@@ -9,4 +9,4 @@ Tabs to indent, spaces to align things in the code (but you should never do this
 Use `` and '' (or " technically) for quotes  
 Use `\times` for the multiplication sign  
 Manually specify non-inlined fractions when needed  
-Remember to surround multi-character exponents or subscripts with `{}`
+Remember to surround multi-character exponents or subscripts with curly braces
