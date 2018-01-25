@@ -1,1 +1,1 @@
-# advanced-function-notes
+# Advanced Functions Notes
