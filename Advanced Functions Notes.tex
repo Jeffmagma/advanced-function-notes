@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, pgfplots}
+\usepackage{amsmath, amssymb, tikz, pgfplots}
+\usetikzlibrary{positioning}
 
 \title{\vspace{-3ex}Advanced Function Notes}
 \author{Jeffrey Gao\and More Contributors Later}
@@ -23,8 +24,21 @@
 		\item lists of ordered pairs
 		\item mapping diagrams
 	\end{itemize}
-	\begin{tikzpicture}
-		\begin{axis}[scatter/classes={a={mark=*,draw=red}}]
+	\begin{tikzpicture}[scale=.75]
+		\begin{axis}[
+			scatter/classes={a={draw=red,fill=red}},
+			axis y line*=left,
+			axis x line*=bottom,
+			grid=both,
+			ymin=0,
+			xmin=0,
+			ymax=4.5,
+			xmax=5.5,
+			axis equal,
+			axis lines=middle,
+			xlabel=$x$,
+			ylabel=$y$
+		]
 		\addplot[scatter,only marks,scatter src=explicit symbolic]
 		table[meta=label] {
 			x y label
@@ -34,5 +48,31 @@
 			5 4 a
 		};
 		\end{axis}
-	\end{tikzpicture}
+	\end{tikzpicture}\\
+	This relation as a set of ordered pairs is $R=\{(2, 2), (2, 4), (4, 1),(5, 4)\}$
+	\subsubsection{Domain and Range of a Function}
+	The domain of a relation is the set of all the x values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation. The range of a relation is the set of all the y values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation.\\\\
+	\begin{minipage}
+		\begin{tikzpicture}[scale=.5]
+		\node (n3) {-3};
+		\node[below=2pt of n3] (n2) {-2};
+		\node[below=2pt of n2] (o) {0};
+		\node[below=2pt of o] (p1) {1};
+		\node[below=2pt of p1] (p2) {2};
+		
+		\node[right=45pt of o] (o2) {0};
+		\node[above=2pt of o2] (nn1) {-1};
+		\node[below=2pt of o2] (pp1) {1};
+		
+		\draw[->] (n3) -- (nn1);
+		\draw[->] (n2) -- (o2);
+		\draw[->] (o) -- (nn1);
+		\draw[->] (p1) -- (pp1);
+		\draw[->] (p2) -- (pp1);
+		\end{tikzpicture}
+	\end{minipage}
+	\begin{minipage}
+		asdf
+	\end{minipage}
+	For this mapping diagram, the domain would be $D=\{-3, -2, 0, 1, 2\}$ and the range would be $R=\{-1, 0, 1\}$
 \end{document}
