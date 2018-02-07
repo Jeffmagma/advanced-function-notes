@@ -1,12 +1,15 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, pgfplots}
 
 \title{\vspace{-3ex}Advanced Function Notes}
 \author{Jeffrey Gao\and More Contributors Later}
+\renewcommand\thesubsubsection{\thesubsection{} \Alph{subsubsection}}
+\renewcommand\labelitemi{--}
 
 \begin{document}
 	\maketitle
+	
 	\section{Unit 1}
 	\subsection{Functions}
 	\subsubsection{Relations}
@@ -18,6 +21,18 @@
 		\item equations
 		\item inequalities
 		\item lists of ordered pairs
-		\item mapping diagrams 
+		\item mapping diagrams
 	\end{itemize}
+	\begin{tikzpicture}
+		\begin{axis}[scatter/classes={a={mark=*,draw=red}}]
+		\addplot[scatter,only marks,scatter src=explicit symbolic]
+		table[meta=label] {
+			x y label
+			2 2 a
+			2 4 a
+			4 1 a
+			5 4 a
+		};
+		\end{axis}
+	\end{tikzpicture}
 \end{document}
