@@ -52,8 +52,7 @@
 	This relation as a set of ordered pairs is $R=\{(2, 2), (2, 4), (4, 1),(5, 4)\}$
 	\subsubsection{Domain and Range of a Function}
 	The domain of a relation is the set of all the x values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation. The range of a relation is the set of all the y values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation.\\\\
-	\begin{minipage}
-		\begin{tikzpicture}[scale=.5]
+	\begin{tikzpicture}[scale=.5]
 		\node (n3) {-3};
 		\node[below=2pt of n3] (n2) {-2};
 		\node[below=2pt of n2] (o) {0};
@@ -69,10 +68,43 @@
 		\draw[->] (o) -- (nn1);
 		\draw[->] (p1) -- (pp1);
 		\draw[->] (p2) -- (pp1);
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}
-		asdf
-	\end{minipage}
+	\end{tikzpicture}
 	For this mapping diagram, the domain would be $D=\{-3, -2, 0, 1, 2\}$ and the range would be $R=\{-1, 0, 1\}$
+	\subsubsection{Functions}
+	A function can only assign one element from the set of Y values (the range) to each element from the set of X values (the domain). $y=f(x)$ where $x$ is the argument or the input of the function and $y$ is the value or the output of the function.\\
+	Using the function $f(x)=(x-1)^2$:
+	\begin{itemize}
+		\item $f(0)=1$
+		\item $f(\frac{1}{2})=\frac{1}{4}$
+		\item $f(a+2)=a^2+2a+1$
+	\end{itemize}
+	\subsection{Graph}
+	The graph of a function $f$ is the graph of the set of ordered pairs $(x, y)$ where $y=f(x)$.\\
+	The graph of the function defined a set of ordered pairs $f=\{(2, 3), (0, -2), (-4, 3), (4, 0), (-3, -3)\}$\\
+	\begin{tikzpicture}[scale=.75]
+		\begin{axis}[
+			scatter/classes={a={draw=red,fill=red}},
+			axis y line*=left,
+			axis x line*=bottom,
+			grid=both,
+			ymin=-4,
+			xmin=-5,
+			ymax=4,
+			xmax=5,
+			axis equal,
+			axis lines=middle,
+			xlabel=$x$,
+			ylabel=$y$
+		]
+		\addplot[scatter,scatter src=explicit symbolic]
+		table[meta=label] {
+			x y label
+			2 3 a
+			0 -2 a
+			-4 3 a
+			4 0 a
+			-3 -3 a
+		};
+		\end{axis}
+	\end{tikzpicture}\\
 \end{document}
