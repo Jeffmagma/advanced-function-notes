@@ -37,7 +37,9 @@
 			axis equal,
 			axis lines=middle,
 			xlabel=$x$,
-			ylabel=$y$
+			ylabel=$y$,
+			xtick distance=1,
+			ytick distance=1
 		]
 		\addplot[scatter,only marks,scatter src=explicit symbolic]
 		table[meta=label] {
@@ -78,9 +80,9 @@
 		\item $f(\frac{1}{2})=\frac{1}{4}$
 		\item $f(a+2)=a^2+2a+1$
 	\end{itemize}
-	\subsection{Graph}
+	\subsubsection{Graph}
 	The graph of a function $f$ is the graph of the set of ordered pairs $(x, y)$ where $y=f(x)$.\\
-	The graph of the function defined a set of ordered pairs $f=\{(2, 3), (0, -2), (-4, 3), (4, 0), (-3, -3)\}$\\
+	The graph of the function defined by a set of ordered pairs $f=\{(2, 3), (0, -2), (-4, 3), (4, 0), (-3, -3)\}$:\\
 	\begin{tikzpicture}[scale=.75]
 		\begin{axis}[
 			scatter/classes={a={draw=red,fill=red}},
@@ -94,9 +96,11 @@
 			axis equal,
 			axis lines=middle,
 			xlabel=$x$,
-			ylabel=$y$
+			ylabel=$y$,
+			xtick distance=1,
+			ytick distance=1
 		]
-		\addplot[scatter,scatter src=explicit symbolic]
+		\addplot[scatter,only marks,scatter src=explicit symbolic]
 		table[meta=label] {
 			x y label
 			2 3 a
@@ -106,5 +110,7 @@
 			-3 -3 a
 		};
 		\end{axis}
-	\end{tikzpicture}\\
+	\end{tikzpicture}
+	\subsubsection{Vertical Line Test}
+	All functions are relations but not all relations are functions.
 \end{document}
