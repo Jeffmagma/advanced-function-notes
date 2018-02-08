@@ -100,7 +100,8 @@
 			xtick distance=1,
 			ytick distance=1
 		]
-		\addplot[scatter,only marks,scatter src=explicit symbolic]
+		%TODO: Fix this so that the points are still red (Change the label something)
+		\addplot[mark=*,scatter,only marks,scatter src=explicit symbolic,nodes near coords={\labelz}, visualization depends on={value {\small$(\thisrowno{0}, \thisrowno{1})$}\as\labelz}]
 		table[meta=label] {
 			x y label
 			2 3 a
@@ -112,5 +113,28 @@
 		\end{axis}
 	\end{tikzpicture}
 	\subsubsection{Vertical Line Test}
-	All functions are relations but not all relations are functions.
+	All functions are relations but not all relations are functions. A graph represents a function if every vertical line intersects the graph in at most one point.\\
+	The set of ordered pairs $\{(0, 0), (-1, -1), (2, 2), (1, -1)\}$ represents a function, while the set of ordered pairs $\{(2, 3), (-1, 3), (2, -2), (-3, -1)\}$ does not.
+	%TODO: The actual graphs with vertical lines
+	\subsubsection{Domain and Range}
+	The domain of a function $f$ is the set of all real numbers $x$ for which $f(x)$ is defined. The range of a function $f$ is the set of all real numbers $y$ for which $y=f(x)$  is defined.\\
+	The domain and range for the set of ordered pairs $\{(-2, 0), (-1, 1), (0, -1), (1, 0)\}$ is $D=\{-2, -1, 0, 1\}$ and $\{-1, 0, 1\}$. The domain and range for the set of ordered pairs $\{(-1, 0), (0, 1), (1, 0), (3, 1), (7, 0)\}$ is $D=\{-1, 0, 1, 3, 7\}$ and $\{0, 1\}$.
+	%TODO: Graphs with domain and range
+	\subsubsection{Restrictions}
+	Division by 0 is undefined, so the denominator of a function cannot equal 0. Square roots are undefined for negative numbers and square roots cannot be negative, so for $f(x)=\sqrt{x}$, $x\geq0$ and $f(x)\geq0$. Squares cannot be negative so for $f(x)=x^2$, $f(x)\geq0$.\\
+	For $y=(x-1)^2-3$:
+	\begin{itemize}
+		\item $D=\{x\in R\}$
+		\item $R=\{y\in R\mid y\geq-3\}$
+	\end{itemize}
+	For $y=2+\sqrt{x-3}$:
+	\begin{itemize}
+		\item $D=\{x\in R\mid x\geq3\}$
+		\item $R=\{y\in R\mid y\geq2\}$
+	\end{itemize}
+	For $y=\frac{x-2}{x+2}$: $=\frac{x+2-4}{x+2}$ $=1-\frac{4}{x+2}$
+	\begin{itemize}
+		\item $D=\{x\in R\mid x\neq-2\}$
+		\item $R=\{y\in R\mid y\neq1\}$
+	\end{itemize}
 \end{document}
