@@ -14,8 +14,7 @@
 	\section{Unit 1}
 	\subsection{Functions}
 	\subsubsection{Relations}
-	A (binary) relation is defined as a set of ordered pairs $(x, y)$.
-	A relation can be described using:
+	A (binary) relation is defined as a set of ordered pairs $(x, y)$. A relation can be described using:
 	\begin{itemize}
 		\item words
 		\item graphs
@@ -62,8 +61,8 @@
 		\node[below=2pt of p1] (p2) {2};
 		
 		\node[right=45pt of o] (o2) {0};
-		\node[above=2pt of o2] (nn1) {-1};
-		\node[below=2pt of o2] (pp1) {1};
+		\node[above=4pt of o2] (nn1) {-1};
+		\node[below=4pt of o2] (pp1) {1};
 		
 		\draw[->] (n3) -- (nn1);
 		\draw[->] (n2) -- (o2);
@@ -160,9 +159,39 @@
 	x'=\frac{x}{b}+c
 	\end{cases}\]
 	%TODO: examples
+	\begin{tikzpicture}[scale=.75]
+		\begin{axis}[
+			scatter/classes={f={draw=red,fill=red},g={draw=blue,fill=blue}},
+			axis y line*=left,
+			axis x line*=bottom,
+			grid=both,
+			ymin=-5,
+			xmin=-10,
+			ymax=10,
+			xmax=10,
+			axis equal,
+			axis lines=middle,
+			xlabel=$x$,
+			ylabel=$y$,
+			xtick distance= 1, ytick distance = 1
+		]
+		\addplot[scatter,scatter src=explicit symbolic]
+			table[meta=label] {
+				x y label
+				-6 0 f
+				-4 -3 f
+				-1 3 f
+				
+				-1 5 g
+				6 7 g
+				10 6 g
+			};
+		\end{axis}
+	\end{tikzpicture}\\
+	To write the function $g(x)$ in the form $g(x)=af(b(x-c))+d$, we have to solve for all 4 of the variables, with 4 equations from the graph. We can know which point corresponds to which point because each segment will have the same proportions. Therefore, we can use these four equations (there are other possibilities): \[\]
 	\subsubsection{Domain and Range}
 	After transformations, the domain and range may be changed. The mapping formulas can be used to calculate the new ones.\\
-	For example: A function with domain $D=(-1,3]$ and range $R=[2,\infty)$ is transformed into a new function $g(x)=-2f(2x-3)+4$. $a=-2$, $b=2$, $c=\frac{3}{2}$, $d=4$.
+	For example: A function with domain $D=(-1,3]$ and range $R=[2,\infty)$ is transformed into a new function $g(x)=-2f(2x-3)+4$. $a=-2$, $b=2$, $c=\frac{3}{2}$, $d=4$. The domain would be shifted to $\left(\frac{-1}{2}+\frac{3}{2}, \frac{3}{2}+\frac{3}{2}\right]=(1,3]$ and the range would be shifted to $\left[-2(2)+4, -2(\infty)+4\right)=[0, -\infty)$
 	\subsection{Inverse Relations}
 	\subsubsection{Inverse Relation}
 	For any relation there is an inverse relation obtained by switching the $x$ and $y$ values for all the elements of the original relation. The inverse relation of a relation $r$ is denoted by $r^{-1}$. A 1:1 function is a function where the inverse is also a function; it passes both the vertical and horizontal line tests.\\
@@ -170,4 +199,31 @@
 	\subsubsection{Symmetry}
 	The graph of a relation and the graph of its inverse relation are symmetrical about the line $y=x$.
 	%TODO: graph
+	\subsubsection{Corresponding Key Points}
+	A point $P(x, y)$ on the relation $r$ corresponds to the point $P'(y, x)$ on the inverse relation $r^{-1}$. The points $P$ and $P'$ are symmetrical about the line $y=x$.
+	%TODO: graph
+	\subsubsection{Domain and Range}
+	The domain of the inverse relation $r^{-1}$ is the same as the range of the range of the relation $r$; $D_{r^{-1}}=R_r$. The range of the inverse relation $r^{-1}$ is the same as the domain of the range of the relation $r$; $R_{r^{-1}}=D_r$.\\
+	A relation $r$ is given by the following mapping diagram:\\
+	\begin{tikzpicture}[scale=.5]
+		\node (n5) {-5};
+		\node[below=2pt of n5] (n2) {-2};
+		\node[below=2pt of n2] (o) {0};
+		\node[below=2pt of o] (p2) {2};
+	
+		\node[right=45pt of n5] (p7) {7};
+		\node[right=45pt of n2] (n3) {-3};
+		\node[right=45pt of o] (o2) {0};
+		\node[right=45pt of p2] (p1) {1};
+	
+		\draw[->] (n5) -- (p7);
+		\draw[->] (n2) -- (p7);
+		\draw[->] (o) -- (n3);
+		\draw[->] (o) -- (o2);
+		\draw[->] (p2) -- (p1);
+	\end{tikzpicture}
+	The domain of $r$ is $D={-5, -2, 0, 2}$ and the range is $R={-3, 0, 1, 7}$.
+	The domain of $r^{-1}$ is $D={-3, 0, 1, 7}$ and the range is $R={-5, -2, 0, 2}$.
+	\subsubsection{Inverse Relation of a Function}
+	Any function is a relation. So, any function $f$ has an inverse relation $f^{-1}$.
 \end{document}
