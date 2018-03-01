@@ -8,10 +8,17 @@
 \renewcommand\thesubsubsection{\thesubsection{} \Alph{subsubsection}}
 \renewcommand\labelitemi{--}
 
+\newcommand{\tsection}[1]{
+	\section*{#1}
+	\addcontentsline{toc}{section}{\protect\large #1}
+}
+
 \begin{document}
 	\maketitle
-	
-	\section{Unit 1}
+	\tableofcontents
+	\newpage
+	\setcounter{section}{1}
+	\tsection{Unit 1: Function Characteristics}
 	\subsection{Functions}
 	\subsubsection{Relations}
 	A (binary) relation is defined as a set of ordered pairs $(x, y)$. A relation can be described using:
@@ -272,4 +279,87 @@
 	The domain of $r^{-1}$ is $D={-3, 0, 1, 7}$ and the range is $R={-5, -2, 0, 2}$.
 	\subsubsection{Inverse Relation of a Function}
 	Any function is a relation. So, any function $f$ has an inverse relation $f^{-1}$.
+	\subsection{Piecewise Functions}
+	\subsubsection{Piecewise-Defined Functions}
+	A piecewise-defined function requires more than one formula to explicitly define the function. Each formula is defined on a different interval. The domain of a piecewise-defined function is the union of all the intervals used to define the function.\\
+	For example, the function $y=|x-2|$ can be rewritten as $y=\begin{cases}
+		x-2&\text{if }x\geq2\\
+		-x+2&\text{if }x<2
+	\end{cases}$\\
+	The heaviside function can be represented as $h(x)=\begin{cases}
+		1&\text{if }x\geq0\\
+		0&\text{if }x<0
+	\end{cases}$\\
+	%Graph
+	%Step function
+	The Dirichlet function can represented as $d(x)=\begin{cases}
+		1&\text{if }x\text{ is rational}\\
+		0&\text{if }x\text{ is irrational}
+	\end{cases}$. Sometimes, $\frac{1}{b}$ (where the rational $x$ is represented as $\frac{a}{b}$) is used instead of 1.\\
+	The function $f(x)=1-|x+1|-|x+2|$ can be rewritten as $f(x)=\begin{cases}
+		x+x+1+x+2=3x+3&x<-2\\x+x+1-x-2=x-1&-2\leq x<-1\\x-x-1-x-2=-x-3&x\geq-1
+	\end{cases}$\\
+	$f(x)=\begin{cases}
+		1&\text{if }x>0\\
+		-1&\text{if }x<0
+	\end{cases}$
+	
+	%more examples
+	\subsubsection{Continuity}
+	The graph of a continuous function can be drawn without lifting your pencil from the paper. A continuous function has no holes, finite gaps, or infinite breaks.\\
+	For example, to calculate a value of $c$ where the function is continuous: $f(x)=\begin{cases}
+		x+c&\text{if }x<2\\
+		cx^2+1&\text{if }x\geq2
+	\end{cases}$
+	\begin{align}
+		2+c&=c(2)^2+1\\
+		2+c&=4c+1\\
+	\end{align}
+	%$sometihing belongs here$
+	\subsubsection{Absolute Value}
+	The absolute value of a function is defined by
+	\[|f(x)|=\begin{cases}
+		f(x)&\text{if }f(x)\geq0\\
+		-f(x)&\text{if }f(x)<0
+	\end{cases}\]
+	\setcounter{section}{9}
+	\setcounter{subsection}{0}
+	\subsection{asdf}
+	\subsection{asdf}
+	\subsection{asdf}
+	\subsection{asdf}
+	\subsection{Composition of Functions}
+	\subsubsection{Composition of Functions}
+	\setcounter{section}{3}
+	\setcounter{subsection}{0}
+	\tsection{Unit 2: Polynomial Functions}
+	\subsection{Exploring Polynomial Functions}
+	\subsubsection{Polynomial Functions}
+	A polynomial function $f(x)$ is defined by: $f(x) = a_nx^n+a_{n-1}x^{n-1}+\ldots+a_2x^2+a_1x+a_0$, where:
+	\begin{itemize}
+		\item $a_n$, $a_{n-1}$, \ldots, $a_2$, $a_1$, $a_0$ are real numbers called the coefficients of the polynomial function
+		\item $a_n$ is called the leading coefficient
+		\item $a_nx^n$ x is called the leading term
+		\item $a_0$ is called the constant term
+		\item $n$ is a non-negative integer that gives the degree of the polynomial function
+		\item the degree of a polynomial function $n$ is the largest exponent of $x$
+	\end{itemize}
+	\subsection{Characteristics of Polynomial Functions}
+	\subsection{Polynomial Functions in Factored Form}
+	\subsection{Transformations of Cubic and Quartic Functions}
+	\subsubsection{Cubic Funcitons}
+	%The graph
+	Cubic functions have the parent function $f(x)=x^3$, and after transformations, may be written as $f(x)=a[b(x-c)^3]$
+	\subsection{asdf}
+	\subsection{asdf}
+	\subsection{Factoring Sums or Differences of Cubes and Powers}
+	\subsubsection{Difference of Two Cubes}
+	The difference of cubes identity is: $a^3-b^3=(a-b)(a^2+ab+b^2)$\\
+	For example: you can factor $x^3-8$ into $(x-2)(x^2+2x+4)$, or $\frac{x^3}{27}-125$ into $(\frac{x}{3}-5)(\frac{x^2}{9}+\frac{5x}{3}+25)$
+	\subsubsection{Sum of Two Cubes}
+	The sum of cubes identity is: $a^3+b^3=(a+b)(a^2-ab+b^2)$\\
+	For example: you can factor $x^3+1$ int $(x+1)(x^2-x+1)$, or $\frac{x^3}{64}+\frac{8}{27}$ into $(\frac{x}{4}+\frac{2}{3})(\frac{x^2}{16}-\frac{x}{6}+\frac{4}{9})$
+	\subsubsection{Difference of Two Powers}
+	For any natural number $n$, the following identity is true: \[a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^2+\dots+a^2b^{n-3}+ab^{n-2}+b^{n-1})\]
+	\subsubsection{Sum of Two Powers}
 \end{document}
