@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, tikz, pgfplots}
+\usepackage{amsmath, amssymb, tikz, pgfplots, polynom}
 \usetikzlibrary{positioning}
 
 \title{\vspace{-3ex}Advanced Function Notes}
@@ -345,13 +345,76 @@
 		\item the degree of a polynomial function $n$ is the largest exponent of $x$
 	\end{itemize}
 	\subsection{Characteristics of Polynomial Functions}
+	\subsubsection{End Behavior}
+	For very large $x$ ($x\to\infty$ or $x\to-\infty$), the graph of the polynomial function will resemble the graph of the leading term $a_nx^n$\\
+	For example, if $a_n>0$ and $n$ is even, as $x\to\infty$, $y\to\infty$, and as $x\to-\infty$, $y\to\infty$, or if $a_n<0$ and $n$ is odd, $x\to\infty$, $y\to-\infty$, and as $x\to-\infty$, $y\to\infty$.
+	\subsubsection{Symmetry}
+	A polynomial function is even if all the powers of $x$ are even, or odd if all the powers of $x$ are odd.\\
+	For example, $x-x^3+2x^5$ is odd, $2-x^2+3x^6$ is even, and $1+x-x^3+3x^4$ is neither.
+	\subsubsection{Zeroes and the Fundamental Theorem of Algebra}
+	\begin{itemize}
+		\item A polynomial function of degree $n$ has $n$ zeroes, real or complex
+		\item If the coefficients of the polynomial function are real numbers, the complex zeroes come in conjugate pairs; there are an even number of complex zeroes
+		\item The number of real zeroes is at most $n$, but these zeroes may be coincident
+		\item A polynomial function with an even degree may have no real zeroes
+		\item A polynomial function with an odd degree must have at least one real zero
+	\end{itemize}
+	\subsubsection{Turning Points}
+	A turning point is the point where increasing changed to decreasing or vice versa. A polynomial function of $n$ has at most $n-1$ turning points
+	\subsubsection{Extrema Points}
+	Extrema is the plural of extremum. Extremum is either a minimum or maximum, and may be local or global. Each turning point is a local extrema point. A polynomial function with an even degree has either a global minimum or global maximum point. A polynomial function with an odd degree has neither a global maximum or a global minimum point.
 	\subsection{Polynomial Functions in Factored Form}
+	\subsubsection{Simple Zeroes}
+	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function
+	\subsubsection{Repeated Zeroes}
+	Some polynomial functions can be factored into the form 
 	\subsection{Transformations of Cubic and Quartic Functions}
 	\subsubsection{Cubic Funcitons}
 	%The graph
-	Cubic functions have the parent function $f(x)=x^3$, and after transformations, may be written as $f(x)=a[b(x-c)^3]$
-	\subsection{asdf}
-	\subsection{asdf}
+	Cubic functions have the parent function $f(x)=x^3$, and after transformations, may be written as $f(x)=a[b(x-c)]^3+d$
+	\subsubsection{Quartic Functions}
+	%The graph
+	Cubic functions have the parent function $f(x)=x^4$, and after transformations, may be written as $f(x)=a[b(x-c)]^4+d$
+	\subsubsection{Power Function(Real Exponent)}
+	\subsubsection{Power Function(Rational Exponent)}
+	\subsection{Dividing Polynomials}
+	\subsubsection{Division of Natural Numbers}
+	If $D$ and $d\neq0$ are two natural numbers, then there are unique numbers $q$ and $r$ such that the relation (called the division statement) $\frac{D}{d}=\frac{r}{d}$ or $D=dq+r$ is true; where $0\leq r<d$.
+	\begin{itemize}
+		\item $D$ is called the dividend
+		\item $d$ is called the divisor
+		\item $q$ is called the quotient
+		\item $r$ is called the remainder
+	\end{itemize}
+	If the remainder is 0, then $D$ is divisible by $d$, or $d$ divides evenly into $D$.
+	\subsubsection{Division of Polynomials}
+	If $D(x)$ and $d(x)$ are two polynomial functions, then there are two unique polynomial functions $q(x)$ and $r(x)$ such that the relation $\frac{D(x)}{d(x)}=\frac{r(x)}{d(x)}$ or $D=d(x)q(x)+r(x)$ is true; where $0\leq\deg r<\deg d$
+	\subsection{Factoring Polynomials}
+	\subsubsection{The Remainder Theorem}
+	If a polynomial $P(x)$ is divided by $x-b$, then the remainder is $P(b)$; Proof:
+	\begin{align*}
+		P(x)&=q(x)(x-b)+r(x)\\
+		P(b)&=q(b)(b-b)+r(b)\\
+		&=q(b)(0)+r(b)\\
+		&=r(b)
+	\end{align*}
+	For example, when $x^3-kx^2+17x+6$ is divided by $x-3$ and the remainder is 12, you can find the value of k by equating $P(3)=12=3^3-k3^2+17(3)+6=27-9k+51+6=84-9k$, so $9k=72; k=8$
+	\subsubsection{The Remainder Theorem, Part II}
+	If a polynomial $P(x)$ is divided by $ax-b$, then the remainder is $P(\frac{b}{a})$; Proof:
+	\begin{align*}
+		P(x)&=q(x)(ax-b)+r(x)\\
+		P\left(\frac{b}{a}\right)&=q\left(\frac{b}{a}\right)\left(a\left(\frac{b}{a}\right)-b\right)+r\left(\frac{b}{a}\right)\\
+		&=q\left(\frac{b}{a}\right)\left(b-b\right)+r\left(\frac{b}{a}\right)\\
+		&=q\left(\frac{b}{a}\right)\left(0\right)+r\left(\frac{b}{a}\right)\\
+		&=r\left(\frac{b}{a}\right)
+	\end{align*}
+	\subsubsection{The Factor Theorem}
+	A polynomial $P(x)$ has $x-b$ as a factor if and only if $P(b)=0$.\\
+	For example: $x+2$ is a factor of $x^3+5x^2+2x-8$ because $(-2)^3+5(-2)^2+2(-2)-8=-8+20-4-8=0$\\
+	%Note: you can use the $\pm$ factors of the last term to find factors
+	\subsubsection{Integral Zero Theorem}
+	If $x=b$ is an integral zero of the polynomial $P(x)$ with integral coefficients, then $b$ is a factor (divisor) of the constant term, $a_0$.
+	For example
 	\subsection{Factoring Sums or Differences of Cubes and Powers}
 	\subsubsection{Difference of Two Cubes}
 	The difference of cubes identity is: $a^3-b^3=(a-b)(a^2+ab+b^2)$\\
@@ -361,5 +424,70 @@
 	For example: you can factor $x^3+1$ int $(x+1)(x^2-x+1)$, or $\frac{x^3}{64}+\frac{8}{27}$ into $(\frac{x}{4}+\frac{2}{3})(\frac{x^2}{16}-\frac{x}{6}+\frac{4}{9})$
 	\subsubsection{Difference of Two Powers}
 	For any natural number $n$, the following identity is true: \[a^n-b^n=(a-b)(a^{n-1}+a^{n-2}b+a^{n-3}b^2+\dots+a^2b^{n-3}+ab^{n-2}+b^{n-1})\]
+	For example: $x^4-16$ can be factored into $(x^2-4)(x^2+4)=(x+2)(x-2)(x^2+4)$
 	\subsubsection{Sum of Two Powers}
+	For any natural odd number $n$, the following identity is true: \[a^n+b^n=(a+b)(a^{n-1}-a^{n-2}b+a^{n-3}b^2-\dots-a^2b^{n-3}+ab^{n-2}-b^{n-1})\]
+	For example: $sdf$ can be factored into $asdf$\\
+	%more examples
+	General Example: Given that $a-b=4$ and $ab=2$, to find $a^3-b^3$:\\
+	\begin{align*}
+		a^3-b^3&=(a-b)(a^2+ab+b^2)\\
+		(a-b)^2&=a^2-2ab+b^2\\
+		\therefore a^3-b^3&=(4)(4^2+3(2))=4(16+6)=4(22)=88
+	\end{align*}
+	\setcounter{section}{4}
+	\setcounter{subsection}{1}
+	\subsection{Solving Linear Polynomial Equations}
+	\subsubsection{Fundamental Theorem of Algebra}
+	\begin{flalign*}
+		\renewcommand\arraystretch{1.5}
+		\begin{array}{rrrrrr}
+			\multicolumn{1}{r|}{2} & 1 & -4 & 7 & 0 & -12\\
+			\multicolumn{1}{r|}{}& & 2 & -4 & 6 & 12\\\cline{2-6}
+			\multicolumn{1}{r|}{-1}& 1 & -2 & 3 & 6 & 0\\
+			\multicolumn{1}{r|}{}& & -1 & 3 & -6\\\cline{2-5}
+			& 1 & -3 & 6 & 0
+		\end{array}
+	\end{flalign*}
+	\subsubsection{asdf}
+	\subsubsection{asdf}
+	\subsubsection{Real Zeroes}
+	If $a+b\sqrt{c}$ where $a$, $b$, and $c$ are rational numbers and $c>0$ is a zero of a polynomial with integral coefficients, then $a-b\sqrt{c}$ is also a zero of this polynomial
+	\subsubsection{Technology}
+	In some cases, the real zeroes of a polynomial equation may only be found using technology. For example, you can use technology to find the real zeroes of $x^3+x-1$: a,b, c
+	\subsection{Solving Polynomial Inequalities}
+	\subsection{Solving Polynomial Inequalities}
+	\subsubsection{Sign Chart Method}
+	To solve $x(x-1)\leq0$
+	\begin{flalign*}
+		\renewcommand\arraystretch{1.3}
+		\begin{array}{r|ccccc}
+		x     & &0& &1& \\\hline
+		x     &-&0&+&+&+\\\hline
+		x-1   &-&-&-&0&+\\\hline
+		x(x-1)&+&0&-&0&+\\\hline
+		\end{array}\\
+		x\in[0, 1]
+	\end{flalign*}
+	To solve $(x^2-x-2)(x^2+1)(x-3)^3\geq0$, you can factor to $(x-2)(x+1)(x^2+1)(x-3)^3\geq0$
+	\begin{flalign*}
+	\renewcommand\arraystretch{1.3}
+		\begin{array}{r|ccccccc}
+			x      & &-1& &2& &3& \\\hline
+			x-2    &-&- &-&0&+&+&+\\\hline
+			x+1    &-&0 &+&+&+&+&+\\\hline
+			(x-3)^3&-&- &-&-&-&0&+\\\hline
+			f(x)   &-&0 &+&0&-&0&+\\\hline
+		\end{array}\\
+		x\in[-1, 2]\cup[3,\infty)
+	\end{flalign*}
+	\tsection{Unit 3: Rational Functions}
+	\setcounter{section}{5}
+	\setcounter{subsection}{1}
+	\subsection{Graphs of Reciprocal Functions}
+	\subsubsection{General Rules}
+	For a function $f(x)$ and its reciprocal $g(x)=\frac{1}{f(x)}$, there are some general rules
+	\begin{itemize}
+		\item If the function $f(x)$ has a zero at $x=a$, the reciprocal function $g(x)$ has a vertical asymptote at $x=a$, and vice versa
+	\end{itemize}
 \end{document}
