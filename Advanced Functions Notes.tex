@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, tikz, pgfplots, polynom}
-\usetikzlibrary{positioning}
+\usepackage{amsmath, amssymb, tikz, pgfplots}
+\usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
 \author{Jeffrey Gao\and More Contributors Later}
@@ -12,6 +12,11 @@
 	\section*{#1}
 	\addcontentsline{toc}{section}{\protect\large #1}
 }
+\newcommand{\tsubsection}[1]{
+	\subsection*{#1}
+	\addcontentsline{toc}{subsection}{\protect\large #1}
+}
+
 
 \begin{document}
 	\maketitle
@@ -481,6 +486,37 @@
 		\end{array}\\
 		x\in[-1, 2]\cup[3,\infty)
 	\end{flalign*}
+	\subsubsection{Graphical Method}
+	You can graph the polynomial and visualize the inequality.\\
+	For example, you can look at the graph of $x(x-1)(x+2)>0$ and see where it is greater than 0
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis y line*=left,
+			axis x line*=bottom,
+			ymin=-5,
+			xmin=-4,
+			ymax=5,
+			xmax=4,
+			axis equal,
+			axis lines=middle,
+			xlabel=$x$,
+			ylabel=$y$,
+			xtick distance=1,
+			ytick distance=1,
+		]
+		\addplot+[<->, mark=none, red, samples=128, line width=1pt]{x*(x-1)*(x+2)};
+		\end{axis}
+	\end{tikzpicture}
+	\subsubsection{Algorithm to Solve Polynomial Inequalities}
+	To solve an inequality involving a polynomial expression:
+	\begin{itemize}
+		\item Move all terms to one side of the inequality
+		\item Factor the polynomial
+		\item Use a sign chart or graphical method to find the [sign] of the polynomial
+		\item Write the solution
+	\end{itemize}
+	\subsubsection{Technology}
+	If you cannot factor the polynomial, use technology to find the solution
 	\tsection{Unit 3: Rational Functions}
 	\setcounter{section}{5}
 	\setcounter{subsection}{1}
@@ -490,4 +526,125 @@
 	\begin{itemize}
 		\item If the function $f(x)$ has a zero at $x=a$, the reciprocal function $g(x)$ has a vertical asymptote at $x=a$, and vice versa
 	\end{itemize}
+	\subsection{Rational Functions}
+	\subsubsection{Rational Functions}
+	A rational function is in the form $f(x)=\frac{P(x)}{Q(x)}$ where $P(x)$ and $Q(x)$ are polynomial functions.
+	\subsubsection{Domain}
+	The domain of a rational function is determined by $Q(x)\neq0$.\\
+	For example, $f(x)=\frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1$ where $D=\{x\in\mathbb{R}\mid x\neq1\}$.\\
+	For $f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x(x-1)}{x(2x-1)(3x+2)}$ and $d=\{x\in\mathbb{R}\mid x\neq0, \frac{1}{2}, -\frac{2}{3}\}$. There is a hole at $(0, \frac{1}{2})$, and vertical asymptotes at $x=\frac{1}{2}$ and $x=-\frac{2}{3}$. As $x\to-\frac{2}{3}^-$, $y\to-\infty$, and $x\to-\frac{2}{3}^+$, $y\to\infty$. As $x\to\frac{1}{2}^-$, $y\to\infty$, and $x\to\frac{1}{2}^+$, $y\to-\infty$. You can use the leading terms to find the end behavior and find the horizontal asymptote at $y=0$\\
+	\[\frac{{P(x)}}{Q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x_1+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x_1+b_0}=\frac{\infty}{\infty}=\frac{a_nx^n\left(1+\frac{a_{n-1}}{a_nx}+\dots+\frac{a_1}{a_nx^{n-1}}+\frac{a_0}{a_nx^n}\right)}{{b_mx^m\left(1+\frac{b_{m-1}}{b_mx}+\dots+\frac{b_m}{b_mx^{m-1}}+\frac{b_0}{b_mx^m}\right)}}\]
+	\[\lim_{|x|\to\infty}f(x)=\lim_{|x|\to\infty}\frac{a_nx^n}{b_mx^m}
+	\begin{cases}\begin{aligned}
+		&n=m&&y=\frac{a_n}{b_m}&&\text{HA}\\
+		&n<m&&y=0&&\text{HA}\\
+		&n>m&&&&\text{no HA, becomes unbounded}\\
+		&n=m+1&&&&\text{oblique asymptote, from quotient}
+	\end{aligned}\end{cases}\]
+	\subsection{Solving Rational Equations}
+	\subsubsection{Rational Equations}
+	To solve a rational equation:
+	\begin{itemize}
+		\item State restrictions
+		\item Find the least common denominator (LCD)
+		\item Multiply so that all terms are over the LCD
+		\item Solve the polynomial equation
+		\item Verify with restrictions
+	\end{itemize}
+	For example: to solve $\frac{x}{x-2}-\frac{2}{x+3}=\frac{10}{x^2+x-6}$, you can factor it into $\frac{x}{x-2}-\frac{2}{x+3}=\frac{10}{(x-2)(x+3)}$. You find the restrictions, $x\neq2,-3$. Then, the least common denominator is $(x-2)(x+3)$. After you multiply, you end up with $\frac{x(x+3)}{(x-2)(x+3)}-\frac{2(x-2)}{(x+3)(x-2)}=\frac{10}{(x-2)(x+3)}$. This is equal to $\frac{x^2+3x-2x+4}{(x+3)(x-2)}=\frac{10}{(x-2)(x+3)}$, which is $x^2+x+4=10$, $x^2+x-6=0$, $(x-2)(x+3)=0$. The solutions for this equation are 2 and $-3$, but since the restrictions for the original equation are $x\neq2,-3$, there are no solutions.
+	\subsubsection{Cross Multiplication}
+	A rational equation of the form $\frac{P(x)}{Q(x)}=\frac{R(x)}{S(x)}\Leftrightarrow P(x)S(x)=Q(x)R(x)$\\
+	For example, to solve $\frac{x-1}{2x+3}=\frac{x+2}{3x-2}$, you can change it to $(x-1)(3x-2)=(x+2)(2x+)$
+	\subsubsection{Shortcut}
+	\subsection{Solving Rational Inequalities}
+	\subsubsection{Rational Inequalities}
+	\subsection{Rates of Change of Rational Functions}
+	\subsubsection{Average Rate of Change}
+	The average rate of change (ARC) over an interval $[x_1, x_2]$, is defined as $\frac{f(x_2)-f(x_1)}{x_2-x_1}$, or $\frac{\Delta y}{\Delta x}$. This is the same as the slope of the secant line from $(x_1, f(x_1))$ to $(x_2, f(x_2))$.
+	\subsubsection{Instantaneous Rate of Change}
+	The instantaneous rate of change (IRC) is defined as $x_1\rightarrow x_2$, the same function. However, since $x_1$ is approaching $x_2$, it would become $\lim_{x_1\to x_2}\frac{f(x_2)-f(x_1)}{x_2-x_1}$. Or, if you use $h$ as the difference between the two $x$ values, $\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$. \\
+	For example, to calculate the IRC of Newton's Serpentine $f(x)=\frac{4x}{x^2+1}$ at $x=0$:
+	\begin{align*}
+		\text{IRC}&=\lim_{h\to 0}\frac{f(0+h)-f(0)}{h}\\
+		&=lim_{h\to 0}\frac{\frac{4h}{h^2+1}}{h}\\
+		&=lim_{h\to 0}\frac{4}{h^2+1}\\
+		&=4
+	\end{align*}
+	To calculate the instantaneous rate of change for any point in the graph, you can calculate the difference quotient ($DQ$), $\frac{f(x+h)-f(x)}{h}$, then use $\lim_{h\to 0}$ on it.
+	\begin{align*}
+		DQ&=\frac{f(x+h)-f(x)}{h}\\
+		&=\frac{\frac{f(x+h)}{(x+h)^2+1}-\frac{4x}{x^2+1}}{h}\\
+		&=\frac{4(x+h)(x^2+1)-4x(x^2+2xh+h^2+1)}{h(x^2+1)\left((x+h)^2+1\right)}\\
+		&=\frac{4x^3+4x+4hx^2+4h-4x^3-8x^2h-4xh^2-4x}{h(x^2+1)\left((x+h)^2+1\right)}\\
+		&=\frac{-4x^2h+4h-4xh^2}{h(x^2+1)\left((x+h)^2+1\right)}\\
+		&=\frac{-4x^2+4-4xh}{(x^2+1)\left((x+h)^2+1\right)}
+	\end{align*}
+	Then, the IRC = $\lim\limits_{h\to 0}DQ$, so you can sub $h=0$ into $DQ$, to end up with IRC $=\frac{-4x^2+4}{(x^2+1)^2}$\\
+	For $f(x)=\frac{x-2}{x-5}$:\\
+	\begin{align*}
+		DQ&=\frac{\frac{x+h-2}{x+h-5}-\frac{x-2}{x-5}}{h}
+	\end{align*}
+	\tsubsection{AP Component: Partial Fraction Decomposition}
+	Partial Fraction Decomposition is the inverse operation of addition or subtraction of fractions. For example, you can decompose $\frac{2x}{x^2-1}=\frac{2x}{(x+1)(x-2)}$ into $\frac{2x}{(x+1)(x-2)}=\frac{a}{x-1}+\frac{b}{x+1}=\frac{a(x+1)+b(x-1)}{(x+1)(x-2)}$. Since they have the same denominators, $2x=a(x+1)+b(x-1)$. Since each degree of x must have the same value on both sides, the coefficient of $x^1$, 2, mus equal $a+b$, and the coefficient of $x^0$, 0, must equal $a-b$. We can solve this system of equations to obtain $a=1$ and $b=1$.\\
+	To solve 
+	\tsection{Unit 4: Exponential and Rational Functions}
+	\setcounter{section}{8}
+	\setcounter{subsection}{0}
+	\subsection{Exploring the Logarithmic Function}
+	\subsubsection{Logarithmic Functions}
+	$b^x$ is the exponential function, while $x^n$ is the power function. For the exponential function, the base, $b$, is defined as $b>0$ and $b\neq1$, to get a useful graph. You know you have an exponential function if the $1,2,3\dots n$th differences are all proportional.%example maybe
+	For exponential functions, the domain is $x\in\mathbb{R}$, while the range is $y\in\mathbb{R}\mid y>0$. They have a horizontal asymptote at $y=0$, but no vertical asymptote. There is a y-intercept at $y=1$, but there is no x-intercept. Their y-intercept is called an invariance point, as it doesn't change based on the base. Exponential functions are one-to-one functions, so their inverse is also a function.\\
+	Their inverse is the log function $f(x)=\log_bx$. They have an invariance point at (1, 0). The domain is $x\in\mathbb{R}\mid x>0$, and the range is $y\in\mathbb{R}$.  They have no y-intercept, but they have an x-intercept at $x=1$. They have a vertical asymptote at $y=0$, but no horizontal asymptote. The limits of the vertical asymptote are $\lim\limits_{x\to0^+}f(x)=-\infty$ if $b>1$, and $\lim\limits_{x\to0^+}f(x)=\infty$ if $0<b<1$.
+	\tsubsection{AP Component: Hyperbolic Functions}
+	\tsubsection{AP Component: Inverse of Hyperbolic Functions}
+	To get the equation of the inverse of $\sinh x$, you can sub $x$ and $y$ into the definition of $\sinh x$:
+	\begin{align*}
+		x&=\sinh y&\\
+		&=\frac{e^y-e^{-y}}{2}\\
+		2x&=e^y-e^{-y}\\
+		e^y-e^{-y}-2x&=0\\
+		e^{2y}-2xe^y-1&=0\\
+		\text{After plugging into quadratic formula: }e^y&=\frac{-(-2x)\pm\sqrt{(2x)^2-4(1)(-1)}}{2(1)}\\
+		&=\frac{2x\pm\sqrt{4x^2+4}}{2}\\
+		&=\frac{2x\pm\sqrt{4(x^2+1)}}{2}\\
+		&=x\pm\sqrt{x^2+1}\\
+		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2+1}\\
+		\sinh^{-1}x&=\ln\left(x+\sqrt{x^2+1}\right)
+	\end{align*}
+	\section{New Section Or Something}
+	\[y=\frac{x|x|}{x+3}=\begin{cases}
+		-\frac{x^2}{x+3}&x<0\\
+		\frac{x^2}{x+3}&x\geq0
+	\end{cases}\]
+	\[\text{Domain: }\{x\in\mathbb{R}\mid x\neq-3\}\]
+	\[\text{Vertical Asymptote at }x=-3\text{ as }\]
+	% as x -> -3- y->inf
+	% as x -> -3+ y->-inf
+	%zero at 0,0
+	%divisions statement, as x-> -inf =-x+3
+	%as x-> inf y=x-3
+	
+	%- from the left
+	%+ from the right
+	%zeroes of the numerator that are not numerators are x intercepts
+	%rational function is p/q, q!=0
+	%holes are common factors
+	%vertical asymptotes are unique roots of q(x)
+	%no holes or vertical asymptotes when domain is all real x
+	%you can determine the behavior around the vertical asymptotes
+	%x-intercepts are unique roots of p(x)
+	%y-intercepts if 0 is part of the domain
+	%end behavior comes from when |x| approaches infinity (lim f(x) |x|\to\infty)=a_nx^n/b_mx^m
+	%y=(x|x|)/(x-3) splits because of the absolute value, vertical asymptote
+	
+	%graph with no value at x=a
+	\noindent Left hand limit (the value when it is approaching from the left):\[L=\lim_{x\to a^-}f(x)\]
+	Right hand limit (the value when it is approaching from the right):\[R=\lim_{x\to a^+}f(x)\]
+	Lowercase l limit : 
+	%lowercase l can be either equal to L or R when L = R
+	%hole or removable disconinuity, L = 1, R = 1, 
+	%even if f(1)=3/2, lowercase l = 1
+	%0/0 is indeterminate case, if you plug it into the equation, also inf/inf, inf-inf, 1^inf, 0^0, inf^0
+	
+	%n^2+1/n
 \end{document}
