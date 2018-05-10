@@ -1,12 +1,13 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, tikz, pgfplots}
+\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft}
 \usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
 \author{Jeffrey Gao\and More Contributors Later}
 \renewcommand\thesubsubsection{\thesubsection{} \Alph{subsubsection}}
 \renewcommand\labelitemi{--}
+\cftpagenumbersoff{subsubsection}
 
 \newcommand{\tsection}[1]{
 	\section*{#1}
@@ -16,7 +17,9 @@
 	\subsection*{#1}
 	\addcontentsline{toc}{subsection}{\protect\large #1}
 }
-
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
 
 \begin{document}
 	\maketitle
@@ -595,6 +598,7 @@
 	$b^x$ is the exponential function, while $x^n$ is the power function. For the exponential function, the base, $b$, is defined as $b>0$ and $b\neq1$, to get a useful graph. You know you have an exponential function if the $1,2,3\dots n$th differences are all proportional.%example maybe
 	For exponential functions, the domain is $x\in\mathbb{R}$, while the range is $y\in\mathbb{R}\mid y>0$. They have a horizontal asymptote at $y=0$, but no vertical asymptote. There is a y-intercept at $y=1$, but there is no x-intercept. Their y-intercept is called an invariance point, as it doesn't change based on the base. Exponential functions are one-to-one functions, so their inverse is also a function.\\
 	Their inverse is the log function $f(x)=\log_bx$. They have an invariance point at (1, 0). The domain is $x\in\mathbb{R}\mid x>0$, and the range is $y\in\mathbb{R}$.  They have no y-intercept, but they have an x-intercept at $x=1$. They have a vertical asymptote at $y=0$, but no horizontal asymptote. The limits of the vertical asymptote are $\lim\limits_{x\to0^+}f(x)=-\infty$ if $b>1$, and $\lim\limits_{x\to0^+}f(x)=\infty$ if $0<b<1$.
+	\subsection{ASDf}
 	\tsubsection{AP Component: Hyperbolic Functions}
 	\tsubsection{AP Component: Inverse of Hyperbolic Functions}
 	To get the equation of the inverse of $\sinh x$, you can sub $x$ and $y$ into the definition of $\sinh x$:
@@ -611,6 +615,73 @@
 		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2+1}\\
 		\sinh^{-1}x&=\ln\left(x+\sqrt{x^2+1}\right)
 	\end{align*}
+	\tsection{Unit 5: Rates of Change and Derivatives}
+	\setcounter{section}{2}
+	\setcounter{subsection}{1}
+	\tsubsection{AP Component: Derivative Functions and First Principles}
+	\subsubsection{Derivative Functions}
+	Given a function $y=f(x)$, the \textit{derivative function} of $f$ is a new function , $f'$ ($f$ prime), defined at $x$ by:
+	\[f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\]
+	\subsubsection{Differentiability}
+	A function $y=f(x)$ is called \textit{differentiable} at $x$ if $f'(x)$ exists. A function $y=f(x)$ is differentiable over an interval $(a, b)$ if the function is differentiable at every number in that interval. The domain of $f'$ is a subset of the domain of the original function. A function is defined over $D_f$, but is differentiable over $D_{f'}$
+	\subsubsection{Interpretations of Derivative Functions}
+	The slope of the tangent line to the graph of $y=f(x)$ at the point $(a, f(a))$ is given by $m=f'(a)$. The instantaneous rate of change in the variable $y$ with respect to the variable $x$, where $y=f(x)$, at $x=a$ is given by $\text{IRC}=f'(a)$
+	\subsubsection{Notations and Reading}
+	Lagrange Notation: $y'=f'(x)$, ``y prime'' or ``f prime at x''.\\
+	Leibniz Notation: $\od{y}{x}=\od{f(x)}{x}$, ``d y by d x''\\
+	$f'(a)=\eval[3]{\dod{y}{x}}_{x=a}$, ``f prime at a equals d y by d x at x = a''
+	\subsubsection{First Principles}
+	\textit{Differentiation} is the process to find the derivative function for a given function.\\
+	\textit{First Principles} is the process of differentiation by computing the limit:
+	\[f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}\]
+	\subsubsection{Non-Differentiability}
+	A function is not differentiable at $x=a$ if $f'(a)$ does not exist. If a function $f$ \textit{is not} continuous at $x=a$, then the function is not differentiable at $x=a$. If a function $f$ \textit{is} continuous at $x=a$, then the function may or may not be differentiable at $x=a$
+	\subsubsection{Differentiability Point}
+	If the function $y=f(x)$ is differentiable at $x=a$, then the tangent at $(a, f(a))$ is unique and not vertical (slope is not $\infty$ or $-\infty$)
+	\subsubsection{Corner Point}
+	$P(a, f(a))$ is a corner point if there are two distinct tangent lines at $P$, one for the left branch and one for the right branch. For example: \[\begin{cases}
+		f_1(x)&x<a\\
+		f_2(x)&x>a\\
+	\end{cases}\text{ and }f_1'(a)\neq f_2'(a)\]
+	\subsubsection{Infinite Slope Point}
+	$P(a, f(a))$ is an infinite slope point if the tangent line at $P$ is vertical and the function is increasing or decreasing in the neighborhood at the end of point $P$.
+	\subsubsection{Cusp Point}
+	$P(a, f(a))$ is a cusp point if the tangent line at $P$ is vertical and the function is increasing on one side of $P$ and decreasing on the other side.
+	\setcounter{subsection}{2}
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Derivatives of Polynomial Functions}
+	\subsubsection{Power Rule}
+	For the power function: $f(x)=x^n$, ${x^n}'=nx^{n-1}$. Some useful examples include $1'=0$, $x'=1$, and $\sqrt{x}'=\dfrac{1}{x\sqrt{x}}$.
+	\subsubsection{Constant Function Rule}
+	For the constant function: $f(x)=c$, $c'=0$
+	\subsubsection{Constant Multiple Rule}
+	For any function $g(x)=cf(x)$, $(cf(x))'=cf'(x)$
+	\subsubsection{Sum and Difference Rules}
+	$(f(x)\pm g(x))'=f'(x)\pm g'(x)$
+	\subsubsection{Tangent Line}
+	To find the equation of a tangent line at the point $(a, f(a))$, find the derivative function $f'(x)$
+	
+	\setcounter{section}{5}
+	\setcounter{subsection}{1}
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Derivatives of Exponential Functions}
+	\subsubsection{Review of Exponential Functions}
+	The exponential function is defined as $y=f(x)=b^x;\ b>0,\:b\neq1$.
+	%graph
+	The x-axis ($y=0$) is a horizontal asymptote
+	\subsubsection{The Number $e$}
+	The number $e$ is defined by \[e=\sum_{n=0}^{\infty}\frac{1}{n!}=\frac{1}{0!}+\frac{1}{1!}+\frac{1}{2!}+\dots\]
+	or
+	\[e=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n\]
+	which can also be written as
+	\[e=\lim_{u\to0}\left(1+u\right)^\frac{1}{u}\]
+	\subsubsection{Exponential Function}
+	The exponential function $e^x$ may be evaluated using the limit $e^x=\lim\limits_{n\to\infty}\left(1+\dfrac{x}{n}\right)^n$, proof:
+	\[\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n=\lim_{n\to\infty}\left(\left(1+\frac{x}{n}\right)^\frac{n}{x}\right)^x=\left(\lim_{u\to0}\left(1+u\right)^\frac{1}{u}\right)^x=e^x\]
+	\subsubsection{Derivative of $e^x$}
+	The derivative of $e^x$ is $e^x$ itself, proof: 
+	\subsubsection{Derivative of $e^f(x)$}
+	Using the chain rule and the fact that ${e^x}'=e^x$, $e^{f(x)\prime}=$
 	\section{New Section Or Something}
 	\[y=\frac{x|x|}{x+3}=\begin{cases}
 		-\frac{x^2}{x+3}&x<0\\
