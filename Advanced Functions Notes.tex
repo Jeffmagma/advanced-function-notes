@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft}
+\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect}
 \usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
@@ -17,6 +17,7 @@
 	\subsection*{#1}
 	\addcontentsline{toc}{subsection}{\protect\large #1}
 }
+
 \makeatletter
 \g@addto@macro\bfseries{\boldmath}
 \makeatother
@@ -682,6 +683,59 @@
 	The derivative of $e^x$ is $e^x$ itself, proof: 
 	\subsubsection{Derivative of $e^f(x)$}
 	Using the chain rule and the fact that ${e^x}'=e^x$, $e^{f(x)\prime}=$
+	\tsection{Unit 6: Introduction to Vectors}
+	\setcounter{section}{6}
+	\setcounter{subsection}{0}
+	\subsection{An Intro to Vectors}
+	\subsubsection{Scalars and Vectors}
+	Scalars are quantities described completely by a number and a measured unit. Vectors are quantities described by a magnitude (for example length, intensity, or size) and a direction.
+	\subsubsection{Geometric Vectors}
+	Geometric Vectors are vectors not related to any coordinate system. For example, the directed line segment $\vv{AB}$ where $A$ is the initial, start, or tail point and $B$ is the final, end, terminal, head, or tip point.
+	\subsubsection{Algebraic Vectors}
+	Algebraic Vectors are vectors that are related to a coordinate system. In general, these vectors are described by their components relative to a reference system, or frame. For example, $\vv{v}=(2,\:3,\:-1)$
+	\subsubsection{Position Vector}
+	The position vector is the directed line segment $\vv{OP}$ from the origin of the coordinate system $O$ to a generic point $P$.
+	\subsubsection{Displacement Vector}
+	The displacement vector $\vv{AB}$ is the directed line segment from the point $A$ to the point $B$.
+	\subsubsection{Pythagorean Theorem}
+	Why is this here
+	\subsubsection{Magnitude}
+	The magnitude is the length, size, norm, or intensity of the vector. The magnitude of a vector $\vv{v}$ can be denoted by $|\vv{v}|$, $\lVert\vv{v}\rVert$, or $v$.
+	\subsubsection{3D Pythagorean Theorem}
+	In 3D, the following relation is true for the 
+	\subsection{Vector Addition and Subtraction}
+	\subsection{Multiplication of Vectors by Scalars}
+	\subsection{Properties of Vectors}
+	\subsection{Vectors in $R^2$ and $R^3$}
+	\subsubsection{Polar Coordinates}
+	Given a Cartesian System of Coordinates, a 2D vector $\vv{v}$ may be defined by its magnitude $\lVert\vv{v}\rVert$ and the counter-clockwise angle $\theta$ between its positive direction of the x-axis and the vector.
+	%graph
+	The pair $(\lVert\vv{v}\rVert, \theta)$ determines the polar coordinates of the 2D vector and $\vv{v}=(\lVert\vv{v}\rVert, \theta)$.
+	\subsubsection{Scalar Components for a 2D Vector}
+	Let us consider a 2D vector with the tail in the origin of the Cartesian system. Parallels through its tip to the coordinate axes intersect the x-axis at $v_x$ and the y-axis at $v_y$.
+	%graph
+	The pair $(v_x, v_y)$ determines the scalar coordinates of the 2D vector and $\vv{v}=(v_x, v_y)$.
+	\subsubsection{Link between Polar Coordinates and Scalar Components}
+	To convert a vector from polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\:\theta)$ to scalar components $\vv{v}=(v_x,\:v_y)$, use the formulas $v_x=\lVert\vv{v}\rVert\cos\theta$ and $v_y=\lVert\vv{v}\rVert\sin\theta$\\
+	To convert a vector from scalar components $\vv{v}=(v_x,\:v_y)$ to polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\:\theta)$, use the formulas $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$ and $\theta=\tan^{-1}\left(\dfrac{v_y}{v_x}\right)$
+	\subsubsection{Magnitude of a 2D Algebraic Vector}
+	The magnitude of a 2D algebraic vector $\vv{v}=(v_x,\:v_y)$ is given by $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$.
+	\subsubsection{Standard Unit Vectors}
+	The unit vectors $\vv{i}=(1,\:0)$ and $\vv{j}=(0,\:1)$ are called the standard unit vectors in 2D space.
+	\subsubsection{Vector Components of a 2D Vector}
+	Any vector $\vv{v}$ may be decomposed into two perpendicular vector components $\vv{v_x}$ and $\vv{v_y}$
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	\section{New Section Or Something}
 	\[y=\frac{x|x|}{x+3}=\begin{cases}
 		-\frac{x^2}{x+3}&x<0\\
