@@ -866,7 +866,7 @@
 		\item If $\vv{a}\bot\vv{b}$, $\cos\theta=0$, and $s=0$
 	\end{itemize}
 	\subsubsection{Dot Product and Scalar Projection}
-	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$
+	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\:a_y,\:a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$. Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\:a_y,\:a_z)\cdot(1,\:0,\:0)}{1}=\dfrac{}{}$
 	\subsection{Cross Product of Two Vectors}
 	\subsubsection{Right Hand System}
 	The Right Hand System is based on the position of the first three fingers of the right hand: %illustrated
@@ -885,9 +885,70 @@
 		\item If $\vv{a}\bot\vv{b}$ $\left(\theta=\dfrac{\pi}{2}=\ang{90}\right)$, then $\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}$ (the maximum)
 		\item If $\vv{a}=\vv{b}$, then $\vv{a}\times\vv{b}=0$
 	\end{itemize}
-	
-	
-	
+	\subsubsection{Cross Product of Unit Vectors}
+	The cross product of the standard unit vectors are:
+	\begin{align*}
+		\vv{i}\times\vv{i}&=0&\vv{j}\times\vv{j}&=0&\vv{k}\times\vv{k}&=0\\
+		\vv{i}\times\vv{j}&=\vv{k}&\vv{j}\times\vv{k}&=\vv{i}&\vv{k}\times\vv{i}&=\vv{j}
+	\end{align*}
+	\subsubsection{Cross Product of Two Algebraic Vectors}
+	The cross product of two vectors $\vv{a}$ and $\vv{b}$ is equal to $\vv{i}(a_yb_z-a_zb_y)+\vv{j}(a_zb_x-a_xb_z)+\vv{k}(a_xb_y-a_yb_x)$\\
+	\begin{tikzpicture}
+		\node(i1) at (-2,0) {$\vv{i}$};
+		\node(j1) at (-1,0) {$\vv{j}$};
+		\node(k)  at (0,0)  {$\vv{k}$};
+		\node(i2) at (1,0)  {$\vv{i}$};
+		\node(j2) at (2,0)  {$\vv{j}$};
+		\node(ax1) at (-2,-1) {$a_x$};
+		\node(ay1) at (-1,-1) {$a_y$};
+		\node(az)  at (0,-1)  {$a_z$};
+		\node(bx1) at (-2,-2) {$b_x$};
+		\node(by1) at (-1,-2) {$b_y$};
+		\node(bz)  at (0,-2)  {$b_z$};
+		\node(ax2) at (1,-1)  {$a_x$};
+		\node(ay2) at (2,-1)  {$a_y$};
+		\node(bx2) at (1,-2)  {$b_x$};
+		\node(by2) at (2,-2)  {$b_y$};
+
+		\draw[-latex] (i1)  -- (ay1);
+		\draw[-latex] (ay1) -- (bz);
+		\draw[-latex] (j1)  -- (az);
+		\draw[-latex] (az)  -- (bx2);
+		\draw[-latex] (k)   -- (ax2);
+		\draw[-latex] (ax2) -- (by2);
+		\draw[-latex] (i2)  -- (az);
+		\draw[-latex] (az)  -- (by1);
+		\draw[-latex] (j2)  -- (ax2);
+		\draw[-latex] (ax2) -- (bz);
+		\draw[-latex] (k)   -- (ay1);
+		\draw[-latex] (ay1) -- (bx1);
+	\end{tikzpicture}\\
+	In the figure, the cross product is the sum of the differences between the product of the two numbers on the rightward diagonal and the leftward diagonal multiplied by the vector at the top.
+	\subsubsection{Properties of Cross Product}
+	The following properties apply to the cross product:
+	\begin{enumerate}
+		\item $\vv{a}\times\vv{b}=-\vv{b}\times\vv{a}$ (anti-commutitive property)
+		\item $\lambda(\vv{a}\times\vv{b})=(\lambda\vv{a})\times\vv{b}=\vv{a}\times(\lambda\vv{b})$
+		\item $\vv{a}\times(\vv{b}+\vv{c})=\vv{a}\times\vv{b}+\vv{a}\times\vv{c}$ (distributive property)
+		\item $\vv{a}\times\vv{b}=0\Leftrightarrow\vv{a}=0\text{ or }\vv{b}=0\text{ or }\vv{a}\parallel\vv{b}$
+		\item $\vv{a}\times0=0$
+		\item $\vv{a}\times\vv{a}=0$
+	\end{enumerate}
+	The dot and cross products have higher priority in comparison to addition and subtraction
+	\subsection{Applications of Dot and Cross Products}
+	\subsubsection{Work}
+	The work done by a constant force $\vv{F}$ acting on an object during a displacement $\vv{d}$ is given by $W=\vv{F}\cdot\vv{d}=Fd\cos\theta$
+	%graph
+	\subsubsection{Torque}
+	The torque (rotational or turning effect) about the point $\vv{A}$ created by a force $\vv{F}$ acting on a object located at the point $B$ is given by $\vv{\tau}=\vv{AB}\times\vv{F}=\vv{r}\times\vv{F}$
+	%graph
+	\subsubsection{Parallelogram Area}
+	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula $A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\:\vv{b})$
+	%graph
+	\subsubsection{Triangle Area}
+	The area of a triangle defined by the vectors $\vv{a}$ and $\vv{b}$ is given by $A=\dfrac{\lVert\vv{a}\times\vv{b}\rVert}{2}=\dfrac{\mv{a}\mv{b}\sin\theta}{2}$
+
+
 	\section{Have to Figure Out Where This Goes}
 	\[y=\frac{x|x|}{x+3}=\begin{cases}
 		-\frac{x^2}{x+3}&x<0\\
