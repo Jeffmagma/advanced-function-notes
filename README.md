@@ -13,4 +13,5 @@ Remember to surround multi-character exponents or subscripts with curly braces
 
 ## TODO List:
 - [ ] unit 1
+  - [ ] unit 1
 - [x] unit 2
