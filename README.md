@@ -12,5 +12,5 @@ Manually specify non-inlined fractions when needed
 Remember to surround multi-character exponents or subscripts with curly braces
 
 ## TODO List:
--[]unit 1
--[x]unit 2
+-[ ] unit 1
+-[x] unit 2
