@@ -90,7 +90,7 @@
 		\draw[->] (p1) -- (pp1);
 		\draw[->] (p2) -- (pp1);
 	\end{tikzpicture}\\
-	For this mapping diagram, the domain would be $D=\{-3,\,-2,\,0,\,1,\,2\}$ and the range would be $R=\{-1,\,0,\,1\}$
+	For this mapping diagram, the domain would be $D=\set{-3,\,-2,\,0,\,1,\,2}$ and the range would be $R=\set{-1,\,0,\,1}$
 	\subsubsection{Functions}
 	A function can only assign one element from the set of Y values (the range) to each element from the set of X values (the domain). $y=f(x)$ where $x$ is the argument or the input of the function and $y$ is the value or the output of the function.\\
 	Using the function $f(x)=(x-1)^2$:
@@ -133,11 +133,11 @@
 	\end{tikzpicture}
 	\subsubsection{Vertical Line Test}
 	All functions are relations but not all relations are functions. A graph represents a function if every vertical line intersects the graph in at most one point.\\
-	The set of ordered pairs $\{(0,\,0),\,(-1,\,-1),\,(2,\,2),\,(1,\,-1)\}$ represents a function, while the set of ordered pairs $\{(2,\,3),\,(-1,\,3),\,(2,\,-2),\,(-3,\,-1)\}$ does not.
+	The set of ordered pairs $\set{(0,\,0),\,(-1,\,-1),\,(2,\,2),\,(1,\,-1)}$ represents a function, while the set of ordered pairs $\set{(2,\,3),\,(-1,\,3),\,(2,\,-2),\,(-3,\,-1)}$ does not.
 	%TODO: The actual graphs with vertical lines
 	\subsubsection{Domain and Range}
 	The domain of a function $f$ is the set of all real numbers $x$ for which $f(x)$ is defined. The range of a function $f$ is the set of all real numbers $y$ for which $y=f(x)$  is defined.\\
-	The domain and range for the set of ordered pairs $\{(-2,\,0),\,(-1,\,1),\,(0,\,-1),\,(1,\,0)\}$ is $D=\{-2,\,-1,\,0,\,1\}$ and $\{-1, 0, 1\}$. The domain and range for the set of ordered pairs $\{(-1, 0), (0, 1), (1, 0), (3, 1), (7, 0)\}$ is $D=\{-1, 0, 1, 3, 7\}$ and $\{0, 1\}$.
+	The domain and range for the set of ordered pairs $\set{(-2,\,0),\,(-1,\,1),\,(0,\,-1),\,(1,\,0)}$ is $D=\set{-2,\,-1,\,0,\,1}$ and $\set{-1, 0, 1}$. The domain and range for the set of ordered pairs $\set{(-1, 0), (0, 1), (1, 0), (3, 1), (7, 0)}$ is $D=\set{-1, 0, 1, 3, 7}$ and $\set{0, 1}$.
 	%TODO: Graphs with domain and range
 	\subsubsection{Restrictions}
 	Division by 0 is undefined, so the denominator of a function cannot equal 0. Square roots are undefined for negative numbers and square roots cannot be negative, so for $f(x)=\sqrt{x}$, $x\geq0$ and $f(x)\geq0$. Squares cannot be negative so for $f(x)=x^2$, $f(x)\geq0$.\\
@@ -159,7 +159,7 @@
 	\subsection{Exploring Absolute Value}
 	\subsubsection{Absolute Value}
 	The absolute value $|x|$ of a real number $x$ is the distance between $x$ and 0.\\
-	For example, $|5|=|-5|=5$ and $\left|2-\left|-3\right|\right|$.
+	For example, $|5|=|-5|=5$ and $\left|2-\left|-3\right|\right|=1$.
 	\subsubsection{Definition of Absolute Value}
 	The absolute value $|x|$ is defined by:
 	\[|x|=\begin{cases}
@@ -201,9 +201,51 @@
 		\begin{cases}
 			2x-3\\
 			2x-3
-		\end{cases}&
+		\end{cases}&\\
+		\text{Not Done Yet but}
 	\end{align*}
+	\subsubsection{Absolute Value Function}
+	The absolute value function is defined by y=f(x)=|x|
+	%graph
+	\subsubsection{Inequalities}
+	The comparison operators are:
+	\begin{itemize}
+		\item $<$ (less)
+		\item $\leq$ (less than or equal to)
+		\item $=$ (equal to)
+		\item $\neq$ (not equal to)
+		\item $>$ (greater than)
+		\item $\geq$ (greater than or equal to)
+	\end{itemize}
+	The non equality comparison operators are used to create inequalities
+	\subsubsection{Interval Notation}
+	The following notations are equivalent and represent sets of numbers:
+	\begin{itemize}
+		\item $a<x\leqslant b$ (inequality notation)
+		\item $x\in[a,b)$ (interval notation)
+		\item $\set{x\in\mathbb{R}\mid a<x\leqslant b}$
+	\end{itemize}
+	\begin{tikzpicture}[scale=1.2]
+		\node[above] (a) at (1,0) {$a$};
+		\node[above] (b) at (2,0) {$b$};
+		\node[below left] (x) at (3,0) {$x$};
+		\draw[->] (0,0) -- (3,0);
+		\filldraw (2,0) circle[radius=2pt];
+		\draw[thick] (1,0) -- (2,0);
+		\draw[fill=white] (1,0) circle[radius=2pt];
+	\end{tikzpicture}
+	\subsubsection{Transformations}
+	Given a parent function $f$, we can create new functions using transformations: $f(x)=af(b(x-c))+d$
+	\begin{itemize}
+		\item There is a vertical stretch by a factor of $a$
+		\item If $a<0$, there is reflection in the x-axis
+		\item There is a horizontal stretch by a factor of $b$
+		\item If $b<0$, there is a reflection in the y-axis
+		\item There is a horizontal translation by $c$
+		\item There is a vertical translation by $d$
+	\end{itemize}
 	\subsection{Properties of Graphs of Functions}
+	\subsubsection{Domain and Range}
 	\subsection{Sketching Graphs of Functions}
 	\subsubsection{Parent Functions}
 	Parent functions are functions in ``simplest form''. Parent functions may be used to create more complicated functions. For example, the function $g(x)=-2\dfrac{1}{(x-1)^2}+3$ is a transformation of the parent function $f(x)=\dfrac{1}{x^2}$. Parent functions can be graphed with key point. For example, five key points of the parent function $f(x)=\sqrt[3]{x}$ are $(-8, -2)$, $(-1, -1)$, $(0, 0)$, $(1, 1)$, and $(8, 2)$.
