@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 %math, symbols, drawing, plots, derivatives, table of contents editing, vectors, units
-\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, siunitx}
+\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, siunitx, mathtools}
 \usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
@@ -34,7 +34,7 @@
 	\tsection{Unit 1: Function Characteristics}
 	\subsection{Functions}
 	\subsubsection{Relations}
-	A (binary) relation is defined as a set of ordered pairs $(x, y)$. A relation can be described using:
+	A (binary) relation is defined as a set of ordered pairs $(x,\,y)$. A relation can be described using:
 	\begin{itemize}
 		\item words
 		\item graphs
@@ -70,9 +70,9 @@
 		};
 		\end{axis}
 	\end{tikzpicture}\\
-	This relation as a set of ordered pairs is $R=\{(2, 2), (2, 4), (4, 1),(5, 4)\}$
+	This relation as a set of ordered pairs is $R=\set{(2,\,2),\,(2,\,4),\,(4,\,1),(5,\,4)}$
 	\subsubsection{Domain and Range of a Function}
-	The domain of a relation is the set of all the x values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation. The range of a relation is the set of all the y values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation.\\\\
+	The domain of a relation is the set of all the x values such that the ordered pair $(x, y)$ satisfies (is an element of) the relation. The range of a relation is the set of all the y values such that the ordered pair $(x,\,y)$ satisfies (is an element of) the relation.\\\\
 	\begin{tikzpicture}[scale=.5]
 		\node (n3) {-3};
 		\node[below=2pt of n3] (n2) {-2};
@@ -89,8 +89,8 @@
 		\draw[->] (o) -- (nn1);
 		\draw[->] (p1) -- (pp1);
 		\draw[->] (p2) -- (pp1);
-	\end{tikzpicture}
-	For this mapping diagram, the domain would be $D=\{-3, -2, 0, 1, 2\}$ and the range would be $R=\{-1, 0, 1\}$
+	\end{tikzpicture}\\
+	For this mapping diagram, the domain would be $D=\{-3,\,-2,\,0,\,1,\,2\}$ and the range would be $R=\{-1,\,0,\,1\}$
 	\subsubsection{Functions}
 	A function can only assign one element from the set of Y values (the range) to each element from the set of X values (the domain). $y=f(x)$ where $x$ is the argument or the input of the function and $y$ is the value or the output of the function.\\
 	Using the function $f(x)=(x-1)^2$:
@@ -100,8 +100,8 @@
 		\item $f(a+2)=a^2+2a+1$
 	\end{itemize}
 	\subsubsection{Graph}
-	The graph of a function $f$ is the graph of the set of ordered pairs $(x, y)$ where $y=f(x)$.\\
-	The graph of the function defined by a set of ordered pairs $f=\{(2, 3), (0, -2), (-4, 3), (4, 0), (-3, -3)\}$:\\
+	The graph of a function $f$ is the graph of the set of ordered pairs $(x,\,y)$ where $y=f(x)$.\\
+	The graph of the function defined by a set of ordered pairs $f=\{(2,\,3),\,(0,\,-2),\,(-4,\,3),\,(4,\,0),\,(-3,\,-3)\}$:\\
 	\begin{tikzpicture}[scale=.75]
 		\begin{axis}[
 			scatter/classes={a={draw=red,fill=red}},
@@ -133,11 +133,11 @@
 	\end{tikzpicture}
 	\subsubsection{Vertical Line Test}
 	All functions are relations but not all relations are functions. A graph represents a function if every vertical line intersects the graph in at most one point.\\
-	The set of ordered pairs $\{(0, 0), (-1, -1), (2, 2), (1, -1)\}$ represents a function, while the set of ordered pairs $\{(2, 3), (-1, 3), (2, -2), (-3, -1)\}$ does not.
+	The set of ordered pairs $\{(0,\,0),\,(-1,\,-1),\,(2,\,2),\,(1,\,-1)\}$ represents a function, while the set of ordered pairs $\{(2,\,3),\,(-1,\,3),\,(2,\,-2),\,(-3,\,-1)\}$ does not.
 	%TODO: The actual graphs with vertical lines
 	\subsubsection{Domain and Range}
 	The domain of a function $f$ is the set of all real numbers $x$ for which $f(x)$ is defined. The range of a function $f$ is the set of all real numbers $y$ for which $y=f(x)$  is defined.\\
-	The domain and range for the set of ordered pairs $\{(-2, 0), (-1, 1), (0, -1), (1, 0)\}$ is $D=\{-2, -1, 0, 1\}$ and $\{-1, 0, 1\}$. The domain and range for the set of ordered pairs $\{(-1, 0), (0, 1), (1, 0), (3, 1), (7, 0)\}$ is $D=\{-1, 0, 1, 3, 7\}$ and $\{0, 1\}$.
+	The domain and range for the set of ordered pairs $\{(-2,\,0),\,(-1,\,1),\,(0,\,-1),\,(1,\,0)\}$ is $D=\{-2,\,-1,\,0,\,1\}$ and $\{-1, 0, 1\}$. The domain and range for the set of ordered pairs $\{(-1, 0), (0, 1), (1, 0), (3, 1), (7, 0)\}$ is $D=\{-1, 0, 1, 3, 7\}$ and $\{0, 1\}$.
 	%TODO: Graphs with domain and range
 	\subsubsection{Restrictions}
 	Division by 0 is undefined, so the denominator of a function cannot equal 0. Square roots are undefined for negative numbers and square roots cannot be negative, so for $f(x)=\sqrt{x}$, $x\geq0$ and $f(x)\geq0$. Squares cannot be negative so for $f(x)=x^2$, $f(x)\geq0$.\\
@@ -335,6 +335,17 @@
 		f(x)&\text{if }f(x)\geq0\\
 		-f(x)&\text{if }f(x)<0
 	\end{cases}\]
+	\subsection{Exploring Operations with Functions}
+	\subsubsection{Arithmetic Combinations}
+	Consider two functions $f(x)$ and $g(x)$. Their sum, difference, product and quotient are defined as:
+	\begin{itemize}
+		\item $(f+g)(x)=f(x)+g(s)$
+		\item $(f-g)(x)=f(x)-g(x)$
+		\item $(fg)(x)=f(x)g(x)$
+		\item $\left(\dfrac{f}{g}\right)(x)=\dfrac{f(x)}{g(x)}$, $f\neq0$
+	\end{itemize}
+	\subsubsection{Domain}
+	The domains of $f+g$, $f-g$, and $fg$ is $D_f\cap D_g$ (the intersection between the domains of $f$ and $g$). The domain of $\dfrac{f}{g}$ is $\set{x\in D_f\cap D_g\mid g(x)\neq0}$
 	\setcounter{section}{9}
 	\setcounter{subsection}{0}
 	\subsection{asdf}
@@ -671,7 +682,7 @@
 	\setcounter{subsubsection}{0}
 	\tsubsection{AP Component: Derivatives of Exponential Functions}
 	\subsubsection{Review of Exponential Functions}
-	The exponential function is defined as $y=f(x)=b^x;\ b>0,\:b\neq1$.
+	The exponential function is defined as $y=f(x)=b^x;\ b>0,\,b\neq1$.
 	%graph
 	The x-axis ($y=0$) is a horizontal asymptote
 	\subsubsection{The Number $e$}
@@ -696,7 +707,7 @@
 	\subsubsection{Geometric Vectors}
 	Geometric Vectors are vectors not related to any coordinate system. For example, the directed line segment $\vv{AB}$ where $A$ is the initial, start, or tail point and $B$ is the final, end, terminal, head, or tip point.
 	\subsubsection{Algebraic Vectors}
-	Algebraic Vectors are vectors that are related to a coordinate system. In general, these vectors are described by their components relative to a reference system, or frame. For example, $\vv{v}=(2,\:3,\:-1)$
+	Algebraic Vectors are vectors that are related to a coordinate system. In general, these vectors are described by their components relative to a reference system, or frame. For example, $\vv{v}=(2,\,3,\,-1)$
 	\subsubsection{Position Vector}
 	The position vector is the directed line segment $\vv{OP}$ from the origin of the coordinate system $O$ to a generic point $P$.
 	\subsubsection{Displacement Vector}
@@ -752,7 +763,7 @@
 	For any triangle $\triangle ABC$, the following relation is true and can be used with any combination of the sides and opposite angle: $c^2=a^2+b^2-2ab\cos C$
 	%graph
 	\subsubsection{Magnitude and Direction of Vector Sum}
-	Let $\theta=\angle (\vv{a},\:\vv{b})$ be the angle between the vectors $\vv{a}$ and $\vv{b}$ when they are placed tail to tail. The magnitude of the vector sum is given by $\lVert\vv{a}+\vv{b}\rVert^2=\mv{a}^2+\mv{b}^2-2\mv{a}\mv{b}\cos(180^\circ-\theta)$. The direction of the vector sum $\vv{a}+\vv{b}$ is defined by the angles $\alpha$ and $\beta$ formed by the vector sum and the vectors $\vv{b}$ and $\vv{a}$ respectively: $\dfrac{\mv{a}}{\sin\alpha}=\dfrac{\mv{b}}{\sin\beta}=\dfrac{\lVert\vv{a}+\vv{b}\rVert}{\sin\gamma}$
+	Let $\theta=\angle (\vv{a},\,\vv{b})$ be the angle between the vectors $\vv{a}$ and $\vv{b}$ when they are placed tail to tail. The magnitude of the vector sum is given by $\lVert\vv{a}+\vv{b}\rVert^2=\mv{a}^2+\mv{b}^2-2\mv{a}\mv{b}\cos(180^\circ-\theta)$. The direction of the vector sum $\vv{a}+\vv{b}$ is defined by the angles $\alpha$ and $\beta$ formed by the vector sum and the vectors $\vv{b}$ and $\vv{a}$ respectively: $\dfrac{\mv{a}}{\sin\alpha}=\dfrac{\mv{b}}{\sin\beta}=\dfrac{\lVert\vv{a}+\vv{b}\rVert}{\sin\gamma}$
 	%diagram
 	\subsubsection{Vector Subtraction}
 	The subtraction operation between two vectors $\vv{a}-\vv{b}$ can be understood as the vector addition between the first vector and the opposite of the second vector: $\vv{d}=\vv{a}-\vv{b}=\vv{a}+\left(-\vv{b}\right)$
@@ -800,23 +811,23 @@
 	%graph
 	The pair $(v_x, v_y)$ determines the scalar coordinates of the 2D vector and $\vv{v}=(v_x, v_y)$.
 	\subsubsection{Link between Polar Coordinates and Scalar Components}
-	To convert a vector from polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\:\theta)$ to scalar components $\vv{v}=(v_x,\:v_y)$, use the formulas $v_x=\lVert\vv{v}\rVert\cos\theta$ and $v_y=\lVert\vv{v}\rVert\sin\theta$\\
-	To convert a vector from scalar components $\vv{v}=(v_x,\:v_y)$ to polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\:\theta)$, use the formulas $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$ and $\theta=\tan^{-1}\left(\dfrac{v_y}{v_x}\right)$
+	To convert a vector from polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\,\theta)$ to scalar components $\vv{v}=(v_x,\,v_y)$, use the formulas $v_x=\lVert\vv{v}\rVert\cos\theta$ and $v_y=\lVert\vv{v}\rVert\sin\theta$\\
+	To convert a vector from scalar components $\vv{v}=(v_x,\,v_y)$ to polar coordinates $\vv{v}=(\lVert\vv{v}\rVert,\,\theta)$, use the formulas $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$ and $\theta=\tan^{-1}\left(\dfrac{v_y}{v_x}\right)$
 	\subsubsection{Magnitude of a 2D Algebraic Vector}
-	The magnitude of a 2D algebraic vector $\vv{v}=(v_x,\:v_y)$ is given by $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$.
+	The magnitude of a 2D algebraic vector $\vv{v}=(v_x,\,v_y)$ is given by $\lVert\vv{v}\rVert=\sqrt{{v_x}^2+{v_y}^2}$.
 	\subsubsection{Standard Unit Vectors}
-	The unit vectors $\vv{i}=(1,\:0)$ and $\vv{j}=(0,\:1)$ are called the standard unit vectors in 2D space.
+	The unit vectors $\vv{i}=(1,\,0)$ and $\vv{j}=(0,\,1)$ are called the standard unit vectors in 2D space.
 	\subsubsection{Vector Components of a 2D Vector}
 	Any vector $\vv{v}$ may be decomposed into two perpendicular vector components $\vv{v_x}$ and $\vv{v_y}$, parallel to each of the standard vectors. %graph
-	The link between the scalar components and vector components is given by $\vv{v_x}=v_x\vv{i}$ and $\vv{v_y}=v_y\vv{j}$. A 2D vector may be written in algebraic form as $\vv{v}=\vv{v_x}+\vv{v_y}=v_x\vv{i}+v_y\vv{j}=\left(v_x,\:v_y\right)$
+	The link between the scalar components and vector components is given by $\vv{v_x}=v_x\vv{i}$ and $\vv{v_y}=v_y\vv{j}$. A 2D vector may be written in algebraic form as $\vv{v}=\vv{v_x}+\vv{v_y}=v_x\vv{i}+v_y\vv{j}=\left(v_x,\,v_y\right)$
 	\subsubsection{Position 2D Vector}
-	The directed line segment $\vv{OP}$ from the origin $O$ to a generic point $P(x, y)$ determines a vector called a position vector, and $\vv{OP}=(x,\:y)=x\vv{i}+y\vv{j}$
+	The directed line segment $\vv{OP}$ from the origin $O$ to a generic point $P(x, y)$ determines a vector called a position vector, and $\vv{OP}=(x,\,y)=x\vv{i}+y\vv{j}$
 	\subsubsection{Displacement 2D Vector}
-	The directed line segment $\vv{AB}$ from the point $A(x_A, y_A)$ to the point $B(x_B, y_B)$ determines a vector called a displacment vector and $\vv{AB}=(x_B-x_A,\:y_B-y_A)=(x_B-x_A)\vv{i}+(y_B-y_A)\vv{j}$
+	The directed line segment $\vv{AB}$ from the point $A(x_A, y_A)$ to the point $B(x_B, y_B)$ determines a vector called a displacment vector and $\vv{AB}=(x_B-x_A,\,y_B-y_A)=(x_B-x_A)\vv{i}+(y_B-y_A)\vv{j}$
 	\subsubsection{Direction Angles}
 	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Direction angles are the angles $\alpha$, $\beta$, and $\gamma$ between the vector and the positive directions of the coordinate axes. %graph if 3D
 	\subsubsection{Scalar Components of a 3D Vector}
-	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Parallel planes throught its tip to the coordinate planes intersec the x-axis at $v_x$, the y-axis at $v_y$, and the z-axis at $v_z$. The triple $(v_x,\:v_y,\:v_z)$ determines the scalar components of the 3D vector and $\vv{v}=(v_x,\:v_y,\:v_z)$. %graph
+	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Parallel planes throught its tip to the coordinate planes intersec the x-axis at $v_x$, the y-axis at $v_y$, and the z-axis at $v_z$. The triple $(v_x,\,v_y,\,v_z)$ determines the scalar components of the 3D vector and $\vv{v}=(v_x,\,v_y,\,v_z)$. %graph
 	\subsubsection{Link Between Direction Angles and 3D Scalar Components}
 	The link between the direction angles ($\alpha$, $\beta$, and $\gamma$) and the scalar components ($v_x$, $v_x$, and $v_z$) is given by
 	\begin{align*}
@@ -826,9 +837,9 @@
 		&&\cos^2\alpha+\cos^2\beta&+\cos^2\gamma=1
 	\end{align*}
 	\subsubsection{Magnitude of a 3D Algebraic Vector}
-	The magnitud of a vector $\vv{v}=(v_x,\:v_y,\:v_z)$ is given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
+	The magnitud of a vector $\vv{v}=(v_x,\,v_y,\,v_z)$ is given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
 	\subsubsection{3D Standard Unit Vectors}
-	The unit vectors $\vv{i}=(1,\:0,\:0)$, $\vv{j}=(0,\:1,\:0)$, and $\vv{k}=(0,\:0,\:1)$ are called the standard unit vecors in 3D space. %graph
+	The unit vectors $\vv{i}=(1,\,0,\,0)$, $\vv{j}=(0,\,1,\,0)$, and $\vv{k}=(0,\,0,\,1)$ are called the standard unit vecors in 3D space. %graph
 	\subsubsection{Vector components for a 3D Vector}
 	Any 3D vector $\vv{v}$ may be decomposed into three perpendicular vector components
 	\subsection{Operations with Vectors in $R^2$}
@@ -840,7 +851,7 @@
 	\subsection{Veolcity}
 	\subsection{Dot Product of Two Geometric Vectors}
 	\subsubsection{Definition}
-	The dot product of two geometric vectors $\vv{a}$ and $\vv{b}$ with an angle $\angle(\vv{a},\:\vv{b})$ between them when placed tail to tail is a scalar defined by $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$. By convention, $0^\circ\leq\theta\leq180^\circ$. %graph
+	The dot product of two geometric vectors $\vv{a}$ and $\vv{b}$ with an angle $\angle(\vv{a},\,\vv{b})$ between them when placed tail to tail is a scalar defined by $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$. By convention, $0^\circ\leq\theta\leq180^\circ$. %graph
 	\subsubsection{Properties of Dot Product}
 	\begin{enumerate}
 		\item $\vv{a}\cdot\vv{b}$ is a scalar (real number)
@@ -855,10 +866,10 @@
 	The dot product of any two of the same standard unit vectors is equal to 1, and he dot productt of any two different standard unit vectors is 0, because
 	\[\vv{i}\cdot\vv{i}=\mv{i}\mv{i}\cos\ang{0}=(1)(1)(1)=1\]\[\vv{i}\cdot\vv{j}=\mv{i}\mv{j}\cos\ang{90}=(1)(1)(0)=0 \text{ (they are perpendicular).}\]
 	\subsubsection{Dot Product of Two Algebraic Vectors}
-	The dot product of two algebraic vectors $\vv{a}=(a_x,\:a_y,\:a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ and $\vv{b}=(a_x,\:a_y,\:a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ is given by
+	The dot product of two algebraic vectors $\vv{a}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ and $\vv{b}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ is given by
 	\subsection{Scalar Projection and Vector Projection}
 	\subsubsection{Scalar Projection}
-	The scalar projection of the vector $\vv{a}$ onto vector $\vv{b}$ is a scalar defined as $\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\:\vv{b})$
+	The scalar projection of the vector $\vv{a}$ onto vector $\vv{b}$ is a scalar defined as $\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	\subsubsection{Special Cases}
 	\begin{itemize}
 		\item If $\vv{a}\uparrow\uparrow\vv{b}$, $\cos\theta=1$, and $s=\mv{a}$
@@ -866,7 +877,7 @@
 		\item If $\vv{a}\bot\vv{b}$, $\cos\theta=0$, and $s=0$
 	\end{itemize}
 	\subsubsection{Dot Product and Scalar Projection}
-	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\:a_y,\:a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$. Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\:a_y,\:a_z)\cdot(1,\:0,\:0)}{1}=\dfrac{}{}$
+	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$. Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{}{}$
 	\subsection{Cross Product of Two Vectors}
 	\subsubsection{Right Hand System}
 	The Right Hand System is based on the position of the first three fingers of the right hand: %illustrated
@@ -943,7 +954,7 @@
 	The torque (rotational or turning effect) about the point $\vv{A}$ created by a force $\vv{F}$ acting on a object located at the point $B$ is given by $\vv{\tau}=\vv{AB}\times\vv{F}=\vv{r}\times\vv{F}$
 	%graph
 	\subsubsection{Parallelogram Area}
-	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula $A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\:\vv{b})$
+	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula $A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	%graph
 	\subsubsection{Triangle Area}
 	The area of a triangle defined by the vectors $\vv{a}$ and $\vv{b}$ is given by $A=\dfrac{\lVert\vv{a}\times\vv{b}\rVert}{2}=\dfrac{\mv{a}\mv{b}\sin\theta}{2}$
