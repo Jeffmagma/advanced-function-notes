@@ -246,9 +246,34 @@
 	\end{itemize}
 	\subsection{Properties of Graphs of Functions}
 	\subsubsection{Domain and Range}
+	The domain of a function is the set of all $x$ values where the function is defined. The range of a function is the set of all $y$ values such that $y=f(x)$
+	\subsubsection{X and Y Intercepts}
+	The x-intercepts are the $x$ values such that $f(x)=0$. The y-intercepts are the $y$ values such that $y=f(0)$, if it exists
+	\subsubsection{Intervals of Increase or Decrease (Turning Points)}
+	The function increases if the slope of the tangent line is positive (the graph is going right and up). The function decreases if the slope of the tangent line is negative (the graph is going right and down). A turning point is a point where the functionchanges from increasing to decreasing or vice versa.
+	\subsubsection{Maximum and Minimum Points}
+	The point $(a,\,f(a))$ is a maximum point if $f(a)\geqslant f(x)$ in the neighborhood of $x=a$. The point $(a,\,f(a))$ is a minimum point of $f(a)\leqslant f(x)$ in the neighborhood of $x=a$.
+	\subsubsection{Odd and Even Functions}
+	The function $f$ is even if $f(x)=f(-x)$ (the graph is symmetric about the y-axis. The function $f$ is odd if $f(-x)=-f(x)$ (the graph is symmetric about the origin
+	\subsubsection{Continuous and Discontinuous Functions}
+	The graph of a continuous function can be drawn without lifting pencil from paper. A continuous functionhas no holes, finite gaps (jumps), or infinite breaks.
+	\subsubsection{Vertical and Horionztal Asymptotes}
+	The vertical line $x=a$ is a vertical asymptote if the $y$ values become unbounded (approach infinity) in the neighborhood of $x=a$. The horizontal line $y=a$ is a horizontal asymptote if the values of $y$ become close to $a$ as $x$ becomes unbounded (approaches infinity)
+	\subsubsection{Horzontal and Vertical Tangent Lines}
+	The graph of a function may have points where the tangent line is horizontal (slope is zero) or vertical (slope is unbounded/approaches infinity)
+	\subsubsection{End Behavior}
+	The end behavior is related to the $y$ values as $x$ becomes unbounded (approaches infinity)
+	\subsubsection{Concavity Upward and Downward}
+	The graph of a function has a concavity upward if the graph lies above all its tangents. The graph of a function has a concavity downward if the graph lies below all its tangents
+	\subsubsection{Corner, Cusp, and Infinite Slope Points}
+	A corner point is a point with two distinct tangent lines. A cusp point is a turning point with a vertical tangent line. An infinite slope point is a non turning point with a vertical tangent line.
+	\subsubsection{Periodic Functions}
+	A function is periodic if there exists $T$ such that $f(x+T)=f(x)$
+	\subsubsection{Axis of Symmetry}
+	The graph of a function has an axis of symmetry $x=a$ if the graph is symmetric about the vertical line $x=a$. The sine and cosine functions have an axis defined by $y=(y_{\text{max}}+y+{\text{min}})/2$
 	\subsection{Sketching Graphs of Functions}
 	\subsubsection{Parent Functions}
-	Parent functions are functions in ``simplest form''. Parent functions may be used to create more complicated functions. For example, the function $g(x)=-2\dfrac{1}{(x-1)^2}+3$ is a transformation of the parent function $f(x)=\dfrac{1}{x^2}$. Parent functions can be graphed with key point. For example, five key points of the parent function $f(x)=\sqrt[3]{x}$ are $(-8, -2)$, $(-1, -1)$, $(0, 0)$, $(1, 1)$, and $(8, 2)$.
+	Parent functions are functions in ``simplest form''. Parent functions may be used to create more complicated functions. For example, the function $g(x)=-2\dfrac{1}{(x-1)^2}+3$ is a transformation of the parent function $f(x)=\dfrac{1}{x^2}$. Parent functions can be graphed with key points. For example, five key points of the parent function $f(x)=\sqrt[3]{x}$ are $(-8, -2)$, $(-1, -1)$, $(0, 0)$, $(1, 1)$, and $(8, 2)$.
 	%TODO: maybe some examples?
 	\subsubsection{Transformations}
 	Given a parent function $f(x)$, we can create new functions using the transformations $g(x)=af(b(x-c))+d$. The graph is:
@@ -303,7 +328,7 @@
 	\subsection{Inverse Relations}
 	\subsubsection{Inverse Relation}
 	For any relation there is an inverse relation obtained by switching the $x$ and $y$ values for all the elements of the original relation. The inverse relation of a relation $r$ is denoted by $r^{-1}$. A 1:1 function is a function where the inverse is also a function; it passes both the vertical and horizontal line tests.\\
-	The inverse relation of the relation $r=\{(1, 2), (1, 0), (-2, 1), (0, 2)\}$ is $r^{-1}=\{(2, 1), (0, 1), (1, -2), (2, 0)\}$
+	The inverse relation of the relation $r=\set{(1, 2), (1, 0), (-2, 1), (0, 2)}$ is $r^{-1}=\set{(2, 1), (0, 1), (1, -2), (2, 0)}$
 	\subsubsection{Symmetry}
 	The graph of a relation and the graph of its inverse relation are symmetrical about the line $y=x$.
 	%TODO: graph
@@ -329,11 +354,25 @@
 		\draw[->] (o) -- (n3);
 		\draw[->] (o) -- (o2);
 		\draw[->] (p2) -- (p1);
-	\end{tikzpicture}
-	The domain of $r$ is $D={-5, -2, 0, 2}$ and the range is $R={-3, 0, 1, 7}$.
-	The domain of $r^{-1}$ is $D={-3, 0, 1, 7}$ and the range is $R={-5, -2, 0, 2}$.
+	\end{tikzpicture}\\
+	The domain of $r$ is $D=\set{-5, -2, 0, 2}$ and the range is $R=\set{-3, 0, 1, 7}$.
+	The domain of $r^{-1}$ is $D=\set{-3, 0, 1, 7}$ and the range is $R=\set{-5, -2, 0, 2}$.
 	\subsubsection{Inverse Relation of a Function}
 	Any function is a relation. So, any function $f$ has an inverse relation $f^{-1}$.
+	\subsubsection{Algebraic Method}
+	To find the inverse of a function:
+	\begin{enumerate}
+		\item write the original function in the form $y=f(x)$
+		\item switch the $x$ and $y$ variables
+		\item solve the expression for $y$
+		\item replace $y$ with $f^{-1}(x)$
+	\end{enumerate}
+	\subsubsection{One-to-One Functions}
+	If the inverse relation of a given function $f$ is also a function, then the function $f$ is called a one-to-one function. In this case: $y=f(x)\Leftrightarrow x=f^{-1}(y)$
+	\subsubsection{Horizontal Line Test}
+	One-to-one functions pass the horizontal line test (any horizontal line intersects the graph in at most one point).
+	\subsubsection{Restricted Domains}
+	By restricting the domain of a function which is not one-to-one, we may obtain a one-to-one function. For example, the inverse of $y=x^2\text{, }x\geqslant0$
 	\subsection{Piecewise Functions}
 	\subsubsection{Piecewise-Defined Functions}
 	A piecewise-defined function requires more than one formula to explicitly define the function. Each formula is defined on a different interval. The domain of a piecewise-defined function is the union of all the intervals used to define the function.\\
@@ -389,13 +428,67 @@
 	\subsubsection{Domain}
 	The domains of $f+g$, $f-g$, and $fg$ is $D_f\cap D_g$ (the intersection between the domains of $f$ and $g$). The domain of $\dfrac{f}{g}$ is $\set{x\in D_f\cap D_g\mid g(x)\neq0}$
 	\setcounter{section}{9}
-	\setcounter{subsection}{0}
-	\subsection{asdf}
-	\subsection{asdf}
-	\subsection{asdf}
-	\subsection{asdf}
+	\setcounter{subsection}{1}
+	\subsection{Sums and Differerences of Functions}
+	\subsubsection{Definitions}
+	The sums and difference of two functions are defined by
+	\begin{itemize}
+		\item $(f+g)(x)=f(x)+g(x)$
+		\item $(f-g)(x)=f(x)-g(x)$
+	\end{itemize}
+	\subsubsection{Domain of Sum and Difference of Two Functions}
+	The domain of the sum or difference of two functions is the intersection of their domains: $D_{f\pm g}=D_f\cap D_g$
+	\subsubsection{Other Stuff Idk}
+	%graph of sums and differences of even/odd/neither functions
+	\subsection{Products of Two Functions}
+	\subsubsection{Definitions}
+	The product of two functions is defined by:
+	\begin{itemize}
+		\item $(fg)(x)=f(x)g(x)$
+		\item $(f\times g)(x)=f(x)\times g(x)$
+	\end{itemize}
+	\subsubsection{Domain of Product of Two Functions}
+	The domain of the product of two functions is the intersection of their domains: $D_{fg}=D_{f\times g}=D_f\cap D_g$
+	\subsubsection{Other Stuff Idk}
+	%table of even/odd
+	\subsection{Quotients of Two Functions}
+	\subsubsection{Definitions}
+	The quotient of two functions is defined by
+	\begin{itemize}
+		\item $(f/g)(x)=f(x)/g(x)$
+		\item $(f\div g)(x)=f(x)\div g(x)$
+		\item $\dfrac{f}{g}(x)=\dfrac{f(x)}{g(x)}$
+	\end{itemize}
+	\subsubsection{Domain of Quotient of Two Functions}
+	The domain of the quotient of two functions is given by: $D_{f/g}=\set{x\in\mathbb{R}\mid x\in D_f\cap D_g\text{ and }g(x)\neq0}$
 	\subsection{Composition of Functions}
 	\subsubsection{Composition of Functions}
+	Any function $y=f(x)$ can be imagined as a machine $f$ who changes the input $x$ into the output $y$:\\
+	\begin{tikzpicture}
+		\draw [->] (.5, 0) node [left] {$x$} -- (1,0);
+		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$f$};
+		\draw [->] (2, 0) -- (2.5, 0) node [right] {$y$};
+	\end{tikzpicture}\\
+	You can connect the output of a machine $g$ to the input of a machine $f$ corresponding to a different function $z=f(y)$:\\
+	\begin{tikzpicture}
+		\node (y) at (2.5,0) {$y$};
+		\draw[->] (.5, 0) node [left] {$x$} -- (1,0);
+		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$g$};
+		\draw[->] (2, 0) -- (y);
+		\draw[->] (y) -- (3,0);
+		\draw (3,.25) rectangle (4,-.25) node[pos=.5] {$f$};
+		\draw[->] (4,0) -- (4.5,0) node [right] {$z$};
+	\end{tikzpicture}\\
+	So you can replace the machines $g$ and $f$ by a new machine $f\circ g$ who changes then input $x$ directly into the output $z$:\\
+	\begin{tikzpicture}
+		\draw [->] (.5, 0) node [left] {$x$} -- (1,0);
+		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$f\circ g$};
+		\draw [->] (2, 0) -- (2.5, 0) node [right] {$z$};
+	\end{tikzpicture}\\
+	The relation $(f\circ g)(x)=f(g(x))$ defines the composition of the functions $f$ and $g$
+	\subsubsection{Domain and Range}
+	The domain of $f\circ g$ is a subset of the domain of $g$: $D_{f\circ g}=\set{x\in D_g\mid g(x)\in D_f}$. The domain of $f\
+	circ g$ consists of the $x$ in the domain of $g$ sugh that $g(x)$ is in the domain of $f$. The range of $f\circ g$ is a subset of the range of $f$
 	\setcounter{section}{3}
 	\setcounter{subsection}{0}
 	\tsection{Unit 2: Polynomial Functions}
@@ -905,21 +998,39 @@
 	\end{enumerate}
 	\subsection{Dot Product of Algebraic Vectors}
 	\subsubsection{Dot Product of Standard Unit Vectors}
-	The dot product of any two of the same standard unit vectors is equal to 1, and he dot productt of any two different standard unit vectors is 0, because
+	The dot products of the standard unit vectors are:
+	\begin{align*}
+		\vv{i}\cdot\vv{i}&=1&\vv{j}\cdot\vv{j}&=1&\vv{k}\cdot\vv{k}&=\\
+		\vv{i}\cdot\vv{j}&=0&\vv{j}\cdot\vv{k}&=0&\vv{k}\cdot\vv{i}&=0
+	\end{align*}
+	Proof:
 	\[\vv{i}\cdot\vv{i}=\mv{i}\mv{i}\cos\ang{0}=(1)(1)(1)=1\]\[\vv{i}\cdot\vv{j}=\mv{i}\mv{j}\cos\ang{90}=(1)(1)(0)=0 \text{ (they are perpendicular).}\]
 	\subsubsection{Dot Product of Two Algebraic Vectors}
-	The dot product of two algebraic vectors $\vv{a}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ and $\vv{b}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ is given by
+	The dot product of two algebraic vectors $\vv{a}$ and $\vv{b}$ is given by $\vv{a}\cdot\vv{b}=(a_x+b_x,\,a_y+b_y,\,a_z+b_z)$
+	\subsubsection{Angle Between Two Vectors}
+	The angle $\angle(\vv{a},\,\vv{b})$ between to vectors $\vv{a}$ and $\vv{b}$ is given by $\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{a}\mv{b}}$.\\Note:
+	\begin{itemize}
+		\item If $\cos\theta=1$, then the vectors are parallel in the same direction
+		\item If $\cos\theta=-1$, then the vectors are parallel, but in opposite directions
+		\item If $\cos\theta=0$, then the vectors are perpendicular, or orthogonal
+		\item If $\cos\theta>0$, then $0<\ang{90}$ ($\theta$ is acute)
+		\item If $\cos\theta<0$, then $\ang{90}<\theta<\ang{180}$ ($\theta$ is obtuse)
+	\end{itemize}
 	\subsection{Scalar Projection and Vector Projection}
 	\subsubsection{Scalar Projection}
-	The scalar projection of the vector $\vv{a}$ onto vector $\vv{b}$ is a scalar defined as $\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
+	The scalar projection of the $\vv{a}$ onto $\vv{b}$ is a scalar defined as $s=\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	\subsubsection{Special Cases}
 	\begin{itemize}
-		\item If $\vv{a}\uparrow\uparrow\vv{b}$, $\cos\theta=1$, and $s=\mv{a}$
-		\item If $\vv{a}\uparrow\downarrow\vv{b}$, $\cos\theta=-1$, and $s=-\mv{a}$
-		\item If $\vv{a}\bot\vv{b}$, $\cos\theta=0$, and $s=0$
+		\item If $\vv{a}\uparrow\uparrow\vv{b}$, then $\cos\theta=1$ and $s=\mv{a}$
+		\item If $\vv{a}\uparrow\downarrow\vv{b}$, then $\cos\theta=-1$ and $s=-\mv{a}$
+		\item If $\vv{a}\bot\vv{b}$, then $\cos\theta=0$ and $s=0$
 	\end{itemize}
 	\subsubsection{Dot Product and Scalar Projection}
-	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$. Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{}{}$
+	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection of two vectors can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$.\\Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{a_x}{1}=a_x$
+	\subsubsection{Vector Projection}
+	The vector projection of $\vv{a}$ onto $\vv{b}$ is a vector defined as $\vv{v}=\mv{a}\cos\theta\dfrac{\vv{b}}{\mv{b}}$. It is the scalar projection of $\vv{a}$ onto $\vv{b}$, with the direction of $\vv{b}$.
+	\subsubsection{Dot Product and Vector Projection}
+	The vector projection of $\vv{a}$ onto $\vv{b}$ can be rewritten using the dot product as $v=\dfrac{(\vv{a}\cdot\vv{b})\vv{b}}{\mv{b}^2}$. For a cartesian coordinate system, the vector components $\vv{a_x}$, $\vv{a_y}$, $\vv{a_z}$ of a vector $\vv{a}$ are the vector projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$, $\vv{j}$, and $\vv{k}$
 	\subsection{Cross Product of Two Vectors}
 	\subsubsection{Right Hand System}
 	The Right Hand System is based on the position of the first three fingers of the right hand: %illustrated
@@ -945,7 +1056,7 @@
 		\vv{i}\times\vv{j}&=\vv{k}&\vv{j}\times\vv{k}&=\vv{i}&\vv{k}\times\vv{i}&=\vv{j}
 	\end{align*}
 	\subsubsection{Cross Product of Two Algebraic Vectors}
-	The cross product of two vectors $\vv{a}$ and $\vv{b}$ is equal to $\vv{i}(a_yb_z-a_zb_y)+\vv{j}(a_zb_x-a_xb_z)+\vv{k}(a_xb_y-a_yb_x)$\\
+	The cross product of two vectors $\vv{a}$ and $\vv{b}$ is equal to $\vv{i}(a_yb_z-a_zb_y)+\vv{j}(a_zb_x-a_xb_z)+\vv{k}(a_xb_y-a_yb_x)$\\This can also be rewritten as $\begin{vmatrix*}a_y&a_z\\b_y&b_z\end{vmatrix*}\vv{i}+\begin{vmatrix*}a_z&a_x\\b_z&b_x\end{vmatrix*}\vv{j}+\begin{vmatrix*}a_x&a_y\\b_x&b_y\end{vmatrix*}\vv{k}$, where $\begin{vmatrix*}a&b\\c&d\end{vmatrix*}$ is the determinant, $ad-bc$\\
 	\begin{tikzpicture}
 		\node(i1) at (-2,0) {$\vv{i}$};
 		\node(j1) at (-1,0) {$\vv{j}$};
@@ -988,21 +1099,28 @@
 		\item $\vv{a}\times\vv{a}=0$
 	\end{enumerate}
 	The dot and cross products have higher priority in comparison to addition and subtraction
+	\begin{itemize}
+		\item $(\vv{a}-\vv{b})\times(\vv{a}+\vv{b})=2(\vv{a}\times\vv{b})$
+		\item $(\vv{a}\times\vv{b})\cdot(\vv{a}\times\vv{b})+(\vv{a}\cdot\vv{b})^2$
+		\item $\vv{a}\cdot(\vv{b}\times\vv{c})=\vv{b}\cdot(\vv{c}\times\vv{a})=\vv{c}\cdot(\vv{a}\times\vv{b})$
+		\item $\vv{a}\times(\vv{b}\times\vv{c})=(\vv{c}\cdot\vv{a})\vv{b}-(\vv{b}\cdot\vv{a})\vv{c}$
+	\end{itemize}
 	\subsection{Applications of Dot and Cross Products}
 	\subsubsection{Work}
-	The work done by a constant force $\vv{F}$ acting on an object during a displacement $\vv{d}$ is given by $W=\vv{F}\cdot\vv{d}=Fd\cos\theta$
+	The work done by a constant force $\vv{F}$ acting on an object during a displacement $\vv{d}$ is given by\\$W=\vv{F}\cdot\vv{d}=Fd\cos\theta$
 	%graph
 	\subsubsection{Torque}
 	The torque (rotational or turning effect) about the point $\vv{A}$ created by a force $\vv{F}$ acting on a object located at the point $B$ is given by $\vv{\tau}=\vv{AB}\times\vv{F}=\vv{r}\times\vv{F}$
 	%graph
 	\subsubsection{Parallelogram Area}
-	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula $A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
+	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula\\$A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	%graph
 	\subsubsection{Triangle Area}
 	The area of a triangle defined by the vectors $\vv{a}$ and $\vv{b}$ is given by $A=\dfrac{\lVert\vv{a}\times\vv{b}\rVert}{2}=\dfrac{\mv{a}\mv{b}\sin\theta}{2}$
+	\subsubsection{Parallelipiped Volume}
+	The volume of a parallelepiped defined by the vectors $\vv{a}$, $\vv{b}$, and $\vv{c}$ is given by\\$V=\vv{c}\cdot(\vv{a}\times\vv{b})=\vv{a}\cdot(\vv{b}\times\vv{c})=\vv{b}\cdot(\vv{c}\times\vv{a})$
 
-
-	\section{Have to Figure Out Where This Goes}
+	\section{Have to Put This Somewhere}
 	\[y=\frac{x|x|}{x+3}=\begin{cases}
 		-\frac{x^2}{x+3}&x<0\\
 		\frac{x^2}{x+3}&x\geq0

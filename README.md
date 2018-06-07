@@ -15,15 +15,15 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 1
   - [x] 1.1
   - [x] 1.2
-  - [ ] 1.3
+  - [x] 1.3
   - [ ] 1.4
-  - [ ] 1.5
+  - [x] 1.5
   - [ ] 1.6
   - [x] 1.7
-  - [ ] 9.2
-  - [ ] 9.3
-  - [ ] 9.4
-  - [ ] 9.5
+  - [x] 9.2
+  - [x] 9.3
+  - [x] 9.4
+  - [x] 9.5
 - [ ] Unit 2
   - [ ] 3.1
   - [ ] 3.2
@@ -46,3 +46,10 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 5
 - [ ] Unit 6
 - [ ] Unit 7
+  - [ ] 7.1
+  - [ ] 7.2
+  - [ ] 7.3
+  - [x] 7.4
+  - [x] 7.5
+  - [x] 7.6
+  - [x] 7.7
