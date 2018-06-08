@@ -12,21 +12,21 @@ Manually specify non-inlined fractions when needed
 Remember to surround multi-character exponents or subscripts with curly braces
 
 ## TODO List:
-- [ ] Unit 1
+- [x] Unit 1
   - [x] 1.1
   - [x] 1.2
   - [x] 1.3
-  - [ ] 1.4
+  - [x] 1.4
   - [x] 1.5
-  - [ ] 1.6
+  - [x] 1.6
   - [x] 1.7
   - [x] 9.2
   - [x] 9.3
   - [x] 9.4
   - [x] 9.5
 - [ ] Unit 2
-  - [ ] 3.1
-  - [ ] 3.2
+  - [x] 3.1
+  - [x] 3.2
   - [ ] 3.3
   - [ ] 3.4
   - [ ] 3.5
@@ -46,9 +46,9 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 5
 - [ ] Unit 6
 - [ ] Unit 7
-  - [ ] 7.1
-  - [ ] 7.2
-  - [ ] 7.3
+  - [x] 7.1
+  - [x] 7.2
+  - [x] 7.3
   - [x] 7.4
   - [x] 7.5
   - [x] 7.6

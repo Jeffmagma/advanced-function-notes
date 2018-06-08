@@ -1,7 +1,8 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-%math, symbols, drawing, plots, derivatives, table of contents editing, vectors, units
-\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, siunitx, mathtools}
+%math, symbols, drawing, plots, derivatives, table of contents editing, vectors, math tools
+\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, mathtools}
+\usepackage[per-mode=symbol]{siunitx}
 \usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
@@ -289,10 +290,10 @@
 	By comparing the parent function $y=f(x)$ and the image (new) function $y'=af(b(x'-c))+d$, we get:
 	\[\begin{cases} 
 	y'=ay+d\\
-	x'=\frac{x}{b}+c
+	x'=\dfrac{x}{b}+c
 	\end{cases}\]
 	%TODO: examples
-	\begin{tikzpicture}[scale=.75]
+	\begin{tikzpicture}
 		\begin{axis}[
 			scatter/classes={f={draw=red,fill=red},g={draw=blue,fill=blue}},
 			axis y line*=left,
@@ -306,22 +307,26 @@
 			axis lines=middle,
 			xlabel=$x$,
 			ylabel=$y$,
-			xtick distance= 1, ytick distance = 1
+			xtick distance=2,
+			ytick distance=2
 		]
 		\addplot[scatter,scatter src=explicit symbolic]
-			table[meta=label] {
-				x y label
-				-6 0 f
-				-4 -3 f
-				-1 3 f
-				
-				-1 5 g
-				6 7 g
-				10 6 g
-			};
+		table[meta=label] {
+			x y label
+			-6 0 f
+			-4 -3 f
+			-1 3 f
+			
+			-1 5 g
+			6 7 g
+			10 6 g
+		};
 		\end{axis}
 	\end{tikzpicture}\\
-	To write the function $g(x)$ in the form $g(x)=af(b(x-c))+d$, we have to solve for all 4 of the variables, with 4 equations from the graph. We can know which point corresponds to which point because each segment will have the same proportions. Therefore, we can use these four equations (there are other possibilities): \[\]
+	To write the function $g(x)$ in the form $g(x)=af(b(x-c))+d$, we have to solve for all 4 of the variables, with 4 equations from the graph. We can know which point corresponds to which point because each segment will have the same proportions. Therefore, we can use these four equations (there are other possibilities):
+	\begin{align*}
+		something\\something\\something\\something
+	\end{align*}
 	\subsubsection{Domain and Range}
 	After transformations, the domain and range may be changed. The mapping formulas can be used to calculate the new ones.\\
 	For example: A function with domain $D=(-1,3]$ and range $R=[2,\infty)$ is transformed into a new function $g(x)=-2f(2x-3)+4$. $a=-2$, $b=2$, $c=\frac{3}{2}$, $d=4$. The domain would be shifted to $\left(\frac{-1}{2}+\frac{3}{2}, \frac{3}{2}+\frac{3}{2}\right]=(1,3]$ and the range would be shifted to $\left[-2(2)+4, -2(\infty)+4\right)=[0, -\infty)$
@@ -503,6 +508,22 @@
 		\item $n$ is a non-negative integer that gives the degree of the polynomial function
 		\item the degree of a polynomial function $n$ is the largest exponent of $x$
 	\end{itemize}
+	\subsubsection{Order}
+	The terms of a polynomial function can be written in any order because the addition operation is a commutative operation.
+	\subsubsection{Specific Polynomials}
+	\begin{itemize}
+		\item For $n=0$, $f(x)=a_0$ is called the constant function
+		\item For $n=1$, $f(x)=a_1x+a_0$ is called the linear function
+		\item For $n=2$, $f(x)=a_2x^2+a_1x+a_0$ is called the quadratic function
+		\item For $n=3$, $f(x)=a_3x^3+a_3x^2+a_1x+a_0$ is called the cubic function
+		\item For $n=4$, we have the quartic function, and for $n=5$, we have the quintic function
+	\end{itemize}
+	\subsubsection{Operations with Polynomial Functions}
+	All four operations (addition, subtraction, multiplication, division) are defined for polynomial functions
+	\subsubsection{Y-Intercept}
+	The y-intercept of a polynomial function is equal to the constant term $\text{y-int}=f(0)=a_0$
+	\subsubsection{Finite Differences}
+	The nth finite differences of a polynomial function of degree $n$ are constant. The constant $c$ is related to $a_n$ and $n$ by $c=n!a_n$
 	\subsection{Characteristics of Polynomial Functions}
 	\subsubsection{End Behavior}
 	For very large $x$ ($x\to\infty$ or $x\to-\infty$), the graph of the polynomial function will resemble the graph of the leading term $a_nx^n$\\
@@ -519,14 +540,14 @@
 		\item A polynomial function with an odd degree must have at least one real zero
 	\end{itemize}
 	\subsubsection{Turning Points}
-	A turning point is the point where increasing changed to decreasing or vice versa. A polynomial function of $n$ has at most $n-1$ turning points
+	A turning point is the point where increasing changes to decreasing or vice versa. A polynomial function of $n$ has at most $n-1$ turning points
 	\subsubsection{Extrema Points}
 	Extrema is the plural of extremum. Extremum is either a minimum or maximum, and may be local or global. Each turning point is a local extrema point. A polynomial function with an even degree has either a global minimum or global maximum point. A polynomial function with an odd degree has neither a global maximum or a global minimum point.
 	\subsection{Polynomial Functions in Factored Form}
 	\subsubsection{Simple Zeroes}
-	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function
+	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function. Here, the function changes sign at each x-intercept and the tangent line at each x-intercept is not zero.
 	\subsubsection{Repeated Zeroes}
-	Some polynomial functions can be factored into the form 
+	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)^{m_1}(x-x_2)^{m_2}\dots(x-x_k)^{m_k}$
 	\subsection{Transformations of Cubic and Quartic Functions}
 	\subsubsection{Cubic Funcitons}
 	%The graph
@@ -983,7 +1004,25 @@
 	\setcounter{section}{7}
 	\setcounter{subsection}{0}
 	\subsection{Vectors as Forces}
-	\subsection{Veolcity}
+	\subsubsection{Vector Force}
+	The force is a vector and the measurement unit is \si{\newton} (Newtons)
+	\subsubsection{Resultant Force}
+	The vector sum of a system of forces is called the resultant force: $\vv{R}=\vv{F_1}+\vv{F_2}+\dots\vv{F_n}$
+	\subsubsection{Algebraic Resultant Force}
+	The scalar components of the resultant force are given by $R_x=F_{1x}+F_{2x}+\dots+F_{nx}$ and $R_y=F_{1y}+F_{2y}+\dots+F_{ny}$. The magnitude and direction given by the resultant force are given by $\mv{R}=\sqrt{{R_x}^2+{R_y}^2}$ and $\theta=\tan^{-1}(\dfrac{R_y}{R_x})$
+	\subsubsection{Equilibrium}
+	A system forces in in a state of equilibrium if the resultant force between then is 0. Three forces in equilibrium form a triangle.
+	\subsubsection{Equilibrant Force}
+	The equilibrant force is the vector force $\vv{E}$ required to be added to a system of forces with a resultante force $\vv{R}$ such that the new system of forces is at equilibrium. $\vv{R}+\vv{E}=0$
+	\subsection{Velocity}
+	\subsubsection{Velocity}
+	Velocity is a vector and the measurement unit is \si{\meter\per\second} or \si{\kilo\meter\per\hour}
+	\subsubsection{Relative Velocity}
+	The relative velocity of the object $B$ travelling at $\vv{v_B}$ relative to the object $A$ travelling at $v_A$ is given by $v_{BA}=\vv{v_B}-\vv{v_A}$. If $\vv{v_A}=0$, then $\vv{BA}=\vv{v_B}$
+	\subsubsection{Boat Velocity}
+	The boat velocity relative to the ground is the vector sum between the boat velocity relative to the water and the water velocity relative to the ground: $\vv{v_{bg}}=\vv{v_{bw}}+\vv{v_{wg}}$
+	\subsubsection{Plane Velocity}
+	The plane velocity relative to the ground is the vector sum between the plane velocity relative to the air and the air velocity relative to the cround: $\vv{v_{pg}}=\vv{v_{pa}}+\vv{v_{ag}}$
 	\subsection{Dot Product of Two Geometric Vectors}
 	\subsubsection{Definition}
 	The dot product of two geometric vectors $\vv{a}$ and $\vv{b}$ with an angle $\angle(\vv{a},\,\vv{b})$ between them when placed tail to tail is a scalar defined by $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$. By convention, $0^\circ\leq\theta\leq180^\circ$. %graph
@@ -995,7 +1034,7 @@
 		\item If $\ang{0}<\theta<\ang{90}$, then $\cos\theta>0$ and $\vv{a}\cdot\vv{b}>0$
 		\item If $\ang{90}<\theta<\ang{180}$, then $\cos\theta<0$ and $\vv{a}\cdot\vv{b}<0$
 		\item If $\vv{a}\uparrow\uparrow\vv{b}$, then $\theta=0$, $\cos\theta=1$, and $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}$
-		\item If $\vv{a}\uparrow\downarrow\vv{b}$, then $\theta=\ang{180}$, $\cos\theta=-1$, and $\vV{a}\cdot\vv{b}=-\mv{a}\mv{b}$
+		\item If $\vv{a}\uparrow\downarrow\vv{b}$, then $\theta=\ang{180}$, $\cos\theta=-1$, and $\vv{a}\cdot\vv{b}=-\mv{a}\mv{b}$
 		\item $\vv{a}\cdot\vv{a}=\mv{a}^2$
 		\item $\vv{a}\cdot\vv{b}=\vv{b}\cdot\vv{a}$ (commutative property)
 		\item $\vv{a}\cdot(\vv{b}+\vv{c})=\vv{a}\cdot\vv{b}+\vv{a}\cdot\vv{c}$ (distributive property)
