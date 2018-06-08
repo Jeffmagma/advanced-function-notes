@@ -27,10 +27,10 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 2
   - [x] 3.1
   - [x] 3.2
-  - [ ] 3.3
-  - [ ] 3.4
-  - [ ] 3.5
-  - [ ] 3.6
+  - [x] 3.3
+  - [x] 3.4
+  - [x] 3.5
+  - [x] 3.6
   - [ ] 3.7
   - [ ] 4.1
   - [ ] 4.2
@@ -45,7 +45,7 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 4
 - [ ] Unit 5
 - [ ] Unit 6
-- [ ] Unit 7
+- [x] Unit 7
   - [x] 7.1
   - [x] 7.2
   - [x] 7.3

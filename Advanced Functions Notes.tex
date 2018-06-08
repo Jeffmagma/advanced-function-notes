@@ -547,7 +547,10 @@
 	\subsubsection{Simple Zeroes}
 	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function. Here, the function changes sign at each x-intercept and the tangent line at each x-intercept is not zero.
 	\subsubsection{Repeated Zeroes}
-	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)^{m_1}(x-x_2)^{m_2}\dots(x-x_k)^{m_k}$
+	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)^{m_1}(x-x_2)^{m_2}\dots(x-x_k)^{m_k}$, where $x_1$ is a root with multiplicity $m_1$, $x_2$ is a root with multiplicity $m_2$, and so on. The polynomial function has $m_1+m_2+\dots+m_k=n$ real zeroes ($m_1$ are coincident and equal to $x_1$, $m_2$ are coincident and equal to $x_2$, and so on).\\
+	If $m_k$ is odd, the function changes sign at $x=x_k$ and the graph crosses the x-axis. If $m_k$ is even, the function does not change sign at $x=x_k$, and the graph touches the x-axis. If the multiplicity $m_k$ is greater than 1 then the tangent line at $x=x_k$ is horizontal.
+	\subsubsection{Non-Real Zeroes}
+	A polynomial function with non-real zeroes can be factored as $f(x)=(a_1x^2+b_1x+c_1)^{m_1}(a_2x^2+b_2x+c_2)^{m_2}$, where ${b_k}^2-4a_kc_k<0$. Each trinomial $a_kx^2+b_kx+c_k$ has the same sign for all real numbers $x$.
 	\subsection{Transformations of Cubic and Quartic Functions}
 	\subsubsection{Cubic Funcitons}
 	%The graph
@@ -556,10 +559,14 @@
 	%The graph
 	Cubic functions have the parent function $f(x)=x^4$, and after transformations, may be written as $f(x)=a[b(x-c)]^4+d$
 	\subsubsection{Power Function(Real Exponent)}
+	The power function with a real exponent is defined by $f(x)=x^a\text{; }a\in\mathbb{R}$
+	%graph
 	\subsubsection{Power Function(Rational Exponent)}
+	The power function with a rational exponent is defined by $f(x)=x^\frac{m}{n}\text{; }m\text{ and }n\text{ are integers}$
+	%graph
 	\subsection{Dividing Polynomials}
 	\subsubsection{Division of Natural Numbers}
-	If $D$ and $d\neq0$ are two natural numbers, then there are unique numbers $q$ and $r$ such that the relation (called the division statement) $\frac{D}{d}=\frac{r}{d}$ or $D=dq+r$ is true; where $0\leq r<d$.
+	If $D$ and $d\neq0$ are two natural numbers, then there are unique numbers $q$ and $r$ such that the relation (called the division statement) $\frac{D}{d}=q+\frac{r}{d}$ or $D=dq+r$ is true; where $0\leq r<d$.
 	\begin{itemize}
 		\item $D$ is called the dividend
 		\item $d$ is called the divisor
@@ -568,7 +575,16 @@
 	\end{itemize}
 	If the remainder is 0, then $D$ is divisible by $d$, or $d$ divides evenly into $D$.
 	\subsubsection{Division of Polynomials}
-	If $D(x)$ and $d(x)$ are two polynomial functions, then there are two unique polynomial functions $q(x)$ and $r(x)$ such that the relation $\frac{D(x)}{d(x)}=\frac{r(x)}{d(x)}$ or $D=d(x)q(x)+r(x)$ is true; where $0\leq\deg r<\deg d$
+	If $D(x)$ and $d(x)$ are two polynomial functions, then there are two unique polynomial functions $q(x)$ and $r(x)$ such that the relation $\frac{D(x)}{d(x)}=q(x)+\frac{r(x)}{d(x)}$ or $D=d(x)q(x)+r(x)$ is true; where $0\leq\deg r<\deg d$
+	\begin{itemize}
+		\item $D$ is called the dividend
+		\item $d$ is called the divisor
+		\item $q$ is called the quotient
+		\item $r$ is called the remainder
+	\end{itemize}
+	\subsubsection{Synthetic Division Algorithm}
+	Synthetic division is a shorthand method for dividing a polynomial $P(x)$ by a linear divisor $x-b$.
+	%maybe explainn
 	\subsection{Factoring Polynomials}
 	\subsubsection{The Remainder Theorem}
 	If a polynomial $P(x)$ is divided by $x-b$, then the remainder is $P(b)$; Proof:
@@ -590,11 +606,10 @@
 	\end{align*}
 	\subsubsection{The Factor Theorem}
 	A polynomial $P(x)$ has $x-b$ as a factor if and only if $P(b)=0$.\\
-	For example: $x+2$ is a factor of $x^3+5x^2+2x-8$ because $(-2)^3+5(-2)^2+2(-2)-8=-8+20-4-8=0$\\
+	For example: $x+2$ is a factor of $x^3+5x^2+2x-8$ because $(-2)^3+5(-2)^2+2(-2)-8=-8+20-4-8=0$
 	%Note: you can use the $\pm$ factors of the last term to find factors
 	\subsubsection{Integral Zero Theorem}
 	If $x=b$ is an integral zero of the polynomial $P(x)$ with integral coefficients, then $b$ is a factor (divisor) of the constant term, $a_0$.
-	For example
 	\subsection{Factoring Sums or Differences of Cubes and Powers}
 	\subsubsection{Difference of Two Cubes}
 	The difference of cubes identity is: $a^3-b^3=(a-b)(a^2+ab+b^2)$\\
@@ -607,18 +622,23 @@
 	For example: $x^4-16$ can be factored into $(x^2-4)(x^2+4)=(x+2)(x-2)(x^2+4)$
 	\subsubsection{Sum of Two Powers}
 	For any natural odd number $n$, the following identity is true: \[a^n+b^n=(a+b)(a^{n-1}-a^{n-2}b+a^{n-3}b^2-\dots-a^2b^{n-3}+ab^{n-2}-b^{n-1})\]
-	For example: $sdf$ can be factored into $asdf$\\
+	For example: $sdf$ can be factored into $asdf$
 	%more examples
+	\vspace{.5ex}\\
 	General Example: Given that $a-b=4$ and $ab=2$, to find $a^3-b^3$:\\
 	\begin{align*}
 		a^3-b^3&=(a-b)(a^2+ab+b^2)\\
 		(a-b)^2&=a^2-2ab+b^2\\
 		\therefore a^3-b^3&=(4)(4^2+3(2))=4(16+6)=4(22)=88
 	\end{align*}
+	\vspace{-2ex}
 	\setcounter{section}{4}
 	\setcounter{subsection}{1}
 	\subsection{Solving Linear Polynomial Equations}
 	\subsubsection{Fundamental Theorem of Algebra}
+	The polynomial function $P(x)$ of degree $n$ has $n$ zeroes, real or complex. The complete factorization of the polynomial function $P(x)$ is $P(x)=a_n(x-x_1)(x-x_2)\ldots(x-x_{x-1})(x-x_n)$, where $x_1$, $x_2$, \ldots, $x_{n-1}$, $x_n$ are the zeroes, real or complex, distinct or coincident.\\
+	The complex zeroes come in conjugate pairs, so $n=r+2m$, where $r$ is the number of real zeroes and $2m\text{, }m\geq0$ is the number of complex zeroes.\\
+	To factor $x^4-4x^3+7x^2-4$ if $2$ and $-1$ are two of its zeroes:
 	\begin{flalign*}
 		\renewcommand\arraystretch{1.5}
 		\begin{array}{rrrrrr}
@@ -629,7 +649,8 @@
 			& 1 & -3 & 6 & 0
 		\end{array}
 	\end{flalign*}
-	\subsubsection{asdf}
+	\subsubsection{Integral Zero Theorem}
+	If $x=b$ is an integral zero of the polynomial $P(x)$ with integral coefficients, then $b$ is a factor of the consant term $a_0$ of the polynomial. The zeroes 
 	\subsubsection{asdf}
 	\subsubsection{Real Zeroes}
 	If $a+b\sqrt{c}$ where $a$, $b$, and $c$ are rational numbers and $c>0$ is a zero of a polynomial with integral coefficients, then $a-b\sqrt{c}$ is also a zero of this polynomial
