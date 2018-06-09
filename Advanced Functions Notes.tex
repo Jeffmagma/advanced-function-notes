@@ -19,6 +19,10 @@
 	\subsection*{#1}
 	\addcontentsline{toc}{subsection}{\protect\large #1}
 }
+\newcommand{\tsubsubsection}[1]{
+	\subsubsection*{#1}
+	\addcontentsline{toc}{subsubsection}{\protect\large #1}
+}
 \newcommand{\mv}[1]{
 	\lVert\vv{#1}\rVert
 }
@@ -715,12 +719,17 @@
 	If you cannot factor the polynomial, use technology to find the solution
 	\tsection{Unit 3: Rational Functions}
 	\setcounter{section}{5}
-	\setcounter{subsection}{1}
+	\setcounter{subsection}{0}
 	\subsection{Graphs of Reciprocal Functions}
 	\subsubsection{General Rules}
-	For a function $f(x)$ and its reciprocal $g(x)=\frac{1}{f(x)}$, there are some general rules
+	For a function $f(x)$ and its reciprocal $g(x)=\dfrac{1}{f(x)}$, there are some general rules
 	\begin{itemize}
 		\item If the function $f(x)$ has a zero at $x=a$, the reciprocal function $g(x)$ has a vertical asymptote at $x=a$, and vice versa
+		\item If the function $f(x)$ is unbounded ($y\to\pm\infty$) as x becomes unbounded ($x\to\pm\infty$), then the reciprocal function $g(x)$ has the horizontal asymptote $y=0$
+		\item If the function $f(x)$ has a horizontal asymptote $y=a$ ($y\to a$ as $x\to\pm\infty$), then the reciprocal function $f(x)$ has the horizontal asymptote $y=\dfrac{1}{a}$
+		\item If the function $f(x)$ is increasing/decreasing over an interval, then the reciprocal function $g(x)$ is decreasing/increasing over the same interval
+		\item If the function $f(x)$ has a local minimum/maximum at $(a,\,f(a))$, the reciprocal function $g(x)$ has a local maximum/minumum at $(a,\,\dfrac{1}{f(a)})$
+		\item If the function $f(x)$ is even/odd/neither, then reciprocal function $g(x)$ is also even/odd.neither
 	\end{itemize}
 	\subsection{Rational Functions}
 	\subsubsection{Rational Functions}
@@ -728,6 +737,13 @@
 	\subsubsection{Domain}
 	The domain of a rational function is determined by $Q(x)\neq0$.\\
 	For example, $f(x)=\frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1$ where $D=\{x\in\mathbb{R}\mid x\neq1\}$.\\
+	\subsubsection{Y-Intercept}
+	The y-intercept for a rational function is the point $(0,\,f(0))$ if 0 is in the domain of $f$.
+	\subsubsection{Holes}
+	The $x$ values where $Q(x)=0$ do not belong to the domain of the function and must not appear on the graph of a rational function. These values might create holes in the graph of the rational function
+	\subsubsection{Vertical Asymptotes}
+	The vertical line $x=a$ is a vertical asymptote for the graph of the function $f(x)$
+	\tsubsubsection{Other Stuff From Class}
 	For $f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x(x-1)}{x(2x-1)(3x+2)}$ and $d=\{x\in\mathbb{R}\mid x\neq0, \frac{1}{2}, -\frac{2}{3}\}$. There is a hole at $(0, \frac{1}{2})$, and vertical asymptotes at $x=\frac{1}{2}$ and $x=-\frac{2}{3}$. As $x\to-\frac{2}{3}^-$, $y\to-\infty$, and $x\to-\frac{2}{3}^+$, $y\to\infty$. As $x\to\frac{1}{2}^-$, $y\to\infty$, and $x\to\frac{1}{2}^+$, $y\to-\infty$. You can use the leading terms to find the end behavior and find the horizontal asymptote at $y=0$\\
 	\[\frac{{P(x)}}{Q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x_1+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x_1+b_0}=\frac{\infty}{\infty}=\frac{a_nx^n\left(1+\frac{a_{n-1}}{a_nx}+\dots+\frac{a_1}{a_nx^{n-1}}+\frac{a_0}{a_nx^n}\right)}{{b_mx^m\left(1+\frac{b_{m-1}}{b_mx}+\dots+\frac{b_m}{b_mx^{m-1}}+\frac{b_0}{b_mx^m}\right)}}\]
 	\[\lim_{|x|\to\infty}f(x)=\lim_{|x|\to\infty}\frac{a_nx^n}{b_mx^m}
