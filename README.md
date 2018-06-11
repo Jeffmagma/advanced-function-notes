@@ -36,7 +36,7 @@ Remember to surround multi-character exponents or subscripts with curly braces
   - [ ] 4.2
   - [ ] 4.3
 - [ ] Unit 3
-  - [ ] 5.1
+  - [x] 5.1
   - [ ] 5.2
   - [ ] 5.3
   - [ ] 5.4
