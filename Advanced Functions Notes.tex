@@ -1,8 +1,7 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-%math, symbols, drawing, plots, derivatives, table of contents editing, vectors, math tools, itemize size
-\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, mathtools, enumitem}
-\usepackage[per-mode=symbol]{siunitx}
+%math, symbols, drawing, plots, derivatives, table of contents editing, vectors, units
+\usepackage{amsmath, amssymb, tikz, pgfplots, commath, tocloft, esvect, siunitx, mathtools}
 \usetikzlibrary{positioning, arrows}
 
 \title{\vspace{-3ex}Advanced Function Notes}
@@ -10,8 +9,6 @@
 \renewcommand\thesubsubsection{\thesubsection{} \Alph{subsubsection}}
 \renewcommand\labelitemi{--}
 \cftpagenumbersoff{subsubsection}
-\renewcommand{\baselinestretch}{1.2}
-\setitemize{itemsep=0pt}
 
 \newcommand{\tsection}[1]{
 	\section*{#1}
@@ -20,10 +17,6 @@
 \newcommand{\tsubsection}[1]{
 	\subsection*{#1}
 	\addcontentsline{toc}{subsection}{\protect\large #1}
-}
-\newcommand{\tsubsubsection}[1]{
-	\subsubsection*{#1}
-	\addcontentsline{toc}{subsubsection}{\protect\large #1}
 }
 \newcommand{\mv}[1]{
 	\lVert\vv{#1}\rVert
@@ -296,10 +289,10 @@
 	By comparing the parent function $y=f(x)$ and the image (new) function $y'=af(b(x'-c))+d$, we get:
 	\[\begin{cases} 
 	y'=ay+d\\
-	x'=\dfrac{x}{b}+c
+	x'=\frac{x}{b}+c
 	\end{cases}\]
 	%TODO: examples
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=.75]
 		\begin{axis}[
 			scatter/classes={f={draw=red,fill=red},g={draw=blue,fill=blue}},
 			axis y line*=left,
@@ -313,33 +306,29 @@
 			axis lines=middle,
 			xlabel=$x$,
 			ylabel=$y$,
-			xtick distance=2,
-			ytick distance=2
+			xtick distance= 1, ytick distance = 1
 		]
 		\addplot[scatter,scatter src=explicit symbolic]
-		table[meta=label] {
-			x y label
-			-6 0 f
-			-4 -3 f
-			-1 3 f
-			
-			-1 5 g
-			6 7 g
-			10 6 g
-		};
+			table[meta=label] {
+				x y label
+				-6 0 f
+				-4 -3 f
+				-1 3 f
+				
+				-1 5 g
+				6 7 g
+				10 6 g
+			};
 		\end{axis}
 	\end{tikzpicture}\\
-	To write the function $g(x)$ in the form $g(x)=af(b(x-c))+d$, we have to solve for all 4 of the variables, with 4 equations from the graph. We can know which point corresponds to which point because each segment will have the same proportions. Therefore, we can use these four equations (there are other possibilities):
-	\begin{align*}
-		something\\something\\something\\something
-	\end{align*}
+	To write the function $g(x)$ in the form $g(x)=af(b(x-c))+d$, we have to solve for all 4 of the variables, with 4 equations from the graph. We can know which point corresponds to which point because each segment will have the same proportions. Therefore, we can use these four equations (there are other possibilities): \[\]
 	\subsubsection{Domain and Range}
 	After transformations, the domain and range may be changed. The mapping formulas can be used to calculate the new ones.\\
 	For example: A function with domain $D=(-1,3]$ and range $R=[2,\infty)$ is transformed into a new function $g(x)=-2f(2x-3)+4$. $a=-2$, $b=2$, $c=\frac{3}{2}$, $d=4$. The domain would be shifted to $\left(\frac{-1}{2}+\frac{3}{2}, \frac{3}{2}+\frac{3}{2}\right]=(1,3]$ and the range would be shifted to $\left[-2(2)+4, -2(\infty)+4\right)=[0, -\infty)$
 	\subsection{Inverse Relations}
 	\subsubsection{Inverse Relation}
 	For any relation there is an inverse relation obtained by switching the $x$ and $y$ values for all the elements of the original relation. The inverse relation of a relation $r$ is denoted by $r^{-1}$. A 1:1 function is a function where the inverse is also a function; it passes both the vertical and horizontal line tests.\\
-	The inverse relation of the relation $r=\set{(1, 2), (1, 0), (-2, 1), (0, 2)}$ is $r^{-1}=\set{(2, 1), (0, 1), (1, -2), (2, 0)}$
+	The inverse relation of the relation $r=\{(1, 2), (1, 0), (-2, 1), (0, 2)\}$ is $r^{-1}=\{(2, 1), (0, 1), (1, -2), (2, 0)\}$
 	\subsubsection{Symmetry}
 	The graph of a relation and the graph of its inverse relation are symmetrical about the line $y=x$.
 	%TODO: graph
@@ -365,25 +354,11 @@
 		\draw[->] (o) -- (n3);
 		\draw[->] (o) -- (o2);
 		\draw[->] (p2) -- (p1);
-	\end{tikzpicture}\\
-	The domain of $r$ is $D=\set{-5, -2, 0, 2}$ and the range is $R=\set{-3, 0, 1, 7}$.
-	The domain of $r^{-1}$ is $D=\set{-3, 0, 1, 7}$ and the range is $R=\set{-5, -2, 0, 2}$.
+	\end{tikzpicture}
+	The domain of $r$ is $D={-5, -2, 0, 2}$ and the range is $R={-3, 0, 1, 7}$.
+	The domain of $r^{-1}$ is $D={-3, 0, 1, 7}$ and the range is $R={-5, -2, 0, 2}$.
 	\subsubsection{Inverse Relation of a Function}
 	Any function is a relation. So, any function $f$ has an inverse relation $f^{-1}$.
-	\subsubsection{Algebraic Method}
-	To find the inverse of a function:
-	\begin{enumerate}
-		\item write the original function in the form $y=f(x)$
-		\item switch the $x$ and $y$ variables
-		\item solve the expression for $y$
-		\item replace $y$ with $f^{-1}(x)$
-	\end{enumerate}
-	\subsubsection{One-to-One Functions}
-	If the inverse relation of a given function $f$ is also a function, then the function $f$ is called a one-to-one function. In this case: $y=f(x)\Leftrightarrow x=f^{-1}(y)$
-	\subsubsection{Horizontal Line Test}
-	One-to-one functions pass the horizontal line test (any horizontal line intersects the graph in at most one point).
-	\subsubsection{Restricted Domains}
-	By restricting the domain of a function which is not one-to-one, we may obtain a one-to-one function. For example, the inverse of $y=x^2\text{, }x\geqslant0$
 	\subsection{Piecewise Functions}
 	\subsubsection{Piecewise-Defined Functions}
 	A piecewise-defined function requires more than one formula to explicitly define the function. Each formula is defined on a different interval. The domain of a piecewise-defined function is the union of all the intervals used to define the function.\\
@@ -474,32 +449,9 @@
 	The domain of the quotient of two functions is given by: $D_{f/g}=\set{x\in\mathbb{R}\mid x\in D_f\cap D_g\text{ and }g(x)\neq0}$
 	\subsection{Composition of Functions}
 	\subsubsection{Composition of Functions}
-	Any function $y=f(x)$ can be imagined as a machine $f$ who changes the input $x$ into the output $y$:\\
-	\begin{tikzpicture}
-		\draw [->] (.5, 0) node [left] {$x$} -- (1,0);
-		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$f$};
-		\draw [->] (2, 0) -- (2.5, 0) node [right] {$y$};
-	\end{tikzpicture}\\
-	You can connect the output of a machine $g$ to the input of a machine $f$ corresponding to a different function $z=f(y)$:\\
-	\begin{tikzpicture}
-		\node (y) at (2.5,0) {$y$};
-		\draw[->] (.5, 0) node [left] {$x$} -- (1,0);
-		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$g$};
-		\draw[->] (2, 0) -- (y);
-		\draw[->] (y) -- (3,0);
-		\draw (3,.25) rectangle (4,-.25) node[pos=.5] {$f$};
-		\draw[->] (4,0) -- (4.5,0) node [right] {$z$};
-	\end{tikzpicture}\\
-	So you can replace the machines $g$ and $f$ by a new machine $f\circ g$ who changes then input $x$ directly into the output $z$:\\
-	\begin{tikzpicture}
-		\draw [->] (.5, 0) node [left] {$x$} -- (1,0);
-		\draw (1,.25) rectangle ++(1,-.5) node[pos=.5] {$f\circ g$};
-		\draw [->] (2, 0) -- (2.5, 0) node [right] {$z$};
-	\end{tikzpicture}\\
-	The relation $(f\circ g)(x)=f(g(x))$ defines the composition of the functions $f$ and $g$
-	\subsubsection{Domain and Range}
-	The domain of $f\circ g$ is a subset of the domain of $g$: $D_{f\circ g}=\set{x\in D_g\mid g(x)\in D_f}$. The domain of $f\
-	circ g$ consists of the $x$ in the domain of $g$ sugh that $g(x)$ is in the domain of $f$. The range of $f\circ g$ is a subset of the range of $f$
+	Any function $y=f(x)$ can be imagined as a machine $f$ who changes the input $x$ into the output $y$:
+
+	\subsection{asdf}
 	\setcounter{section}{3}
 	\setcounter{subsection}{0}
 	\tsection{Unit 2: Polynomial Functions}
@@ -514,22 +466,6 @@
 		\item $n$ is a non-negative integer that gives the degree of the polynomial function
 		\item the degree of a polynomial function $n$ is the largest exponent of $x$
 	\end{itemize}
-	\subsubsection{Order}
-	The terms of a polynomial function can be written in any order because the addition operation is a commutative operation.
-	\subsubsection{Specific Polynomials}
-	\begin{itemize}
-		\item For $n=0$, $f(x)=a_0$ is called the constant function
-		\item For $n=1$, $f(x)=a_1x+a_0$ is called the linear function
-		\item For $n=2$, $f(x)=a_2x^2+a_1x+a_0$ is called the quadratic function
-		\item For $n=3$, $f(x)=a_3x^3+a_3x^2+a_1x+a_0$ is called the cubic function
-		\item For $n=4$, we have the quartic function, and for $n=5$, we have the quintic function
-	\end{itemize}
-	\subsubsection{Operations with Polynomial Functions}
-	All four operations (addition, subtraction, multiplication, division) are defined for polynomial functions
-	\subsubsection{Y-Intercept}
-	The y-intercept of a polynomial function is equal to the constant term $\text{y-int}=f(0)=a_0$
-	\subsubsection{Finite Differences}
-	The nth finite differences of a polynomial function of degree $n$ are constant. The constant $c$ is related to $a_n$ and $n$ by $c=n!a_n$
 	\subsection{Characteristics of Polynomial Functions}
 	\subsubsection{End Behavior}
 	For very large $x$ ($x\to\infty$ or $x\to-\infty$), the graph of the polynomial function will resemble the graph of the leading term $a_nx^n$\\
@@ -546,17 +482,14 @@
 		\item A polynomial function with an odd degree must have at least one real zero
 	\end{itemize}
 	\subsubsection{Turning Points}
-	A turning point is the point where increasing changes to decreasing or vice versa. A polynomial function of $n$ has at most $n-1$ turning points
+	A turning point is the point where increasing changed to decreasing or vice versa. A polynomial function of $n$ has at most $n-1$ turning points
 	\subsubsection{Extrema Points}
 	Extrema is the plural of extremum. Extremum is either a minimum or maximum, and may be local or global. Each turning point is a local extrema point. A polynomial function with an even degree has either a global minimum or global maximum point. A polynomial function with an odd degree has neither a global maximum or a global minimum point.
 	\subsection{Polynomial Functions in Factored Form}
 	\subsubsection{Simple Zeroes}
-	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function. Here, the function changes sign at each x-intercept and the tangent line at each x-intercept is not zero.
+	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)(x-x_2)\dots(x-x_{n-1})(x-x_n)$ where $x_1, x_2, \dots, x_{n-1}, x_n$ are $n$ distinct real numbers and are the zeroes of the function
 	\subsubsection{Repeated Zeroes}
-	Some polynomial functions can be factored into the form $f(x)=a_n(x-x_1)^{m_1}(x-x_2)^{m_2}\dots(x-x_k)^{m_k}$, where $x_1$ is a root with multiplicity $m_1$, $x_2$ is a root with multiplicity $m_2$, and so on. The polynomial function has $m_1+m_2+\dots+m_k=n$ real zeroes ($m_1$ are coincident and equal to $x_1$, $m_2$ are coincident and equal to $x_2$, and so on).\\
-	If $m_k$ is odd, the function changes sign at $x=x_k$ and the graph crosses the x-axis. If $m_k$ is even, the function does not change sign at $x=x_k$, and the graph touches the x-axis. If the multiplicity $m_k$ is greater than 1 then the tangent line at $x=x_k$ is horizontal.
-	\subsubsection{Non-Real Zeroes}
-	A polynomial function with non-real zeroes can be factored as $f(x)=(a_1x^2+b_1x+c_1)^{m_1}(a_2x^2+b_2x+c_2)^{m_2}$, where ${b_k}^2-4a_kc_k<0$. Each trinomial $a_kx^2+b_kx+c_k$ has the same sign for all real numbers $x$.
+	Some polynomial functions can be factored into the form 
 	\subsection{Transformations of Cubic and Quartic Functions}
 	\subsubsection{Cubic Funcitons}
 	%The graph
@@ -565,14 +498,10 @@
 	%The graph
 	Cubic functions have the parent function $f(x)=x^4$, and after transformations, may be written as $f(x)=a[b(x-c)]^4+d$
 	\subsubsection{Power Function(Real Exponent)}
-	The power function with a real exponent is defined by $f(x)=x^a\text{; }a\in\mathbb{R}$
-	%graph
 	\subsubsection{Power Function(Rational Exponent)}
-	The power function with a rational exponent is defined by $f(x)=x^\frac{m}{n}\text{; }m\text{ and }n\text{ are integers}$
-	%graph
 	\subsection{Dividing Polynomials}
 	\subsubsection{Division of Natural Numbers}
-	If $D$ and $d\neq0$ are two natural numbers, then there are unique numbers $q$ and $r$ such that the relation (called the division statement) $\frac{D}{d}=q+\frac{r}{d}$ or $D=dq+r$ is true; where $0\leq r<d$.
+	If $D$ and $d\neq0$ are two natural numbers, then there are unique numbers $q$ and $r$ such that the relation (called the division statement) $\frac{D}{d}=\frac{r}{d}$ or $D=dq+r$ is true; where $0\leq r<d$.
 	\begin{itemize}
 		\item $D$ is called the dividend
 		\item $d$ is called the divisor
@@ -581,16 +510,7 @@
 	\end{itemize}
 	If the remainder is 0, then $D$ is divisible by $d$, or $d$ divides evenly into $D$.
 	\subsubsection{Division of Polynomials}
-	If $D(x)$ and $d(x)$ are two polynomial functions, then there are two unique polynomial functions $q(x)$ and $r(x)$ such that the relation $\frac{D(x)}{d(x)}=q(x)+\frac{r(x)}{d(x)}$ or $D=d(x)q(x)+r(x)$ is true; where $0\leq\deg r<\deg d$
-	\begin{itemize}
-		\item $D$ is called the dividend
-		\item $d$ is called the divisor
-		\item $q$ is called the quotient
-		\item $r$ is called the remainder
-	\end{itemize}
-	\subsubsection{Synthetic Division Algorithm}
-	Synthetic division is a shorthand method for dividing a polynomial $P(x)$ by a linear divisor $x-b$.
-	%maybe explainn
+	If $D(x)$ and $d(x)$ are two polynomial functions, then there are two unique polynomial functions $q(x)$ and $r(x)$ such that the relation $\frac{D(x)}{d(x)}=\frac{r(x)}{d(x)}$ or $D=d(x)q(x)+r(x)$ is true; where $0\leq\deg r<\deg d$
 	\subsection{Factoring Polynomials}
 	\subsubsection{The Remainder Theorem}
 	If a polynomial $P(x)$ is divided by $x-b$, then the remainder is $P(b)$; Proof:
@@ -612,10 +532,11 @@
 	\end{align*}
 	\subsubsection{The Factor Theorem}
 	A polynomial $P(x)$ has $x-b$ as a factor if and only if $P(b)=0$.\\
-	For example: $x+2$ is a factor of $x^3+5x^2+2x-8$ because $(-2)^3+5(-2)^2+2(-2)-8=-8+20-4-8=0$
+	For example: $x+2$ is a factor of $x^3+5x^2+2x-8$ because $(-2)^3+5(-2)^2+2(-2)-8=-8+20-4-8=0$\\
 	%Note: you can use the $\pm$ factors of the last term to find factors
 	\subsubsection{Integral Zero Theorem}
 	If $x=b$ is an integral zero of the polynomial $P(x)$ with integral coefficients, then $b$ is a factor (divisor) of the constant term, $a_0$.
+	For example
 	\subsection{Factoring Sums or Differences of Cubes and Powers}
 	\subsubsection{Difference of Two Cubes}
 	The difference of cubes identity is: $a^3-b^3=(a-b)(a^2+ab+b^2)$\\
@@ -628,23 +549,18 @@
 	For example: $x^4-16$ can be factored into $(x^2-4)(x^2+4)=(x+2)(x-2)(x^2+4)$
 	\subsubsection{Sum of Two Powers}
 	For any natural odd number $n$, the following identity is true: \[a^n+b^n=(a+b)(a^{n-1}-a^{n-2}b+a^{n-3}b^2-\dots-a^2b^{n-3}+ab^{n-2}-b^{n-1})\]
-	For example: $sdf$ can be factored into $asdf$
+	For example: $sdf$ can be factored into $asdf$\\
 	%more examples
-	\vspace{.5ex}\\
 	General Example: Given that $a-b=4$ and $ab=2$, to find $a^3-b^3$:\\
 	\begin{align*}
 		a^3-b^3&=(a-b)(a^2+ab+b^2)\\
 		(a-b)^2&=a^2-2ab+b^2\\
 		\therefore a^3-b^3&=(4)(4^2+3(2))=4(16+6)=4(22)=88
 	\end{align*}
-	\vspace{-2ex}
 	\setcounter{section}{4}
 	\setcounter{subsection}{1}
 	\subsection{Solving Linear Polynomial Equations}
 	\subsubsection{Fundamental Theorem of Algebra}
-	The polynomial function $P(x)$ of degree $n$ has $n$ zeroes, real or complex. The complete factorization of the polynomial function $P(x)$ is $P(x)=a_n(x-x_1)(x-x_2)\ldots(x-x_{x-1})(x-x_n)$, where $x_1$, $x_2$, \ldots, $x_{n-1}$, $x_n$ are the zeroes, real or complex, distinct or coincident.\\
-	The complex zeroes come in conjugate pairs, so $n=r+2m$, where $r$ is the number of real zeroes and $2m\text{, }m\geq0$ is the number of complex zeroes.\\
-	To factor $x^4-4x^3+7x^2-4$ if $2$ and $-1$ are two of its zeroes:
 	\begin{flalign*}
 		\renewcommand\arraystretch{1.5}
 		\begin{array}{rrrrrr}
@@ -655,8 +571,7 @@
 			& 1 & -3 & 6 & 0
 		\end{array}
 	\end{flalign*}
-	\subsubsection{Integral Zero Theorem}
-	If $x=b$ is an integral zero of the polynomial $P(x)$ with integral coefficients, then $b$ is a factor of the consant term $a_0$ of the polynomial. The zeroes 
+	\subsubsection{asdf}
 	\subsubsection{asdf}
 	\subsubsection{Real Zeroes}
 	If $a+b\sqrt{c}$ where $a$, $b$, and $c$ are rational numbers and $c>0$ is a zero of a polynomial with integral coefficients, then $a-b\sqrt{c}$ is also a zero of this polynomial
@@ -721,17 +636,12 @@
 	If you cannot factor the polynomial, use technology to find the solution
 	\tsection{Unit 3: Rational Functions}
 	\setcounter{section}{5}
-	\setcounter{subsection}{0}
+	\setcounter{subsection}{1}
 	\subsection{Graphs of Reciprocal Functions}
 	\subsubsection{General Rules}
-	For a function $f(x)$ and its reciprocal $g(x)=\dfrac{1}{f(x)}$, there are some general rules
+	For a function $f(x)$ and its reciprocal $g(x)=\frac{1}{f(x)}$, there are some general rules
 	\begin{itemize}
 		\item If the function $f(x)$ has a zero at $x=a$, the reciprocal function $g(x)$ has a vertical asymptote at $x=a$, and vice versa
-		\item If the function $f(x)$ is unbounded ($y\to\pm\infty$) as x becomes unbounded ($x\to\pm\infty$), then the reciprocal function $g(x)$ has the horizontal asymptote $y=0$
-		\item If the function $f(x)$ has a horizontal asymptote $y=a$ ($y\to a$ as $x\to\pm\infty$), then the reciprocal function $f(x)$ has the horizontal asymptote $y=\dfrac{1}{a}$
-		\item If the function $f(x)$ is increasing/decreasing over an interval, then the reciprocal function $g(x)$ is decreasing/increasing over the same interval
-		\item If the function $f(x)$ has a local minimum/maximum at $(a,\,f(a))$, the reciprocal function $g(x)$ has a local maximum/minimum at $(a,\,\dfrac{1}{f(a)})$
-		\item If the function $f(x)$ is even/odd/neither, then reciprocal function $g(x)$ is also even/odd.neither
 	\end{itemize}
 	\subsection{Rational Functions}
 	\subsubsection{Rational Functions}
@@ -739,15 +649,6 @@
 	\subsubsection{Domain}
 	The domain of a rational function is determined by $Q(x)\neq0$.\\
 	For example, $f(x)=\frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1$ where $D=\{x\in\mathbb{R}\mid x\neq1\}$.\\
-	\subsubsection{Y-Intercept}
-	The y-intercept for a rational function is the point $(0,\,f(0))$ if 0 is in the domain of $f$.
-	\subsubsection{Holes}
-	The $x$ values where $Q(x)=0$ do not belong to the domain of the function and must not appear on the graph of a rational function. These values might create holes in the graph of the rational function
-	\subsubsection{Vertical Asymptotes}
-	The vertical line $x=a$ is a vertical asymptote for the graph of the function $f(x)$ if the value of the function becomes unbounded as $x$ approaches $a$. $x=a$ is a vertical asymptote if $\lim\limits_{\hspace{1ex}x\to a^-}f(x)=f(a-\epsilon)=\pm\infty$ or $\lim\limits_{\hspace{1ex}x\to a^+}f(x)=f(a+\epsilon)=\pm\infty$ where $\epsilon$ is extremely small and greater than zero
-	\subsubsection{Behavior Near Vertical Asymptotes}
-	The value of the rational function is unbounded ($\pm\infty$) as $x$ approaches $a$ from the left and right. To find the unbounded value ($\pm\infty$) of the rational function, substitute $a\pm\epsilon$ for $x$
-	\tsubsubsection{Other Stuff From Class}
 	For $f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x(x-1)}{x(2x-1)(3x+2)}$ and $d=\{x\in\mathbb{R}\mid x\neq0, \frac{1}{2}, -\frac{2}{3}\}$. There is a hole at $(0, \frac{1}{2})$, and vertical asymptotes at $x=\frac{1}{2}$ and $x=-\frac{2}{3}$. As $x\to-\frac{2}{3}^-$, $y\to-\infty$, and $x\to-\frac{2}{3}^+$, $y\to\infty$. As $x\to\frac{1}{2}^-$, $y\to\infty$, and $x\to\frac{1}{2}^+$, $y\to-\infty$. You can use the leading terms to find the end behavior and find the horizontal asymptote at $y=0$\\
 	\[\frac{{P(x)}}{Q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x_1+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x_1+b_0}=\frac{\infty}{\infty}=\frac{a_nx^n\left(1+\frac{a_{n-1}}{a_nx}+\dots+\frac{a_1}{a_nx^{n-1}}+\frac{a_0}{a_nx^n}\right)}{{b_mx^m\left(1+\frac{b_{m-1}}{b_mx}+\dots+\frac{b_m}{b_mx^{m-1}}+\frac{b_0}{b_mx^m}\right)}}\]
 	\[\lim_{|x|\to\infty}f(x)=\lim_{|x|\to\infty}\frac{a_nx^n}{b_mx^m}
@@ -872,8 +773,7 @@
 	\subsubsection{Sum and Difference Rules}
 	$(f(x)\pm g(x))'=f'(x)\pm g'(x)$
 	\subsubsection{Tangent Line}
-	To find the equation of a tangent line at the point $(a, f(a))$, find the derivative function $f'(x)$
-	
+	To find the equation of a tangent line at the point $(a, f(a))$, find the derivative function $f'(x)$	
 	\setcounter{section}{5}
 	\setcounter{subsection}{1}
 	\setcounter{subsubsection}{0}
@@ -1045,25 +945,7 @@
 	\setcounter{section}{7}
 	\setcounter{subsection}{0}
 	\subsection{Vectors as Forces}
-	\subsubsection{Vector Force}
-	The force is a vector and the measurement unit is \si{\newton} (Newtons)
-	\subsubsection{Resultant Force}
-	The vector sum of a system of forces is called the resultant force: $\vv{R}=\vv{F_1}+\vv{F_2}+\dots\vv{F_n}$
-	\subsubsection{Algebraic Resultant Force}
-	The scalar components of the resultant force are given by $R_x=F_{1x}+F_{2x}+\dots+F_{nx}$ and $R_y=F_{1y}+F_{2y}+\dots+F_{ny}$. The magnitude and direction given by the resultant force are given by $\mv{R}=\sqrt{{R_x}^2+{R_y}^2}$ and $\theta=\tan^{-1}(\dfrac{R_y}{R_x})$
-	\subsubsection{Equilibrium}
-	A system forces in in a state of equilibrium if the resultant force between then is 0. Three forces in equilibrium form a triangle.
-	\subsubsection{Equilibrant Force}
-	The equilibrant force is the vector force $\vv{E}$ required to be added to a system of forces with a resultante force $\vv{R}$ such that the new system of forces is at equilibrium. $\vv{R}+\vv{E}=0$
-	\subsection{Velocity}
-	\subsubsection{Velocity}
-	Velocity is a vector and the measurement unit is \si{\meter\per\second} or \si{\kilo\meter\per\hour}
-	\subsubsection{Relative Velocity}
-	The relative velocity of the object $B$ travelling at $\vv{v_B}$ relative to the object $A$ travelling at $v_A$ is given by $v_{BA}=\vv{v_B}-\vv{v_A}$. If $\vv{v_A}=0$, then $\vv{BA}=\vv{v_B}$
-	\subsubsection{Boat Velocity}
-	The boat velocity relative to the ground is the vector sum between the boat velocity relative to the water and the water velocity relative to the ground: $\vv{v_{bg}}=\vv{v_{bw}}+\vv{v_{wg}}$
-	\subsubsection{Plane Velocity}
-	The plane velocity relative to the ground is the vector sum between the plane velocity relative to the air and the air velocity relative to the cround: $\vv{v_{pg}}=\vv{v_{pa}}+\vv{v_{ag}}$
+	\subsection{Veolcity}
 	\subsection{Dot Product of Two Geometric Vectors}
 	\subsubsection{Definition}
 	The dot product of two geometric vectors $\vv{a}$ and $\vv{b}$ with an angle $\angle(\vv{a},\,\vv{b})$ between them when placed tail to tail is a scalar defined by $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$. By convention, $0^\circ\leq\theta\leq180^\circ$. %graph
@@ -1075,48 +957,24 @@
 		\item If $\ang{0}<\theta<\ang{90}$, then $\cos\theta>0$ and $\vv{a}\cdot\vv{b}>0$
 		\item If $\ang{90}<\theta<\ang{180}$, then $\cos\theta<0$ and $\vv{a}\cdot\vv{b}<0$
 		\item If $\vv{a}\uparrow\uparrow\vv{b}$, then $\theta=0$, $\cos\theta=1$, and $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}$
-		\item If $\vv{a}\uparrow\downarrow\vv{b}$, then $\theta=\ang{180}$, $\cos\theta=-1$, and $\vv{a}\cdot\vv{b}=-\mv{a}\mv{b}$
-		\item $\vv{a}\cdot\vv{a}=\mv{a}^2$
-		\item $\vv{a}\cdot\vv{b}=\vv{b}\cdot\vv{a}$ (commutative property)
-		\item $\vv{a}\cdot(\vv{b}+\vv{c})=\vv{a}\cdot\vv{b}+\vv{a}\cdot\vv{c}$ (distributive property)
-		\item $(k\vv{a})\cdot\vv{b}=k(\vv{a}\cdot\vv{b})=\vv{a}\cdot(k\vv{b})$
-		\item $\vv{a}\cdot0=0$
 	\end{enumerate}
 	\subsection{Dot Product of Algebraic Vectors}
 	\subsubsection{Dot Product of Standard Unit Vectors}
-	The dot products of the standard unit vectors are:
-	\begin{align*}
-		\vv{i}\cdot\vv{i}&=1&\vv{j}\cdot\vv{j}&=1&\vv{k}\cdot\vv{k}&=\\
-		\vv{i}\cdot\vv{j}&=0&\vv{j}\cdot\vv{k}&=0&\vv{k}\cdot\vv{i}&=0
-	\end{align*}
-	Proof:
+	The dot product of any two of the same standard unit vectors is equal to 1, and he dot productt of any two different standard unit vectors is 0, because
 	\[\vv{i}\cdot\vv{i}=\mv{i}\mv{i}\cos\ang{0}=(1)(1)(1)=1\]\[\vv{i}\cdot\vv{j}=\mv{i}\mv{j}\cos\ang{90}=(1)(1)(0)=0 \text{ (they are perpendicular).}\]
 	\subsubsection{Dot Product of Two Algebraic Vectors}
-	The dot product of two algebraic vectors $\vv{a}$ and $\vv{b}$ is given by $\vv{a}\cdot\vv{b}=(a_x+b_x,\,a_y+b_y,\,a_z+b_z)$
-	\subsubsection{Angle Between Two Vectors}
-	The angle $\angle(\vv{a},\,\vv{b})$ between to vectors $\vv{a}$ and $\vv{b}$ is given by $\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{a}\mv{b}}$.\\Note:
-	\begin{itemize}
-		\item If $\cos\theta=1$, then the vectors are parallel in the same direction
-		\item If $\cos\theta=-1$, then the vectors are parallel, but in opposite directions
-		\item If $\cos\theta=0$, then the vectors are perpendicular, or orthogonal
-		\item If $\cos\theta>0$, then $0<\ang{90}$ ($\theta$ is acute)
-		\item If $\cos\theta<0$, then $\ang{90}<\theta<\ang{180}$ ($\theta$ is obtuse)
-	\end{itemize}
+	The dot product of two algebraic vectors $\vv{a}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ and $\vv{b}=(a_x,\,a_y,\,a_z)=a_x\vv{i}+a_y\vv{j}+a_z\vv{k}$ is given by
 	\subsection{Scalar Projection and Vector Projection}
 	\subsubsection{Scalar Projection}
-	The scalar projection of the $\vv{a}$ onto $\vv{b}$ is a scalar defined as $s=\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
+	The scalar projection of the vector $\vv{a}$ onto vector $\vv{b}$ is a scalar defined as $\mv{a}\cos\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	\subsubsection{Special Cases}
 	\begin{itemize}
-		\item If $\vv{a}\uparrow\uparrow\vv{b}$, then $\cos\theta=1$ and $s=\mv{a}$
-		\item If $\vv{a}\uparrow\downarrow\vv{b}$, then $\cos\theta=-1$ and $s=-\mv{a}$
-		\item If $\vv{a}\bot\vv{b}$, then $\cos\theta=0$ and $s=0$
+		\item If $\vv{a}\uparrow\uparrow\vv{b}$, $\cos\theta=1$, and $s=\mv{a}$
+		\item If $\vv{a}\uparrow\downarrow\vv{b}$, $\cos\theta=-1$, and $s=-\mv{a}$
+		\item If $\vv{a}\bot\vv{b}$, $\cos\theta=0$, and $s=0$
 	\end{itemize}
 	\subsubsection{Dot Product and Scalar Projection}
-	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection of two vectors can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$.\\Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{a_x}{1}=a_x$
-	\subsubsection{Vector Projection}
-	The vector projection of $\vv{a}$ onto $\vv{b}$ is a vector defined as $\vv{v}=\mv{a}\cos\theta\dfrac{\vv{b}}{\mv{b}}$. It is the scalar projection of $\vv{a}$ onto $\vv{b}$, with the direction of $\vv{b}$.
-	\subsubsection{Dot Product and Vector Projection}
-	The vector projection of $\vv{a}$ onto $\vv{b}$ can be rewritten using the dot product as $v=\dfrac{(\vv{a}\cdot\vv{b})\vv{b}}{\mv{b}^2}$. For a cartesian coordinate system, the vector components $\vv{a_x}$, $\vv{a_y}$, $\vv{a_z}$ of a vector $\vv{a}$ are the vector projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$, $\vv{j}$, and $\vv{k}$
+	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$. Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{}{}$
 	\subsection{Cross Product of Two Vectors}
 	\subsubsection{Right Hand System}
 	The Right Hand System is based on the position of the first three fingers of the right hand: %illustrated
@@ -1142,7 +1000,7 @@
 		\vv{i}\times\vv{j}&=\vv{k}&\vv{j}\times\vv{k}&=\vv{i}&\vv{k}\times\vv{i}&=\vv{j}
 	\end{align*}
 	\subsubsection{Cross Product of Two Algebraic Vectors}
-	The cross product of two vectors $\vv{a}$ and $\vv{b}$ is equal to $\vv{i}(a_yb_z-a_zb_y)+\vv{j}(a_zb_x-a_xb_z)+\vv{k}(a_xb_y-a_yb_x)$\\This can also be rewritten as $\begin{vmatrix*}a_y&a_z\\b_y&b_z\end{vmatrix*}\vv{i}+\begin{vmatrix*}a_z&a_x\\b_z&b_x\end{vmatrix*}\vv{j}+\begin{vmatrix*}a_x&a_y\\b_x&b_y\end{vmatrix*}\vv{k}$, where $\begin{vmatrix*}a&b\\c&d\end{vmatrix*}$ is the determinant, $ad-bc$\\
+	The cross product of two vectors $\vv{a}$ and $\vv{b}$ is equal to $\vv{i}(a_yb_z-a_zb_y)+\vv{j}(a_zb_x-a_xb_z)+\vv{k}(a_xb_y-a_yb_x)$\\
 	\begin{tikzpicture}
 		\node(i1) at (-2,0) {$\vv{i}$};
 		\node(j1) at (-1,0) {$\vv{j}$};
@@ -1185,28 +1043,21 @@
 		\item $\vv{a}\times\vv{a}=0$
 	\end{enumerate}
 	The dot and cross products have higher priority in comparison to addition and subtraction
-	\begin{itemize}
-		\item $(\vv{a}-\vv{b})\times(\vv{a}+\vv{b})=2(\vv{a}\times\vv{b})$
-		\item $(\vv{a}\times\vv{b})\cdot(\vv{a}\times\vv{b})+(\vv{a}\cdot\vv{b})^2$
-		\item $\vv{a}\cdot(\vv{b}\times\vv{c})=\vv{b}\cdot(\vv{c}\times\vv{a})=\vv{c}\cdot(\vv{a}\times\vv{b})$
-		\item $\vv{a}\times(\vv{b}\times\vv{c})=(\vv{c}\cdot\vv{a})\vv{b}-(\vv{b}\cdot\vv{a})\vv{c}$
-	\end{itemize}
 	\subsection{Applications of Dot and Cross Products}
 	\subsubsection{Work}
-	The work done by a constant force $\vv{F}$ acting on an object during a displacement $\vv{d}$ is given by\\$W=\vv{F}\cdot\vv{d}=Fd\cos\theta$
+	The work done by a constant force $\vv{F}$ acting on an object during a displacement $\vv{d}$ is given by $W=\vv{F}\cdot\vv{d}=Fd\cos\theta$
 	%graph
 	\subsubsection{Torque}
 	The torque (rotational or turning effect) about the point $\vv{A}$ created by a force $\vv{F}$ acting on a object located at the point $B$ is given by $\vv{\tau}=\vv{AB}\times\vv{F}=\vv{r}\times\vv{F}$
 	%graph
 	\subsubsection{Parallelogram Area}
-	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula\\$A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
+	The area of a parallelogram defined by the vectors $\vv{a}$ and $\vv{b}$ is determined by the formula $A=\lVert\vv{a}\times\vv{b}\rVert=\mv{a}\mv{b}\sin\theta$, where $\theta=\angle(\vv{a},\,\vv{b})$
 	%graph
 	\subsubsection{Triangle Area}
 	The area of a triangle defined by the vectors $\vv{a}$ and $\vv{b}$ is given by $A=\dfrac{\lVert\vv{a}\times\vv{b}\rVert}{2}=\dfrac{\mv{a}\mv{b}\sin\theta}{2}$
-	\subsubsection{Parallelipiped Volume}
-	The volume of a parallelepiped defined by the vectors $\vv{a}$, $\vv{b}$, and $\vv{c}$ is given by\\$V=\vv{c}\cdot(\vv{a}\times\vv{b})=\vv{a}\cdot(\vv{b}\times\vv{c})=\vv{b}\cdot(\vv{c}\times\vv{a})$
 
-	\section{Have to Put This Somewhere}
+
+	\section{Have to Figure Out Where This Goes}
 	\[y=\frac{x|x|}{x+3}=\begin{cases}
 		-\frac{x^2}{x+3}&x<0\\
 		\frac{x^2}{x+3}&x\geq0
