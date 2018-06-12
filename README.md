@@ -24,17 +24,17 @@ Remember to surround multi-character exponents or subscripts with curly braces
   - [x] 9.3
   - [x] 9.4
   - [x] 9.5
-- [ ] Unit 2
+- [x] Unit 2
   - [x] 3.1
   - [x] 3.2
   - [x] 3.3
   - [x] 3.4
   - [x] 3.5
   - [x] 3.6
-  - [ ] 3.7
-  - [ ] 4.1
-  - [ ] 4.2
-  - [ ] 4.3
+  - [x] 3.7
+  - [x] 4.1
+  - [x] 4.2
+  - [x] 4.3
 - [ ] Unit 3
   - [x] 5.1
   - [ ] 5.2

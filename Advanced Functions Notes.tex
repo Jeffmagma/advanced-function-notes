@@ -678,7 +678,7 @@
 	\subsubsection{Inequations, Part I}
 	The inequation $|E(x)|<a\text{, }a\ge0$ is equivalent to $-a<E(x)<a$
 	\subsubsection{Inequations, Part II}
-	The inequation $|E(x)|>a\text{, }a\ge0$
+	The inequation $|E(x)|>a\text{, }a\ge0$ is equivalent to $E(x)<-a$ or $E(x)>a$
 	\subsection{Solving Polynomial Inequalities}
 	\subsubsection{Sign Chart Method}
 	To solve $x(x-1)\leq0$
@@ -754,7 +754,7 @@
 	A rational function is in the form $f(x)=\frac{P(x)}{Q(x)}$ where $P(x)$ and $Q(x)$ are polynomial functions.
 	\subsubsection{Domain}
 	The domain of a rational function is determined by $Q(x)\neq0$.\\
-	For example, $f(x)=\frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1$ where $D=\{x\in\mathbb{R}\mid x\neq1\}$.\\
+	For example, $f(x)=\frac{x^2-1}{x-1}=\frac{(x+1)(x-1)}{x-1}=x+1$ where $D=\{x\in\mathbb{R}\mid x\neq1\}$.
 	\subsubsection{Y-Intercept}
 	The y-intercept for a rational function is the point $(0,\,f(0))$ if 0 is in the domain of $f$.
 	\subsubsection{Holes}
@@ -762,7 +762,13 @@
 	\subsubsection{Vertical Asymptotes}
 	The vertical line $x=a$ is a vertical asymptote for the graph of the function $f(x)$ if the value of the function becomes unbounded as $x$ approaches $a$. $x=a$ is a vertical asymptote if $\lim\limits_{\hspace{1ex}x\to a^-}f(x)=f(a-\epsilon)=\pm\infty$ or $\lim\limits_{\hspace{1ex}x\to a^+}f(x)=f(a+\epsilon)=\pm\infty$ where $\epsilon$ is extremely small and greater than zero
 	\subsubsection{Behavior Near Vertical Asymptotes}
-	The value of the rational function is unbounded ($\pm\infty$) as $x$ approaches $a$ from the left and right. To find the unbounded value ($\pm\infty$) of the rational function, substitute $a\pm\epsilon$ for $x$
+	The value of the rational function is unbounded ($\pm\infty$) as $x$ approaches $a$ from the left and right. To find the unbounded value ($\pm\infty$) of the rational function, substitute $a\pm\epsilon$ for $x$, then you can use one of the following types of limits:
+	\begin{align*}
+		\frac{1}{\epsilon}&=\infty&\frac{1}{e\epsilon}&=-\infty&\frac{1}{\epsilon^2}&=\infty&\frac{1}{(-\epsilon)^2}&=\infty&\frac{1}{(-\epsilon)^3}&=-\infty
+	\end{align*}
+	and so on.
+	\subsubsection{Horizontal Asymptotes}
+	The horizontal line $y=c$ is a horizontal asymptote 
 	\tsubsubsection{Other Stuff From Class}
 	For $f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x(x-1)}{x(2x-1)(3x+2)}$ and $d=\{x\in\mathbb{R}\mid x\neq0, \frac{1}{2}, -\frac{2}{3}\}$. There is a hole at $(0, \frac{1}{2})$, and vertical asymptotes at $x=\frac{1}{2}$ and $x=-\frac{2}{3}$. As $x\to-\frac{2}{3}^-$, $y\to-\infty$, and $x\to-\frac{2}{3}^+$, $y\to\infty$. As $x\to\frac{1}{2}^-$, $y\to\infty$, and $x\to\frac{1}{2}^+$, $y\to-\infty$. You can use the leading terms to find the end behavior and find the horizontal asymptote at $y=0$\\
 	\[\frac{{P(x)}}{Q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x_1+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x_1+b_0}=\frac{\infty}{\infty}=\frac{a_nx^n\left(1+\frac{a_{n-1}}{a_nx}+\dots+\frac{a_1}{a_nx^{n-1}}+\frac{a_0}{a_nx^n}\right)}{{b_mx^m\left(1+\frac{b_{m-1}}{b_mx}+\dots+\frac{b_m}{b_mx^{m-1}}+\frac{b_0}{b_mx^m}\right)}}\]
