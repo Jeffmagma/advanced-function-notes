@@ -768,7 +768,19 @@
 	\end{align*}
 	and so on.
 	\subsubsection{Horizontal Asymptotes}
-	The horizontal line $y=c$ is a horizontal asymptote 
+	The horizontal line $y=c$ is a horizontal asymptote for the graph of the function $f(x)$ if the vertical distance between the graph and this line approaches 0 as $x$ becomes unbounded ($\pm\infty$). $\lim\limits_{x\to\infty}f(x)=c$ or $\lim\limits_{x\to-\infty}f(x)=c$, where $c$ is a finite number.\\
+	Some functions may have two different horizontal asymptotes (one as $x\to\infty$ and one as $x\to-\infty$). Rational functions may have at most one horizontal asymptote.\\
+	For a rational function $f(x)=\dfrac{P(x)}{Q(x)}=\dfrac{a_nx_n+\ldots+a_1x+a_0}{b_mx_m+\ldots+b_1x+b_0}$:
+	\begin{itemize}
+		\item If $P(x)$ and $Q(x)$ have the same degree ($n=m$) then the equation has the horizontal asymptote $y=\dfrac{a_n}{b_m}$
+		\item If the degree of $P(x)$ is less than the degree of $Q(x)$ ($n<m$) then the equation has the horizontal asymptote $y=0$
+		\item If the degree if $P(x)$ is greater than the degree of $Q(x)$ then the equation does not have a horizontal asymptote
+	\end{itemize}
+	\subsubsection{Oblique Asymptotes}
+	The line $y=mx+b$ is an oblique (slant) asymptote for the graph of the function $f(x)$ if the vertical distance between the graph and this line approaches 0 as $x$ becomes unbounded ($\pm\infty$).\\
+	A rational function has an oblique asymptote if the degree of $P(x)$ is one unit greater than the degree of $Q(x)$. To find the equation of the oblique asymptote, use long divide the rational function to obtain $f(x)=mx+b+\dfrac{c}{R(x)}$. $y=mx+b$ will be the equation of the oblique asymptote.
+	\subsubsection{Graph Sketching}
+	Use x-intercepts, y-intercepts, symmetry, vertical asymptotes, horizontal asymptotes, oblique asymptotes, and sign charts to sketch the graph of a rational function.
 	\tsubsubsection{Other Stuff From Class}
 	For $f(x)=\frac{x^2-x}{6x^3+x^2-2x}=\frac{x(x-1)}{x(2x-1)(3x+2)}$ and $d=\{x\in\mathbb{R}\mid x\neq0, \frac{1}{2}, -\frac{2}{3}\}$. There is a hole at $(0, \frac{1}{2})$, and vertical asymptotes at $x=\frac{1}{2}$ and $x=-\frac{2}{3}$. As $x\to-\frac{2}{3}^-$, $y\to-\infty$, and $x\to-\frac{2}{3}^+$, $y\to\infty$. As $x\to\frac{1}{2}^-$, $y\to\infty$, and $x\to\frac{1}{2}^+$, $y\to-\infty$. You can use the leading terms to find the end behavior and find the horizontal asymptote at $y=0$\\
 	\[\frac{{P(x)}}{Q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\dots+a_1x_1+a_0}{b_mx^m+b_{m-1}x^{m-1}+\dots+b_1x_1+b_0}=\frac{\infty}{\infty}=\frac{a_nx^n\left(1+\frac{a_{n-1}}{a_nx}+\dots+\frac{a_1}{a_nx^{n-1}}+\frac{a_0}{a_nx^n}\right)}{{b_mx^m\left(1+\frac{b_{m-1}}{b_mx}+\dots+\frac{b_m}{b_mx^{m-1}}+\frac{b_0}{b_mx^m}\right)}}\]
@@ -779,6 +791,66 @@
 		&n>m&&&&\text{no HA, becomes unbounded}\\
 		&n=m+1&&&&\text{oblique asymptote, from quotient}
 	\end{aligned}\end{cases}\]
+	\setcounter{section}{3}
+	\setcounter{subsection}{3}
+	\tsubsection{AP Component: Asymptotes}
+	\subsubsection{Vertical Asymptotes (Infinite Limits)}
+	\begin{itemize}
+		\item If the values of $f(x)$ can be made arbitrarily large by taking $x$ sufficiently close to $a$ with $x<a$, then $\lim\limits_{\hspace{1ex}x\to a^-}f(x)=\infty$
+		\item If the values of $f(x)$ can be made arbitrarily large by taking $x$ sufficiently close to $a$ with $x>a$, then $\lim\limits_{\hspace{1ex}x\to a^+}f(x)=\infty$
+		\item If the values of $f(x)$ can be made arbitrarily large by taking $x$ sufficiently close to $a$, then $\lim\limits_{x\to a}f(x)=\infty$
+		\item If the values of $f(x)$ can be made arbitrarily large in absolute value but negative by taking $x$ sufficiently close to $a$ with $x<a$, then $\lim\limits_{\hspace{1ex}x\to a^-}f(x)=-\infty$
+		\item If the values of $f(x)$ can be made arbitrarily large in absolute value but negative by taking $x$ sufficiently close to $a$ with $x>a$, then $\lim\limits_{\hspace{1ex}x\to a^+}f(x)=-\infty$
+		\item If the values of $f(x)$ can be made arbitrarily large in absolute value but negative by taking $x$ sufficiently close to $a$, then $\lim\limits_{x\to a}f(x)=-\infty$
+	\end{itemize}
+	\subsubsection{Vertical Asymptotes}
+	A vertical line $y=a$ is called a vertical asymptote of the curve $y=f(x)$ if $\lim\limits_{\hspace{1ex}x\to a^-}f(x)=\pm\infty$ or $\lim\limits_{\hspace{1ex}x\to a^+}f(x)=\pm\infty$. A vertical asymptote may have a point of intersection with the graph of the function. The vertical asymptotes are the zeroes of the denominator that are not the zeroes of the numerator.
+	\subsubsection{Limits at Infinity}
+	If the values of $f(x)$ can be made arbitrarily close to $L$ by taking $x$ sufficiently large, then $\lim\limits_{x\to\infty}f(x)=L$. If the values of $f(x)$ can be made arbitrarily close to $L$ by taking $x$ sufficiently large in absolute value but negative, then $\lim\limits_{x\to-\infty}f(x)=L$
+	\subsubsection{Horizontal Asymptotes}
+	A horizontal line $y=L$ is called a horizontal asymptote of the curve $y=f(x)$ if $\lim\limits_{x\to\pm\infty}f(x)=L$. A horizontal asymptote may be crossed or touched by the graph of the function. A curve may have at most two horizontal asymptotes (one for $+\infty$ and one for $-\infty$). If $a>1$, then $\lim\limits_{x\to\pm\infty}\dfrac{1}{x^a}=0$\\
+	For the rational function $f(x)=\dfrac{P(x)}{Q(x)}=\dfrac{a+nx^n+\dots+a_1x+a_0}{b+mx^m+\dots+b_1x+b_0}$:
+	\[\lim_{x\to\pm\infty}f(x)=\begin{cases}
+		\dfrac{a_n}{b_m}&\text{if }n=m\\
+		0&\text{if }n<m\\
+		\text{sign}\left(\dfrac{a_n}{b_m}\right)(\pm\infty)^{n-m}&\text{if }n>m
+	\end{cases}\]
+	Any rational function behaves as $\left(\dfrac{a_n}{b+m}\right)x^{n-m}$ at infinity
+	\subsubsection{Infinite Limits at Infinity}
+	If the values of $f(x)$ can be made arbitrarily large by taking $x$ sufficiently large, then $\lim\limits_{x\to\infty}f(x)=\infty$. Similarly, we may have $\lim\limits_{x\to-\infty}f(x)=\infty$, $\lim\limits_{x\to\infty}f(x)=-\infty$, or $\lim\limits_{x\to-\infty}f(x)=-\infty$\\
+	If $a>1$ then $\lim\limits_{a\to\pm\infty}x^a=(\pm\infty)^a$
+	\subsubsection{Oblique Asymptotes}
+	The line $y=mx+b$ is a linear oblique asymptote for the curve $y=f(x)$ if $\lim\limits_{x\to\pm\infty}\left(f(x)-(mx+b)\right)=0$. An oblique asymptote may be crossed or touched by the graph of the function. A curve may have at most two oblique asymptotes (one for $+\infty$ and one for $-\infty$)\\
+	If $n=m+1$, rational functions have an oblique asymptote whose equation can be found by long division: $\dfrac{P(x)}{Q(x)}=mx+b+\dfrac{R(x)}{Q(x)}$. For non rational functions, you can compute the limits: $m=\lim\limits_{x\to\pm\infty}\dfrac{f(x)}{x}$ and $b=\lim\limits_{a\to\pm\infty}(f(x)-mx)$
+	\setcounter{section}{5}
+	\setcounter{subsection}{2}
+	\subsection{Graphs of Rational Functions of the Form $f(x)=\dfrac{ax+b}{cx+d}$}
+	\subsubsection{Characteristics of the Function, Case 1}
+	\[f(x)=\frac{ax+b}{cx+d}\quad a,c\ne0\]
+	Case 1: $cx+d$ is not a factor of $ax+b$
+	\begin{itemize}
+		\item Domain: $\set{x\in\mathbb{R}\mid x\ne-\dfrac{d}{c}}$
+		\item Range: $\set{x\in\mathbb{R}\mid x\ne-\dfrac{d}{c}}$
+		\item X-Intercept: $x=\dfrac{b}{a}$
+		\item Y-Intercept: $y=\dfrac{b}{d}$ if $d\ne0$
+		\item Symmetry: Neither even or odd
+		\item Vertical Asymptote: $x=-\dfrac{d}{c}$
+		\item Horizontal Asymptote: $y=\dfrac{a}{c}$
+		\item Continuity: There is an infinite break at $x=-\dfrac{d}{c}$
+	\end{itemize}
+	\subsubsection{Characteristics of the Function, Case 2}
+	\[f(x)=\frac{ax+b}{cx+d}\quad a,c\ne0\]
+	Case 2: $cx+d$ is a factor of $ax+b$
+	\begin{itemize}
+		\item Domain: $\set{x\in\mathbb{R}\mid x\ne-\dfrac{d}{c}}$
+		\item Range: $\set{x\in\mathbb{R}\mid x\ne-\dfrac{d}{c}}$
+		\item X-Intercept: none
+		\item Y-Intercept: $y=\dfrac{b}{d}$ if $d\ne0$
+		\item Symmetry: Neither even or odd
+		\item Vertical Asymptote: none
+		\item Horizontal Asymptote: $y=\dfrac{a}{c}$
+		\item Continuity: There is a hole at $x=-\dfrac{d}{c}$
+	\end{itemize}
 	\subsection{Solving Rational Equations}
 	\subsubsection{Rational Equations}
 	To solve a rational equation:
@@ -794,18 +866,31 @@
 	A rational equation of the form $\frac{P(x)}{Q(x)}=\frac{R(x)}{S(x)}\Leftrightarrow P(x)S(x)=Q(x)R(x)$\\
 	For example, to solve $\frac{x-1}{2x+3}=\frac{x+2}{3x-2}$, you can change it to $(x-1)(3x-2)=(x+2)(2x+)$
 	\subsubsection{Shortcut}
+	A rational equation in the form $\dfrac{P(x)}{Q(x)}=0$ is equivalent to $P(x)=0$ if all restrictions are satisfied
+	\subsubsection{No Solution}
+	A rational equation of the form $\dfrac{\text{constant}}{Q(x)}=0$ does not have any solutions
 	\subsection{Solving Rational Inequalities}
 	\subsubsection{Rational Inequalities}
+	In order to solve a rational (nonlinear) inequality:
+	\begin{itemize}
+		\item State restrictions
+		\item Move all the terms to one side
+		\item Multiply the expression by the LCD
+		\item Simplify and factor both the numerator and the denominator
+		\item Make a sign chart and get the solution set
+		\item Verify with restrictions
+	\end{itemize}
+	%example
 	\subsection{Rates of Change of Rational Functions}
 	\subsubsection{Average Rate of Change}
 	The average rate of change (ARC) over an interval $[x_1, x_2]$, is defined as $\frac{f(x_2)-f(x_1)}{x_2-x_1}$, or $\frac{\Delta y}{\Delta x}$. This is the same as the slope of the secant line from $(x_1, f(x_1))$ to $(x_2, f(x_2))$.
 	\subsubsection{Instantaneous Rate of Change}
-	The instantaneous rate of change (IRC) is defined as $x_1\rightarrow x_2$, the same function. However, since $x_1$ is approaching $x_2$, it would become $\lim_{x_1\to x_2}\frac{f(x_2)-f(x_1)}{x_2-x_1}$. Or, if you use $h$ as the difference between the two $x$ values, $\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$. \\
+	The instantaneous rate of change (IRC) is defined as $x_1\rightarrow x_2$, the same function. However, since $x_1$ is approaching $x_2$, it would become $\lim\limits_{x_1\to x_2}\frac{f(x_2)-f(x_1)}{x_2-x_1}$. Or, if you use $h$ as the difference between the two $x$ values, $\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}$. \\
 	For example, to calculate the IRC of Newton's Serpentine $f(x)=\frac{4x}{x^2+1}$ at $x=0$:
 	\begin{align*}
 		\text{IRC}&=\lim_{h\to 0}\frac{f(0+h)-f(0)}{h}\\
-		&=lim_{h\to 0}\frac{\frac{4h}{h^2+1}}{h}\\
-		&=lim_{h\to 0}\frac{4}{h^2+1}\\
+		&=\lim_{h\to 0}\frac{\frac{4h}{h^2+1}}{h}\\
+		&=\lim_{h\to 0}\frac{4}{h^2+1}\\
 		&=4
 	\end{align*}
 	To calculate the instantaneous rate of change for any point in the graph, you can calculate the difference quotient ($DQ$), $\frac{f(x+h)-f(x)}{h}$, then use $\lim_{h\to 0}$ on it.
@@ -823,8 +908,14 @@
 		DQ&=\frac{\frac{x+h-2}{x+h-5}-\frac{x-2}{x-5}}{h}
 	\end{align*}
 	\tsubsection{AP Component: Partial Fraction Decomposition}
-	Partial Fraction Decomposition is the inverse operation of addition or subtraction of fractions. For example, you can decompose $\frac{2x}{x^2-1}=\frac{2x}{(x+1)(x-2)}$ into $\frac{2x}{(x+1)(x-2)}=\frac{a}{x-1}+\frac{b}{x+1}=\frac{a(x+1)+b(x-1)}{(x+1)(x-2)}$. Since they have the same denominators, $2x=a(x+1)+b(x-1)$. Since each degree of x must have the same value on both sides, the coefficient of $x^1$, 2, mus equal $a+b$, and the coefficient of $x^0$, 0, must equal $a-b$. We can solve this system of equations to obtain $a=1$ and $b=1$.\\
-	To solve 
+	\tsubsubsection{Partial Fractions}
+	By adding two rational expressions such as $\dfrac{2}{x+5}+\dfrac{1}{x+1}$, you get the LCD and simplify, and you get $\dfrac{3x+7}{(x+5)(x+1)}$. The reverse process, of breaking down a rational expression like $\dfrac{3x+7}{(x+5)(x+1)}$ into partial fractions such as $\dfrac{2}{x+5}+\dfrac{1}{x+1}$ is called partial fraction decomposition\\
+	We call the rational function $R(x)=\dfrac{P(x)}{Q(x)}\text{, }Q(x)\ne0$ a proper fraction when the degree of $P(x)$ is the same as the degree of $Q(x)$. We assume that $P(x)$ and $Q(x)$ have no common zeroes.\\
+	Partial fraction decomposition depends on the factors in the denominator $Q(x)$ %something
+	\tsubsubsection{Case 1: Quotient Contains Distinct Linear Factors}
+	
+	\tsubsubsection{Stuff from Class}
+	Partial Fraction Decomposition is the inverse operation of addition or subtraction of fractions. For example, you can decompose $\frac{2x}{x^2-1}=\frac{2x}{(x+1)(x-2)}$ into $\frac{2x}{(x+1)(x-2)}=\frac{a}{x-1}+\frac{b}{x+1}=\frac{a(x+1)+b(x-1)}{(x+1)(x-2)}$. Since they have the same denominators, $2x=a(x+1)+b(x-1)$. Since each degree of x must have the same value on both sides, the coefficient of $x^1$, 2, mus equal $a+b$, and the coefficient of $x^0$, 0, must equal $a-b$. We can solve this system of equations to obtain $a=1$ and $b=1$.
 	\tsection{Unit 4: Exponential and Rational Functions}
 	\setcounter{section}{8}
 	\setcounter{subsection}{0}
@@ -1070,7 +1161,7 @@
 	\subsubsection{Vector Force}
 	The force is a vector and the measurement unit is \si{\newton} (Newtons)
 	\subsubsection{Resultant Force}
-	The vector sum of a system of forces is called the resultant force: $\vv{R}=\vv{F_1}+\vv{F_2}+\dots\vv{F_n}$
+	The vector sum of a system of forces is called the resultant force: $\vv{R}=\vv{F_1}+\vv{F_2}+\dots+\vv{F_n}$
 	\subsubsection{Algebraic Resultant Force}
 	The scalar components of the resultant force are given by $R_x=F_{1x}+F_{2x}+\dots+F_{nx}$ and $R_y=F_{1y}+F_{2y}+\dots+F_{ny}$. The magnitude and direction given by the resultant force are given by $\mv{R}=\sqrt{{R_x}^2+{R_y}^2}$ and $\theta=\tan^{-1}(\dfrac{R_y}{R_x})$
 	\subsubsection{Equilibrium}
