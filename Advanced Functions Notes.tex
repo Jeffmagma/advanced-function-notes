@@ -921,10 +921,125 @@
 	\setcounter{subsection}{0}
 	\subsection{Exploring the Logarithmic Function}
 	\subsubsection{Logarithmic Functions}
+	The logarithmic function is defined as the inverse of the exponential function. If $f(x)=b^x$, then $f^{-1}(x)=\log_b(x)$, where $b$ is the base of the logarithm. $y=b^2\Leftrightarrow x=\log_bx$. Read: ``log(arithm) (to) base $b$ of $y$''. $y=b^x$ is called the exponential form and $x=\log_by$ is called the logarithmic form.
+	\subsubsection{Domain, Range, and Restrictions}
+	The domain and range are of the exponential defined by $b^x:$ $(-\infty,+\infty)\to(0,+\infty)$. Since the logarithmic function is the inverse, the domain and range are defined by $\log_bx:$ $(0,+\infty)\to(-\infty,+\infty)$. The base $b$ has the same restrictions as the base of the exponential function: $b>0$, $b\ne1$
+	\subsubsection{Basic Formulas}
+	\begin{itemize}
+		\item $\log_b1=0$
+		\item $\log_bb=1$
+		\item $\log_b\dfrac{1}{b}=-1$
+		\item $\log_{\frac{1}{b}}b=-1$
+		\item $\log_bb^n=n$
+	\end{itemize}
+	\subsubsection{Basic Equations}
+	I don't understand what's supposed to go here
+	\subsubsection{Graphs of Logarithmic Functions}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis y line*=left,
+			axis x line*=bottom,
+			ymin=-5,
+			xmin=-5,
+			ymax=5,
+			xmax=5,
+			axis equal,
+			axis lines=middle,
+			xlabel=$x$,
+			ylabel=$y$,
+			xtick distance=1,
+			ytick distance=1,
+		]
+			\addplot+[<->, mark=none, red, samples=128, line width=1pt]{log2(x)};
+		\end{axis}
+	\end{tikzpicture}
+	\subsubsection{Characteristics of Logarithmic Functions}
+	\begin{itemize}
+		\item Domain: $\set{x\in\mathbb{R}\mid x>0}$
+		\item Range: $\set{y\in\mathbb{R}}$
+		\item X-Intercepts $x=1$
+		\item Y-Intercepts none
+		\item Increasing: $(0,\,+\infty)$
+		\item Horizontal Asymptotes: none
+		\item Vertical Asymptotes: $x=0$
+		\item Continuity: continuous over entire function
+		\item One-to-One: yes
+		\item Key Points: $(1, 0)$
+	\end{itemize}
+	\subsubsection{Stuff From Class (Very Unorganized)}
 	$b^x$ is the exponential function, while $x^n$ is the power function. For the exponential function, the base, $b$, is defined as $b>0$ and $b\neq1$, to get a useful graph. You know you have an exponential function if the $1,2,3\dots n$th differences are all proportional.%example maybe
 	For exponential functions, the domain is $x\in\mathbb{R}$, while the range is $y\in\mathbb{R}\mid y>0$. They have a horizontal asymptote at $y=0$, but no vertical asymptote. There is a y-intercept at $y=1$, but there is no x-intercept. Their y-intercept is called an invariance point, as it doesn't change based on the base. Exponential functions are one-to-one functions, so their inverse is also a function.\\
 	Their inverse is the log function $f(x)=\log_bx$. They have an invariance point at (1, 0). The domain is $x\in\mathbb{R}\mid x>0$, and the range is $y\in\mathbb{R}$.  They have no y-intercept, but they have an x-intercept at $x=1$. They have a vertical asymptote at $y=0$, but no horizontal asymptote. The limits of the vertical asymptote are $\lim\limits_{x\to0^+}f(x)=-\infty$ if $b>1$, and $\lim\limits_{x\to0^+}f(x)=\infty$ if $0<b<1$.
-	\subsection{ASDf}
+	\subsection{Transformations of Logarithmic Functions}
+	The function $g(x)=a\log_b(b(x-c))+d$ is a transformation of the parent function $f(x)=\log_bx$. If $c>0$, then the domain is $(c, \infty)$. If $c<0$, then the domain is $(-\infty, c)$. There is a vertical asymptote at $x=c$
+	%examples
+	\subsection{Evaluating Logarithms}
+	\subsubsection{Specific Logarithms}
+	The logarithm to base 10 is called the decimal or common logarithm. We can use the shortcut $\log{10}x=\lg x$. The logarithm to base $e$ is called the natural logarithm. We can use the shortcut $\log_ex=\ln x$
+	\subsubsection{Evaluating Logarithms}
+	You can use the exponential-logarithmic conversion to evaluate a logarithm
+	\subsubsection{Technology}
+	Most scientific calculators have a log key to compute logarithms
+	\subsection{Laws of Logarithms}
+	\subsubsection{Power Law}
+	$\log_bx^n=n\log_bx$; $x>0$
+	\subsubsection{Product Law}
+	$\log_b(xy)=\log_bx+\log_by$; $x,y>0$
+	\subsubsection{Quotient Law}
+	$\log_b(\dfrac{x}{y})=\log_bx-\log_by$; $x,y>0$
+	\subsubsection{Change of Base Law}
+	$\log_ax=\dfrac{\log_bx}{\log_ba}$
+	\subsubsection{Change of Base Law for Exponential Functions}
+	$a^x=b^{x\log_ba}$
+	\subsection{Solving Exponential Equations}
+	\subsubsection{One-to-One Property}
+	The exponential function is a one-to-one function, so $a^x=a^y\Leftrightarrow x=y$; $a>0$, $a\ne1$, $x\in\mathbb{R}$, $y\in\mathbb{R}$
+	\subsubsection{Change of Variable}
+	Sometimes, changing the variable might help with solving the equation, for example $y\equiv a^x$
+	\subsubsection{Logarithms}
+	Sometimes, logarithms are needed to solve exponential equations.
+	\\For example:
+	\begin{align*}
+		2^{3x+1}&=5\\
+		3x+1&=\log_25\\
+		3x&=[]-1\\
+		x&=\dfrac{num}{3}\\
+		&=ff
+	\end{align*}
+	\subsubsection{Applications}
+	Many applications are related to solving exponential equations
+	%examples
+	\subsection{Solving Logarithmic Equations}
+	\subsubsection{Exponential-Logarithmic Conversion}
+	The following two expressions are equivalent: $b^x=y\Leftrightarrow x=\log_by$;\hspace{2ex}$b>0$, $b\ne1$, $y>0$, $x\in\mathbb{R}$
+	\subsubsection{One-to-One Property}
+	The logarithmic function is a one-to-one function, s: $\log_bx=\log_by\Leftrightarrow x=y$; $b>0$, $b\ne1$, $x\in\mathbb{R}$, $y\in\mathbb{R}$
+	\subsubsection{Technology}
+	\textit{there is nothing here}
+	\subsubsection{Inequalities and Logarithms}
+	If $b>1$ then $\log_bx>\log_by\Leftrightarrow x>y$. If $b<1$ then $\log_bx>\log_by\Leftrightarrow x<y$
+	\subsection{Solving Problems with Exponential and Logarithmic Functions}
+	\subsubsection{pH Values}
+	Chemists define the acidity or alkalinity of a substance according to the formula $\text{pH}=-\log[\text{H}^+]$, where $[\text{H}^+]$ is the hydrogen ion concentration, measured in moles per liter.
+	\begin{itemize}
+		\item Solutions with a pH value of less than 7 are acidic
+		\item Solutions with a pH value of greater than 7 are basic
+		\item Solutions with a pH value of 7 (like pure water) are neutral
+	\end{itemize}
+	\subsubsection{Sound Intensity}
+	``Loudness'' is measured in decibels. The formula for the loudness of a sound is given by $\text{dB}=10\log[I\div I_0]$, where $I_0$ is the intensity of the ``threshold sound'', or sound that can barely be perceived. Other sounds are defined in terms of how many times more intense they are than the threshold sound.\\
+	For example, a cat's purr is about 316 times as intense as a threshold sound:
+	\begin{align*}
+		\text{dB}&=10\log[I\div I_0]\\
+		&=10\log[316I_0\div I_0]\\
+		&=10\log[316]\\
+		&=24.9969...\\
+		&\approx\SI{25}{\deci\bel}
+	\end{align*}
+	\subsubsection{Earthquakes and Richter Scale}
+	Earthquake intensity is measured by the Richter Scale. The formula for the Richter rating of a given quake is given by $\text{R}=\log[I\div I_0]$, where $I_0$ is the intensity of the ``threshold quake'', or movement hat can barely be detected. Other quakes are defined in terms of how many times more intense they are than the threshold quake.
+	\subsubsection{Exponential Growth}
+	$A=Pe^{kt}$, where $A$ is the current value, $P$ is the initial value, $k$ is the growth factor, and $t$ is the time.
 	\tsubsection{AP Component: Hyperbolic Functions}
 	\tsubsection{AP Component: Inverse of Hyperbolic Functions}
 	To get the equation of the inverse of $\sinh x$, you can sub $x$ and $y$ into the definition of $\sinh x$:

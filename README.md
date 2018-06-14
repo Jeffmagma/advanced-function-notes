@@ -38,11 +38,18 @@ Remember to surround multi-character exponents or subscripts with curly braces
 - [ ] Unit 3
   - [x] 5.1
   - [x] 5.2
-  - [ ] 5.3
-  - [ ] 5.4
-  - [ ] 5.5
-  - [ ] 5.6
+  - [x] 5.3
+  - [x] 5.4
+  - [x] 5.5
+  - [ ] 5.6 (no pdf?)
 - [ ] Unit 4
+  - [x] 8.1
+  - [x] 8.2
+  - [x] 8.3
+  - [x] 8.4
+  - [x] 8.5
+  - [x] 8.6
+  - [x] 8.7
 - [ ] Unit 5
 - [ ] Unit 6
 - [x] Unit 7
