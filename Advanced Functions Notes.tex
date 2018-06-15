@@ -12,6 +12,7 @@
 \cftpagenumbersoff{subsubsection}
 \renewcommand{\baselinestretch}{1.2}
 \setitemize{itemsep=0pt}
+\DeclareMathOperator{\sech}{sech}
 
 \newcommand{\tsection}[1]{
 	\section*{#1}
@@ -1041,6 +1042,23 @@
 	\subsubsection{Exponential Growth}
 	$A=Pe^{kt}$, where $A$ is the current value, $P$ is the initial value, $k$ is the growth factor, and $t$ is the time.
 	\tsubsection{AP Component: Hyperbolic Functions}
+	\tsubsubsection{Hyperbolic Functions}
+	The hyperbolic functions are defined by:
+	\begin{align*}
+		\sinh x&=\frac{e^x-e^{-x}}{2}\\
+		\cosh x&=\frac{e^x+e^{-x}}{2}\\
+		\tanh x&=\frac{\sinh x}{\cosh x}
+	\end{align*}
+	Identities:
+	\begin{align*}
+		\cosh^2x-\sinh^x=1\\
+		\sinh'x=\cosh x\\
+		1-\tanh^x=\sech^2x\\
+		\cosh(-x)=\cosh x\\
+		\sinh(-x)=-\sinh x\\
+		\sinh2x=2\sinh x\cosh x\\
+		\cosh2x=\cosh^2x+\sinh^2x
+	\end{align*}
 	\tsubsection{AP Component: Inverse of Hyperbolic Functions}
 	To get the equation of the inverse of $\sinh x$, you can sub $x$ and $y$ into the definition of $\sinh x$:
 	\begin{align*}
@@ -1050,6 +1068,20 @@
 		e^y-e^{-y}-2x&=0\\
 		e^{2y}-2xe^y-1&=0\\
 		\text{After plugging into quadratic formula: }e^y&=\frac{-(-2x)\pm\sqrt{(2x)^2-4(1)(-1)}}{2(1)}\\
+		&=\frac{2x\pm\sqrt{4x^2+4}}{2}\\
+		&=\frac{2x\pm\sqrt{4(x^2+1)}}{2}\\
+		&=x\pm\sqrt{x^2+1}\\
+		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2+1}\\
+		\sinh^{-1}x&=\ln\left(x+\sqrt{x^2+1}\right)
+	\end{align*}
+	To get the equation of the inverse of $\cosh x$, you can sub $x$ and $y$ into the definition of $\cosh x$:
+	\begin{align*}
+		x&=\cosh y&\\
+		&=\frac{e^y+e^{-y}}{2}\\
+		2x&=e^y+e^{-y}\\
+		e^y+e^{-y}-2x&=0\\
+		e^{2y}-2xe^y+1&=0\\
+		\text{Factor: }(e^y-1)^2&=0\\
 		&=\frac{2x\pm\sqrt{4x^2+4}}{2}\\
 		&=\frac{2x\pm\sqrt{4(x^2+1)}}{2}\\
 		&=x\pm\sqrt{x^2+1}\\
