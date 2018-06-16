@@ -20,11 +20,11 @@
 }
 \newcommand{\tsubsection}[1]{
 	\subsection*{#1}
-	\addcontentsline{toc}{subsection}{\protect\large #1}
+	\addcontentsline{toc}{subsection}{#1}
 }
 \newcommand{\tsubsubsection}[1]{
 	\subsubsection*{#1}
-	\addcontentsline{toc}{subsubsection}{\protect\large #1}
+	\addcontentsline{toc}{subsubsection}{#1}
 }
 \newcommand{\mv}[1]{
 	\lVert\vv{#1}\rVert
@@ -1060,9 +1060,10 @@
 		\cosh2x=\cosh^2x+\sinh^2x
 	\end{align*}
 	\tsubsection{AP Component: Inverse of Hyperbolic Functions}
+	\tsubsubsection{Inverse Hyperbolic Sine Function}
 	To get the equation of the inverse of $\sinh x$, you can sub $x$ and $y$ into the definition of $\sinh x$:
 	\begin{align*}
-		x&=\sinh y&\\
+		x&=\sinh y\\
 		&=\frac{e^y-e^{-y}}{2}\\
 		2x&=e^y-e^{-y}\\
 		e^y-e^{-y}-2x&=0\\
@@ -1074,23 +1075,55 @@
 		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2+1}\\
 		\sinh^{-1}x&=\ln\left(x+\sqrt{x^2+1}\right)
 	\end{align*}
+	The domain is $x\in\mathbb{R}$ and the range is $f\in\mathbb{R}$.
+	\tsubsubsection{Inverse Hyperbolic Cosine Function}
 	To get the equation of the inverse of $\cosh x$, you can sub $x$ and $y$ into the definition of $\cosh x$:
 	\begin{align*}
-		x&=\cosh y&\\
+		x&=\cosh y\\
 		&=\frac{e^y+e^{-y}}{2}\\
 		2x&=e^y+e^{-y}\\
 		e^y+e^{-y}-2x&=0\\
 		e^{2y}-2xe^y+1&=0\\
-		\text{Factor: }(e^y-1)^2&=0\\
-		&=\frac{2x\pm\sqrt{4x^2+4}}{2}\\
-		&=\frac{2x\pm\sqrt{4(x^2+1)}}{2}\\
-		&=x\pm\sqrt{x^2+1}\\
-		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2+1}\\
-		\sinh^{-1}x&=\ln\left(x+\sqrt{x^2+1}\right)
+		\text{After plugging into quadratic formula: }e^y&=\frac{-(-2x)\pm\sqrt{(2x)^2-4(1)(1)}}{2(1)}\\
+		&=\frac{2x\pm\sqrt{4x^2-4}}{2}\\
+		&=\frac{2x\pm\sqrt{4(x^2-1)}}{2}\\
+		&=x\pm\sqrt{x^2-1}\\
+		\because e^y>0\therefore&\text{ we can only take }x+\sqrt{x^2-1}\\
+		\cosh^{-1}x&=\ln\left(x+\sqrt{x^2-1}\right)
+	\end{align*}
+	The domain is $x\in\mathbb{R}\mid x\ge1$ and the range is $f\in\mathbb{R}\mid y\ge0$.
+	\tsubsubsection{Inverse Hyperbolic Tangent Function}
+	To get the equation of the inverse of $\tanh x$, you can sub $x$ and $y$ into the definition of $\tanh x$:
+	\begin{align*}
+		x&=\tanh y\\
+		&=\frac{\sinh x}{\cosh x}\\
+		&=\frac{e^y-e^{-y}}{e^y+e^{-y}}\\
+		&=\frac{e^y-e^{-y}}{e^y+e^{-y}}\times\frac{e^y}{e^y}\\
+		&=\frac{e^{2y}-1}{e^{2y}+1}\\
+		xe^{2y}+x&=e^{2y}-1\\
+		x+1&=e^{2y}(1-x)\\
+		e^{2y}&=\frac{1+x}{1-x}\\
+		2y&=\ln\frac{1+x}{1-x}\\
+		y&=\frac{1}{2}\ln\frac{1+x}{1-x}\\
+	\end{align*}
+	\tsubsubsection{Inverse Hyperbolic Cotangent Function}
+	To get the equation of the inverse of $\coth x$, you can sub $x$ and $y$ into the definition of $\coth x$:
+	\begin{align*}
+		x&=\coth y\\
+		&=\frac{\cosh x}{\sinh x}\\
+		&=\frac{e^y+e^{-y}}{e^y-e^{-y}}\\
+		&=\frac{e^y+e^{-y}}{e^y-e^{-y}}\times\frac{e^y}{e^y}\\
+		&=\frac{e^{2y}+1}{e^{2y}-1}\\
+		xe^{2y}-x&=e^{2y}+1\\
+		e^{2y}(x-1)=x+1\\
+		e^{2y}&=\frac{x+1}{x-1}\\
+		2y&=\ln\frac{x+1}{x-1}\\
+		y&=\frac{1}{2}\ln\frac{1+x}{1-x}\\
 	\end{align*}
 	\tsection{Unit 5: Rates of Change and Derivatives}
 	\setcounter{section}{2}
 	\setcounter{subsection}{1}
+	\setcounter{subsubsection}{0}
 	\tsubsection{AP Component: Derivative Functions and First Principles}
 	\subsubsection{Derivative Functions}
 	Given a function $y=f(x)$, the \textit{derivative function} of $f$ is a new function , $f'$ ($f$ prime), defined at $x$ by:
@@ -1132,8 +1165,28 @@
 	\subsubsection{Sum and Difference Rules}
 	$(f(x)\pm g(x))'=f'(x)\pm g'(x)$
 	\subsubsection{Tangent Line}
-	To find the equation of a tangent line at the point $(a, f(a))$, find the derivative function $f'(x)$
-	
+	To find the equation of a tangent line at the point $(a, f(a))$, find the derivative function $f'(x)$, find the slope at $a$ using $m=f'(a)$, then use the slope-point formula to get the equation: $y-f(a)=m(x-a)$
+	\subsubsection{Normal Line}
+	If $m_T$ is the slope of the tangent line, then the slope of the normal line is given by $m_N=-\dfrac{1}{m_T}$
+	\subsubsection{Differentiability for Piecewise Defined Functions}
+	For a piecewise defined function: $f(x)=\begin{cases}
+		f_1(x)&x<a\\
+		c&x=a\\
+		f_2(x)&x>a
+	\end{cases}$, the function $f$ is differentiable at $x=a$ if the function is continuous at $x=a$, and ${f_1}'(a)={f_2}'(a)$
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Product Rule}
+	\subsubsection{Product Rule}
+	If $f$ and $g$ are differentiable at $x$, then so is $fg$, and $(fg)'=f'g+g'f$
+	\subsubsection{Product of Three Functions}
+	If $f$, $g$, and $h$ are differentiable at $x$, then so is $fgh$, and $(fgh)'=f'gh+fg'h+fgh'$\\
+	Proof: $(fgh)'=(fg)'h+fgh'=(f'g+gf')h+fgh'=f'gh+fg'h+fgh'$
+	\subsubsection{Generalized Power Rule}
+	If $f$ is differentiable at $x$, then so is $f^n$, and $(f^n)'=nf^{n-1}f'$\\
+	Proof for $n=3$: using $(fgh)'=f'gh+fg'h+fgh'$, replace all functions with $f$ to get $f'ff+ff'f+fff'=3f^2f'$
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Quotient Rule}
+	If $f$ and $g$ are differentiable at $x$ and $g(x)\ne0$, then so is $\dfrac{f}{g}$, and $\left(\dfrac{f}{g}\right)'=\dfrac{f'g-g'f}{g^2}$
 	\setcounter{section}{5}
 	\setcounter{subsection}{1}
 	\setcounter{subsubsection}{0}
@@ -1152,9 +1205,16 @@
 	The exponential function $e^x$ may be evaluated using the limit $e^x=\lim\limits_{n\to\infty}\left(1+\dfrac{x}{n}\right)^n$, proof:
 	\[\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n=\lim_{n\to\infty}\left(\left(1+\frac{x}{n}\right)^\frac{n}{x}\right)^x=\left(\lim_{u\to0}\left(1+u\right)^\frac{1}{u}\right)^x=e^x\]
 	\subsubsection{Derivative of $e^x$}
-	The derivative of $e^x$ is $e^x$ itself, proof: 
+	The derivative of $e^x$ is $e^x$ itself, proof: $later$ 
 	\subsubsection{Derivative of $e^f(x)$}
-	Using the chain rule and the fact that ${e^x}'=e^x$, $e^{f(x)\prime}=$
+	Using the chain rule and the fact that ${e^x}'=e^x$, $e^{f(x)\prime}=e^{f(x)}f'(x)$
+	\subsubsection{Derivative of $b^x$, $b>0$, $b\ne1$}
+	$(b^x)'=b^x\ln b$
+	\subsubsection{Derivative of $b^{f(x)}$}
+	Using the chain rule, and the fact that $(b^x)'=b^x\ln b$, $(b^{f(x)})'=b^{f(x)}f'(x)\ln b$
+	\setcounter{subsection}{2}
+	\tsubsection{AP Component: Derivatives of Logarithmic Functions}
+	
 	\tsection{Unit 6: Introduction to Vectors}
 	\setcounter{section}{6}
 	\setcounter{subsection}{0}

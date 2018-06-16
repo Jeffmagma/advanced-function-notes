@@ -50,6 +50,8 @@ Remember to surround multi-character exponents or subscripts with curly braces
   - [x] 8.5
   - [x] 8.6
   - [x] 8.7
+  - [x] asdf
+  - [ ] asdf2
 - [ ] Unit 5
 - [ ] Unit 6
 - [x] Unit 7
