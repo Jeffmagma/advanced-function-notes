@@ -239,7 +239,7 @@
 		\node[below left] (x) at (3,0) {$x$};
 		\draw[->] (0,0) -- (3,0);
 		\filldraw (2,0) circle[radius=2pt];
-		\draw[thick] (1,0) -- (2,0);
+		\draw[line width=1.5pt] (1,0) -- (2,0);
 		\draw[fill=white] (1,0) circle[radius=2pt];
 	\end{tikzpicture}
 	\subsubsection{Transformations}
@@ -1174,6 +1174,7 @@
 		c&x=a\\
 		f_2(x)&x>a
 	\end{cases}$, the function $f$ is differentiable at $x=a$ if the function is continuous at $x=a$, and ${f_1}'(a)={f_2}'(a)$
+	\setcounter{subsection}{3}
 	\setcounter{subsubsection}{0}
 	\tsubsection{AP Component: Product Rule}
 	\subsubsection{Product Rule}
@@ -1184,9 +1185,47 @@
 	\subsubsection{Generalized Power Rule}
 	If $f$ is differentiable at $x$, then so is $f^n$, and $(f^n)'=nf^{n-1}f'$\\
 	Proof for $n=3$: using $(fgh)'=f'gh+fg'h+fgh'$, replace all functions with $f$ to get $f'ff+ff'f+fff'=3f^2f'$
+	\setcounter{subsection}{4}
 	\setcounter{subsubsection}{0}
 	\tsubsection{AP Component: Quotient Rule}
+	\subsubsection{Quotient Rule}
 	If $f$ and $g$ are differentiable at $x$ and $g(x)\ne0$, then so is $\dfrac{f}{g}$, and $\left(\dfrac{f}{g}\right)'=\dfrac{f'g-g'f}{g^2}$
+	\setcounter{subsection}{5}
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Chain Rule}
+	\subsubsection{Composition of Functions}
+	If $u=g(x)$ and $v=f(u)$, then \tikz[baseline]{
+		\node (x) at (0,0) {$x$};
+		\node (u) at (2,0) {$u$};
+		\node (v) at (4,0) {$v$};
+		
+		\draw[->] (x) -- (u) node[pos=.5, above] {$u=g(x)$};
+		\draw[->] (u) -- (v) node[pos=.5, above] {$v=f(u)$};
+	} and $v=f(u)=f(g(x))=(f\circ g)(x)$
+	\subsubsection{Chain Rule (Leibniz Notation)}
+	\tikz[baseline]{
+		\node (x) at (0,0) {$\Delta x$};
+		\node (u) at (2,0) {$\Delta u$};
+		\node (v) at (4,0) {$\Delta v$};
+		
+		\draw[->] (x) -- (u) node[pos=.5, above] {$u=g(x)$};
+		\draw[->] (u) -- (v) node[pos=.5, above] {$v=f(u)$};
+	} and $\dfrac{\Delta v}{\Delta x}=\dfrac{\Delta v}{\Delta u}\dfrac{\Delta u}{\Delta x}\ \to\ \dod{v}{x}=\dod{v}{u}\dod{u}{x}$
+	\subsection{Composition of Three Functions}
+	\tikz[baseline]{
+		\node (x) at (0,0) {$x$};
+		\node (u) at (2,0) {$u$};
+		\node (v) at (4,0) {$v$};
+		\node (w) at (6,0) {$w$};
+		
+		\draw[->] (x) -- (u) node[pos=.5, above] {$u=h(x)$};
+		\draw[->] (u) -- (v) node[pos=.5, above] {$v=g(u)$};
+		\draw[->] (v) -- (w) node[pos=.5, above] {$w=f(v)$};
+	} $\dod{w}{x}=\dod{w}{v}\dod{v}{u}\dod{u}{x}$
+	\subsubsection{Chain Rule (Lagrange Notation)}
+	$v=f(u)=f(g(x))=(f\circ g)(x);\ \dod{v}{x}=(f(g(x)))';\ \dod{v}{u}=f'(u)=f'(g(x));\ \dod{u}{x}=g'(x)$\\
+	$\dod{v}{x}=\dod{v}{u}\dod{u}{x}\ \to\ (f(g(x)))'=f'(g(x))g'(x)$\\
+	If $g$ is differentiable at $x$ and $f$ is differentiable at $g(x)$, then the composition $(f\circ g)(x)=f(g(X))$ is differentiable at $x$ and $(f\circ g)'(x)=(f(g(x)))'=f'(g(x))g'(x)$. So, the derivative of $f(g(x))$ is the derivative of $f$ evaluated of $g$ multiplied by the derivative of $g$
 	\setcounter{section}{5}
 	\setcounter{subsection}{1}
 	\setcounter{subsubsection}{0}
@@ -1213,8 +1252,67 @@
 	\subsubsection{Derivative of $b^{f(x)}$}
 	Using the chain rule, and the fact that $(b^x)'=b^x\ln b$, $(b^{f(x)})'=b^{f(x)}f'(x)\ln b$
 	\setcounter{subsection}{2}
+	\setcounter{subsubsection}{0}
 	\tsubsection{AP Component: Derivatives of Logarithmic Functions}
-	
+	\subsubsection{Review of Logarithmic Functions}
+	\begin{itemize}
+		\item $b^x\Leftrightarrow x=\log_by$
+		\item $y=f(x)=\log_bx$, $b>0$, $b\ne1$, $x>0$
+		\item $\log_b(xy)=\log_bx+\log_by$
+		\item $\log_b\dfrac{x}{y}=\log_bx-\log_by$
+		\item $\ln x=\log_ex$
+		\item $\log x=\log_{10}x$
+		\item $\log_bx^n=n\log_bx$
+		\item $\log_bx=\dfrac{\log_ax}{\log_ab}$
+		\item $\log_b1=0$
+		\item $\log_bb=1$
+	\end{itemize}
+	\subsubsection{Derivative of $\ln x$}
+	$(\ln x)'=\dfrac{1}{x}$, proof
+	\subsubsection{Derivative of $\ln f(x)$}
+	Using chain rule and $(\ln x)'=\dfrac{1}{x}$, $(\ln f(x))'=\dfrac{f'(x)}{f(x)}$
+	\subsubsection{Derivative of $\log_bx$}
+	$(\log_bx)'=\dfrac{1}{x\ln b}$, proof
+	\subsubsection{Derivative of $\log_bf(x)$}
+	Using chain rule and $(\log_bx)'=\dfrac{1}{x\ln b}$, $(\log_bf(x))'=\dfrac{f'(x)}{f(x)\ln b}$
+	\setcounter{subsection}{4}
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Derivatives of Trigonometric Functions}
+	\subsubsection{Review of Trigonometric Functions}
+	\begin{itemize}
+		\item $\sin x:\mathbb{R}\to[-1,1]$
+		\item $\cos x:\mathbb{R}\to[-1,1]$
+		\item $\sin(x+\dfrac{\pi}{2})=\cos x$
+		\item $\sin(x+2\pi)=\sin(x)$
+		\item $\cos(x+2\pi)=\cos(x)$
+		\item $\sin(x+\pi)=-\sin x$
+		\item $\sin(2x)=2\sin x\cos x$
+		\item $\cos(2x)=\cos^2x-\sin^2x$
+		\item $\tan x=\dfrac{\sin x}{\cos x}$
+		\item $\tan x:\set{x\in\mathbb{R}\mid x\ne\dfrac{\pi}{2}+n\pi,n\in\mathbb{Z}}\to\mathbb{R}$
+	\end{itemize}
+	\subsubsection{Derivate of $\sin x$}
+	$(\sin x)'=\cos x$
+	\subsubsection{Derivative of $\sin f(x)$}
+	$(\sin f(x))'=(\cos f(x))f'(x)$
+	\subsubsection{Derivative of $\cos x$}
+	$(\cos x)'=-\sin x$
+	\subsubsection{Derivative of $\cos f(x)$}
+	$(\cos f(x))'=-(\sin f(x))f'(x)$
+	\subsubsection{Derivative of $\tan x$}
+	$(\tan x)'=\sec^2(x)$
+	\setcounter{section}{1}
+	\setcounter{subsection}{5}
+	\setcounter{subsubsection}{0}
+	\tsubsection{AP Component: Tangent and Normal Lines}
+	\subsubsection{Lines}
+	The equation of a non vertical line in slope y-intercept form is $y=mx+b$, where $m$ is the slope and $b$ is the y-intercept. If two points $P_1(x_1,y_1)$ and $P_2(x_2,y_2)$ are on a line, the slope of the line is given by $m=\dfrac{y_2-y_1}{x_2-x_1}$. If given the slope of the line and a point $P(x_1,y_1)$ on the line, then the equation of the line is $y-y_1=m(x-x_1)$
+	\subsubsection{Parallel and Perpendicular Lines}
+	The slopes of two parallel lines are equal ($m_1=m_2$). The slopes of two perpendicular lines are negative reciprocal $\left(m_1=-\dfrac{1}{m_2}\text{ or }m_1m_2=-1\right)$
+	\subsubsection{Tangent Line}
+	Consider a function $y=f(x)$ and a point $P(a, f(a))$ on its graph. The slope of the tangent line passing through $P$ is given by $m=\lim\lim\limits_{x\to a}\dfrac{f(x)-f(a)}{x-a}$ or $m=\lim\lim\limits_{x\to a}\dfrac{f(x)-f(a)}{x-a}$. The equation of a tangent line passing through $P$ and having slope $m$ is $y-f(a)=m(x-a)$
+	\subsubsection{Normal Line}
+	Consider a function $y=f(x)$ and a point $P(a, f(a))$ on its graph. The normal line passing through the point $P$ is perpendicular to the tangent line passing through the same point. The equation of the normal line passing through the point $P(a, f(a))$ where the slope of the tangent line is $m$ is given by $y-f(a)=-\dfrac{1}{m}(x-a)$
 	\tsection{Unit 6: Introduction to Vectors}
 	\setcounter{section}{6}
 	\setcounter{subsection}{0}
@@ -1292,7 +1390,7 @@
 	The magnitude of the vector difference is given by $\lVert\vv{a}-\vv{b}\rVert=\mv{a}^2+\mv{b}-2\mv{a}\mv{b}\cos\theta$
 	\subsection{Multiplication of Vectors by Scalars}
 	\subsubsection{Multiplication of a Vector by a Scalar}
-	My multipying a vector $\vv{v}$ by a scalar $k$, we obtain a new vectot $k\vv{v}$ with the properties that $k\vv{v}$ has the same direction as $\vv{v}$ if $k>0$ and the opposite direction of $k<0$. As well, $\lVert k\vv{v}\rVert=|k|\times\mv{v}$
+	My multipying a vector $\vv{v}$ by a scalar $k$, we obtain a new vector $k\vv{v}$ with the properties that $k\vv{v}$ has the same direction as $\vv{v}$ if $k>0$ and the opposite direction of $k<0$. As well, $\lVert k\vv{v}\rVert=|k|\times\mv{v}$
 	\subsubsection{Properties}
 	The following properties apply for the multiplication of a vector by a scalar:
 	\begin{itemize}
@@ -1340,11 +1438,11 @@
 	\subsubsection{Position 2D Vector}
 	The directed line segment $\vv{OP}$ from the origin $O$ to a generic point $P(x, y)$ determines a vector called a position vector, and $\vv{OP}=(x,\,y)=x\vv{i}+y\vv{j}$
 	\subsubsection{Displacement 2D Vector}
-	The directed line segment $\vv{AB}$ from the point $A(x_A, y_A)$ to the point $B(x_B, y_B)$ determines a vector called a displacment vector and $\vv{AB}=(x_B-x_A,\,y_B-y_A)=(x_B-x_A)\vv{i}+(y_B-y_A)\vv{j}$
+	The directed line segment $\vv{AB}$ from the point $A(x_A, y_A)$ to the point $B(x_B, y_B)$ determines a vector called a displacement vector and $\vv{AB}=(x_B-x_A,\,y_B-y_A)=(x_B-x_A)\vv{i}+(y_B-y_A)\vv{j}$
 	\subsubsection{Direction Angles}
 	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Direction angles are the angles $\alpha$, $\beta$, and $\gamma$ between the vector and the positive directions of the coordinate axes. %graph if 3D
 	\subsubsection{Scalar Components of a 3D Vector}
-	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Parallel planes throught its tip to the coordinate planes intersec the x-axis at $v_x$, the y-axis at $v_y$, and the z-axis at $v_z$. The triple $(v_x,\,v_y,\,v_z)$ determines the scalar components of the 3D vector and $\vv{v}=(v_x,\,v_y,\,v_z)$. %graph
+	Let us consider a 3D coordinate system and a 3D vector $\vv{v}$ with a tail at the origin $O$. Parallel planes through its tip to the coordinate planes intersect the x-axis at $v_x$, the y-axis at $v_y$, and the z-axis at $v_z$. The triple $(v_x,\,v_y,\,v_z)$ determines the scalar components of the 3D vector and $\vv{v}=(v_x,\,v_y,\,v_z)$. %graph
 	\subsubsection{Link Between Direction Angles and 3D Scalar Components}
 	The link between the direction angles ($\alpha$, $\beta$, and $\gamma$) and the scalar components ($v_x$, $v_x$, and $v_z$) is given by
 	\begin{align*}
@@ -1354,13 +1452,50 @@
 		&&\cos^2\alpha+\cos^2\beta&+\cos^2\gamma=1
 	\end{align*}
 	\subsubsection{Magnitude of a 3D Algebraic Vector}
-	The magnitud of a vector $\vv{v}=(v_x,\,v_y,\,v_z)$ is given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
+	The magnitude of a vector $\vv{v}=(v_x,\,v_y,\,v_z)$ is given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
 	\subsubsection{3D Standard Unit Vectors}
 	The unit vectors $\vv{i}=(1,\,0,\,0)$, $\vv{j}=(0,\,1,\,0)$, and $\vv{k}=(0,\,0,\,1)$ are called the standard unit vecors in 3D space. %graph
 	\subsubsection{Vector components for a 3D Vector}
-	Any 3D vector $\vv{v}$ may be decomposed into three perpendicular vector components
+	Any 3D vector $\vv{v}$ may be decomposed into three perpendicular vector components $\vv{v_x}$, $\vv{v_y}$ and $\vv{v_z}$, parallel to each of the standard unit vectors. \textit{some more useless info}
+	\subsubsection{O Position 3D Vector}
+	The directed line segment $\vv{OP}$ from the origin $O$ to a generic point $P(x,y,z)$ determines a vector called the position vector, and $\vv{OP}=(x,\,y,\,z)$
+	\subsubsection{Displacement 3D Vector}
+	The directed line $\vv{AB}$ from the point $A(x_A,y_A,z_A)$ to the point $B(x_B,y_B,z_B)$ determines a vector called the displacement vector and $\vv{AB}=(x_B-x_A,y_B-y_A,z_B-z_A)$
 	\subsection{Operations with Vectors in $R^2$}
+	\subsubsection{2D Algebraic Vectors}
+	A 2D algebraic vector may be written in component form as $\vv{v}=(v_x,\,v_y)$, in terms of unit vectors as $\vv{v}=v_x\vv{i}+v_y\vv{j}$ and has a magnitude given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2}$
+	\subsubsection{Addition of 2D Algebraic Vectors}
+	The sum of two 2D algebraic vectors $\vv{a}$ and $\vv{b}$ is a 2D algebraic vector given by $\vv{a}+\vv{b}=(a_x+b_x,\,a_y+b_y)$
+	\subsubsection{Subtraction of 2D Algebraic Vectors}
+	The difference of two 2D algebraic vectors $\vv{a}$ and $\vv{b}$ is a 2D algebraic vector given by $\vv{a}-\vv{b}=(a_x-b_x,\,a_y-b_y)$
+	\subsubsection{Multiplication of a 2D Algebraic Vector by a Scalar}
+	The multiplication of a 2D algebraic vector $\vv{a}$ by a scalar $\lambda$ is a 2D algebraic vector given by $\lambda\vv{a}=(\lambda a_x,\,\lambda a_y)$
+	\subsubsection{Vector Equations}
+	You can use backward operations to solve equations involving vectors:
+	\begin{itemize}
+		\item $\vv{x}+\vv{a}=\vv{b}\Rightarrow\vv{x}=\vv{b}-\vv{a}$
+		\item $\vv{a}-\vv{x}=\vv{b}\Rightarrow\vv{x}=\vv{a}-\vv{b}$
+		\item $\lambda\vv{x}=\vv{a}\Rightarrow\vv{x}=\dfrac{1}{\lambda}\vv{a}$
+	\end{itemize}
 	\subsection{Operations with Algebraic Vectors in $R^3$}
+	\subsubsection{3D Algebraic Vectors}
+	A 3D algebraic vector may be written in component form as $\vv{v}=(v_x,\,v_y,\,v_z)$, in terms of unit vectors as $\vv{v}=v_x\vv{i}+v_y\vv{j}+v_z\vv{k}$ and has a magnitude given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
+	\subsubsection{Addition of 3D Algebraic Vectors}
+	The sum of two 2D algebraic vectors $\vv{a}$ and $\vv{b}$ is a 3D algebraic vector given by $\vv{a}+\vv{b}=(a_x+b_x,\,a_y+b_y,\,a_z+b_z)$
+	\subsubsection{Subtraction of 3D Algebraic Vectors}
+	The difference of two 2D algebraic vectors $\vv{a}$ and $\vv{b}$ is a 3D algebraic vector given by $\vv{a}-\vv{b}=(a_x-b_x,\,a_y-b_y,\,a_z-b_z)$
+	\subsubsection{Multiplication of a 3D Algebraic Vector by a Scalar}
+	The multiplication of a 2D algebraic vector $\vv{a}$ by a scalar $\lambda$ is a 3D algebraic vector given by $\lambda\vv{a}=(\lambda a_x,\,\lambda a_y,\,\lambda a_z)$
+	\subsubsection{Midpoint}
+	The midpoint of the line segment $AB$ is the point $M$ such that $\vv{MA}+\vv{MB}=0$
+	\subsubsection{Centroid}
+	The centroid of a system of point $P_1,P_2,\dots,P_n$ is a point $C$ defined by $\vv{OC}=\dfrac{\vv{OP_1}+\vv{OP_2}+\dots+\vv{OP_n}}{n}$
+	\subsubsection{Parallelism}
+	Two vectors $\vv{a}$ and $\vv{b}$ are parallel ($\vv{a}\|\vv{b}$) if there exists $\lambda$ such that $\vv{a}=\lambda\vv{b}$
+	\subsubsection{Co-Linearity}
+	Three points $A$, $B$, and $C$ are collinear if $\vv{AB}\|\vv{BC}$
+	\subsubsection{Linear Dependency}
+	Three vectors $\vv{a}$, $\vv{b}$, and $\vv{c}$ are linear dependent if there exists $\lambda$ and $\mu$ such that $\vv{c}=\lambda\vv{a}+\mu\vv{b}$
 	\tsection{Unit 7: Vector Applications}
 	\setcounter{section}{7}
 	\setcounter{subsection}{0}
