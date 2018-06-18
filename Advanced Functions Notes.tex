@@ -258,16 +258,16 @@
 	\subsubsection{X and Y Intercepts}
 	The x-intercepts are the $x$ values such that $f(x)=0$. The y-intercepts are the $y$ values such that $y=f(0)$, if it exists
 	\subsubsection{Intervals of Increase or Decrease (Turning Points)}
-	The function increases if the slope of the tangent line is positive (the graph is going right and up). The function decreases if the slope of the tangent line is negative (the graph is going right and down). A turning point is a point where the functionchanges from increasing to decreasing or vice versa.
+	The function increases if the slope of the tangent line is positive (the graph is going right and up). The function decreases if the slope of the tangent line is negative (the graph is going right and down). A turning point is a point where the function changes from increasing to decreasing or vice versa.
 	\subsubsection{Maximum and Minimum Points}
 	The point $(a,\,f(a))$ is a maximum point if $f(a)\geqslant f(x)$ in the neighborhood of $x=a$. The point $(a,\,f(a))$ is a minimum point of $f(a)\leqslant f(x)$ in the neighborhood of $x=a$.
 	\subsubsection{Odd and Even Functions}
 	The function $f$ is even if $f(x)=f(-x)$ (the graph is symmetric about the y-axis. The function $f$ is odd if $f(-x)=-f(x)$ (the graph is symmetric about the origin
 	\subsubsection{Continuous and Discontinuous Functions}
-	The graph of a continuous function can be drawn without lifting pencil from paper. A continuous functionhas no holes, finite gaps (jumps), or infinite breaks.
-	\subsubsection{Vertical and Horionztal Asymptotes}
+	The graph of a continuous function can be drawn without lifting pencil from paper. A continuous function has no holes, finite gaps (jumps), or infinite breaks.
+	\subsubsection{Vertical and Horizontal Asymptotes}
 	The vertical line $x=a$ is a vertical asymptote if the $y$ values become unbounded (approach infinity) in the neighborhood of $x=a$. The horizontal line $y=a$ is a horizontal asymptote if the values of $y$ become close to $a$ as $x$ becomes unbounded (approaches infinity)
-	\subsubsection{Horzontal and Vertical Tangent Lines}
+	\subsubsection{Horizontal and Vertical Tangent Lines}
 	The graph of a function may have points where the tangent line is horizontal (slope is zero) or vertical (slope is unbounded/approaches infinity)
 	\subsubsection{End Behavior}
 	The end behavior is related to the $y$ values as $x$ becomes unbounded (approaches infinity)
@@ -392,7 +392,7 @@
 		x-2&\text{if }x\geq2\\
 		-x+2&\text{if }x<2
 	\end{cases}$\\
-	The heaviside function can be represented as $h(x)=\begin{cases}
+	The Heaviside function can be represented as $h(x)=\begin{cases}
 		1&\text{if }x\geq0\\
 		0&\text{if }x<0
 	\end{cases}$\\
@@ -441,7 +441,7 @@
 	The domains of $f+g$, $f-g$, and $fg$ is $D_f\cap D_g$ (the intersection between the domains of $f$ and $g$). The domain of $\dfrac{f}{g}$ is $\set{x\in D_f\cap D_g\mid g(x)\neq0}$
 	\setcounter{section}{9}
 	\setcounter{subsection}{1}
-	\subsection{Sums and Differerences of Functions}
+	\subsection{Sums and Differences of Functions}
 	\subsubsection{Definitions}
 	The sums and difference of two functions are defined by
 	\begin{itemize}
@@ -1003,9 +1003,9 @@
 	\begin{align*}
 		2^{3x+1}&=5\\
 		3x+1&=\log_25\\
-		3x&=[]-1\\
-		x&=\dfrac{num}{3}\\
-		&=ff
+		3x&=\log_25-1\\
+		x&=\dfrac{\log_25-1}{3}\\
+		&\approx.44
 	\end{align*}
 	\subsubsection{Applications}
 	Many applications are related to solving exponential equations
@@ -1096,7 +1096,7 @@
 	To get the equation of the inverse of $\tanh x$, you can sub $x$ and $y$ into the definition of $\tanh x$:
 	\begin{align*}
 		x&=\tanh y\\
-		&=\frac{\sinh x}{\cosh x}\\
+		&=\frac{\sinh y}{\cosh y}\\
 		&=\frac{e^y-e^{-y}}{e^y+e^{-y}}\\
 		&=\frac{e^y-e^{-y}}{e^y+e^{-y}}\times\frac{e^y}{e^y}\\
 		&=\frac{e^{2y}-1}{e^{2y}+1}\\
@@ -1368,8 +1368,8 @@
 	\subsubsection{Polygon Rule}
 	To find the sum of $n$ geometric vectors, place each vector with its tail at the head of the previous vector.
 	%graph
-	\subsubsection{Parellogram Rule (Tail to Tail Rule)}
-	To add two geometric vectors, you can also place their tails at the same point, and form a parellelogram using the vectors as the two sides. The sum is the diagonal of the parallelogram starting from the common tail point.
+	\subsubsection{Parallelogram Rule (Tail to Tail Rule)}
+	To add two geometric vectors, you can also place their tails at the same point, and form a parallelogram using the vectors as the two sides. The sum is the diagonal of the parallelogram starting from the common tail point.
 	%graph
 	\subsubsection{Sine Law}
 	For any triangle $\triangle ABC$, the following relation is true: $\dfrac{\sin A}{a}=\dfrac{\sin B}{b}=\dfrac{\sin C}{c}$
@@ -1454,7 +1454,7 @@
 	\subsubsection{Magnitude of a 3D Algebraic Vector}
 	The magnitude of a vector $\vv{v}=(v_x,\,v_y,\,v_z)$ is given by $\mv{v}=\sqrt{{v_x}^2+{v_y}^2+{v_z}^2}$
 	\subsubsection{3D Standard Unit Vectors}
-	The unit vectors $\vv{i}=(1,\,0,\,0)$, $\vv{j}=(0,\,1,\,0)$, and $\vv{k}=(0,\,0,\,1)$ are called the standard unit vecors in 3D space. %graph
+	The unit vectors $\vv{i}=(1,\,0,\,0)$, $\vv{j}=(0,\,1,\,0)$, and $\vv{k}=(0,\,0,\,1)$ are called the standard unit vectors in 3D space. %graph
 	\subsubsection{Vector components for a 3D Vector}
 	Any 3D vector $\vv{v}$ may be decomposed into three perpendicular vector components $\vv{v_x}$, $\vv{v_y}$ and $\vv{v_z}$, parallel to each of the standard unit vectors. \textit{some more useless info}
 	\subsubsection{O Position 3D Vector}
@@ -1509,12 +1509,12 @@
 	\subsubsection{Equilibrium}
 	A system forces in in a state of equilibrium if the resultant force between then is 0. Three forces in equilibrium form a triangle.
 	\subsubsection{Equilibrant Force}
-	The equilibrant force is the vector force $\vv{E}$ required to be added to a system of forces with a resultante force $\vv{R}$ such that the new system of forces is at equilibrium. $\vv{R}+\vv{E}=0$
+	The equilibrant force is the vector force $\vv{E}$ required to be added to a system of forces with a resultant force $\vv{R}$ such that the new system of forces is at equilibrium. $\vv{R}+\vv{E}=0$
 	\subsection{Velocity}
 	\subsubsection{Velocity}
 	Velocity is a vector and the measurement unit is \si{\meter\per\second} or \si{\kilo\meter\per\hour}
 	\subsubsection{Relative Velocity}
-	The relative velocity of the object $B$ travelling at $\vv{v_B}$ relative to the object $A$ travelling at $v_A$ is given by $v_{BA}=\vv{v_B}-\vv{v_A}$. If $\vv{v_A}=0$, then $\vv{BA}=\vv{v_B}$
+	The relative velocity of the object $B$ travelling at $\vv{v_B}$ relative to the object $A$ travelling at $\vv{v_A}$ is given by $\vv{v_{BA}}=\vv{v_B}-\vv{v_A}$. If $\vv{v_A}=0$, then $\vv{BA}=\vv{v_B}$
 	\subsubsection{Boat Velocity}
 	The boat velocity relative to the ground is the vector sum between the boat velocity relative to the water and the water velocity relative to the ground: $\vv{v_{bg}}=\vv{v_{bw}}+\vv{v_{wg}}$
 	\subsubsection{Plane Velocity}
@@ -1567,7 +1567,7 @@
 		\item If $\vv{a}\bot\vv{b}$, then $\cos\theta=0$ and $s=0$
 	\end{itemize}
 	\subsubsection{Dot Product and Scalar Projection}
-	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection of two vectors can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$.\\Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{a_x}{1}=a_x$
+	Since the dot product is defined as $\vv{a}\cdot\vv{b}=\mv{a}\mv{b}\cos\theta$, the scalar projection of two vectors can be rewritten as $s=\mv{a}\cos\theta=\dfrac{\vv{a}\cdot\vv{b}}{\mv{b}}$. For a Cartesian coordinate system, the scalar components $a_x$, $a_y$, and $a_z$ of a vector $\vv{a}=(a_x,\,a_y,\,a_z)$ are the scalar projections of the vector $\vv{a}$ onto the unit vectors $\vv{i}$.\\Proof: $s=\dfrac{\vv{a}\cdot\vv{i}}{\mv{i}}=\dfrac{(a_x,\,a_y,\,a_z)\cdot(1,\,0,\,0)}{1}=\dfrac{a_x}{1}=a_x$
 	\subsubsection{Vector Projection}
 	The vector projection of $\vv{a}$ onto $\vv{b}$ is a vector defined as $\vv{v}=\mv{a}\cos\theta\dfrac{\vv{b}}{\mv{b}}$. It is the scalar projection of $\vv{a}$ onto $\vv{b}$, with the direction of $\vv{b}$.
 	\subsubsection{Dot Product and Vector Projection}
@@ -1632,7 +1632,7 @@
 	\subsubsection{Properties of Cross Product}
 	The following properties apply to the cross product:
 	\begin{enumerate}
-		\item $\vv{a}\times\vv{b}=-\vv{b}\times\vv{a}$ (anti-commutitive property)
+		\item $\vv{a}\times\vv{b}=-\vv{b}\times\vv{a}$ (anti-commutative property)
 		\item $\lambda(\vv{a}\times\vv{b})=(\lambda\vv{a})\times\vv{b}=\vv{a}\times(\lambda\vv{b})$
 		\item $\vv{a}\times(\vv{b}+\vv{c})=\vv{a}\times\vv{b}+\vv{a}\times\vv{c}$ (distributive property)
 		\item $\vv{a}\times\vv{b}=0\Leftrightarrow\vv{a}=0\text{ or }\vv{b}=0\text{ or }\vv{a}\parallel\vv{b}$
@@ -1642,7 +1642,7 @@
 	The dot and cross products have higher priority in comparison to addition and subtraction
 	\begin{itemize}
 		\item $(\vv{a}-\vv{b})\times(\vv{a}+\vv{b})=2(\vv{a}\times\vv{b})$
-		\item $(\vv{a}\times\vv{b})\cdot(\vv{a}\times\vv{b})+(\vv{a}\cdot\vv{b})^2$
+		\item $(\vv{a}\times\vv{b})\cdot(\vv{a}\times\vv{b})=(\vv{a}\cdot\vv{b})^2$
 		\item $\vv{a}\cdot(\vv{b}\times\vv{c})=\vv{b}\cdot(\vv{c}\times\vv{a})=\vv{c}\cdot(\vv{a}\times\vv{b})$
 		\item $\vv{a}\times(\vv{b}\times\vv{c})=(\vv{c}\cdot\vv{a})\vv{b}-(\vv{b}\cdot\vv{a})\vv{c}$
 	\end{itemize}
